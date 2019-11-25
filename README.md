@@ -54,6 +54,6 @@ Additional sections/sub-sections can be added as needed.
 
 ### SV callers
 
- - [Comprehensive evaluation and characterisation of short read general-purpose structural variant calling software](https://www.nature.com/articles/s41467-019-11146-4). 2019. `BreakDancer `cortex` `CREST` `DELLY` `GRIDSS` `Hydra` `LUMPY` `manta` `Pindel` `SOCRATES`
+ - [Comprehensive evaluation and characterisation of short read general-purpose structural variant calling software](https://www.nature.com/articles/s41467-019-11146-4). 2019. `BreakDancer` `cortex` `CREST` `DELLY` `GRIDSS` `Hydra` `LUMPY` `manta` `Pindel` `SOCRATES`
  
  - [Comprehensive evaluation of structural variation detection algorithms for whole genome sequencing](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1720-5). 2019. `1-2-3-SV` `AS-GENESENG` `BASIL-ANISE` `BatVI` `BICseq2` `BreakDancer` `BreakSeek` `BreakSeq2` `Breakway` `CLEVER` `CNVnator` `Control-FREEC` `CREST` `DELLY` `DINUMT` `ERDS` `FermiKit` `forestSV` `GASVPro` `GenomeSTRiP` `GRIDSS` `HGT-ID` `Hydra-sv` `iCopyDAV` `inGAP-sv` `ITIS` `laSV` `Lumpy` `Manta` `MATCHCLIP` `Meerkat` `MELT` `MELT-numt` `MetaSV` `MindTheGap` `Mobster` `Mobster-numt` `Mobster-vei` `OncoSNP-SEQ` `Pamir` `PBHoney` `PBHoney-NGM` `pbsv` `PennCNV-Seq` `Pindel` `PopIns` `PRISM` `RAPTR` `readDepth` `RetroSeq` `Sniffles` `Socrates` `SoftSearch` `SoftSV` `SoloDel` `Sprites` `SvABA` `SVDetect` `Svelter` `SVfinder` `SVseq2` `Tangram` `Tangram-numt` `Tangram-vei` `Tea` `TEMP` `TIDDIT` `Ulysses` `VariationHunter` `VirusFinder` `VirusSeq` `Wham`
