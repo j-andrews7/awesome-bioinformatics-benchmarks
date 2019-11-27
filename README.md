@@ -90,6 +90,23 @@ More generally, they found that methods that utilize variable window sizes and P
 
 ### Differential Gene Expression
 
+**Title:** [How many biological replicates are needed in an RNA-seq experiment and which differential expression tool should you use?](https://www.ncbi.nlm.nih.gov/pubmed/27022035)
+
+**Authors:** Nicholas J. Schurch\*, Pietá Schofield\*, Marek Gierliński\*, Christian Cole\*, Alexander Sherstnev\*, et al. 
+
+**Journal Info:** RNA, March 2016
+
+**Description:** This paper compared 11 differential expression tools on varying numbers of RNA-seq biological replicates (3-42) between two conditions.
+Each tool was compared against itself as a standard (using all replicates) and against the other tools.
+
+**Tools/methods compared:** `baySeq`, `cuffdiff`, `DEGSeq`, `DESeq`, `DESeq2`, `EBSeq`, `edgeR (exact and glm modes)`, `limma`, `NOISeq`, `PoissonSeq`, `SAMSeq`. 
+
+**Recommendation(s):** With fewer than 12 biological replicates, [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) and [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) were the top performers. 
+As replicates increased, [DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html) did a better job minimizing false positives than other tools.
+
+Additionally, the authors recommend at least six biological replicates should be used, rising to at least 12 if users want to identify all significantly differentially expressed genes no matter the fold change magnitude.
+
+**Additional links (optional):**
 
 ### Cell-Type Deconvolution
 
