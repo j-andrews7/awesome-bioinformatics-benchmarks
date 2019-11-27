@@ -45,11 +45,13 @@ Additional sections/sub-sections can be added as needed.
 
 **Journal Info:** PLoS ONE, May 2014
 
-**Description:** This paper compares four peak callers specificty and sensitivity on DNase-seq data from two publications composed of three cell types, using ENCODE data for the same cell types as a benchmark. The authors tested multiple parameters for each caller to determine the best settings for DNase-seq data for each.
+**Description:** This paper compares four peak callers specificty and sensitivity on DNase-seq data from two publications composed of three cell types, using ENCODE data for the same cell types as a benchmark. 
+The authors tested multiple parameters for each caller to determine the best settings for DNase-seq data for each.
 
 **Tools/methods compared:** `F-seq`, `Hotspot`, `MACS2`, `ZINBA`.
 
-**Recommendation(s):** [F-seq](https://github.com/aboyle/F-seq) was the most sensitive, though [MACS2](https://github.com/taoliu/MACS) and [Hotspot](https://github.com/rthurman/hotspot) both performed competitively as well. ZINBA was the least performant by a massive margin, requiring much more time to run, and was also the least sensitive.
+**Recommendation(s):** [F-seq](https://github.com/aboyle/F-seq) was the most sensitive, though [MACS2](https://github.com/taoliu/MACS) and [Hotspot](https://github.com/rthurman/hotspot) both performed competitively as well. 
+ZINBA was the least performant by a massive margin, requiring much more time to run, and was also the least sensitive.
 
 ---
 
@@ -59,15 +61,35 @@ Additional sections/sub-sections can be added as needed.
 
 **Journal Info:** Briefings in Bioinformatics, May 2017
 
-**Description:** This paper compared six peak calling methods on 300 simulated and three real ChIP-seq data sets across a range of significance values. Methods were scored by sensitivity, precision, and F-score.
+**Description:** This paper compared six peak calling methods on 300 simulated and three real ChIP-seq data sets across a range of significance values. 
+Methods were scored by sensitivity, precision, and F-score.
 
 **Tools/methods compared:** `GEM`, `MACS2`, `MUSIC`, `BCP`, `Threshold-based method (TM)`, `ZINBA`.
 
-**Recommendation(s):** Varies. [BCP](http://ranger.sourceforge.net/manual1.18.html) and [MACS2](https://github.com/taoliu/MACS) performed the best across all metrics on the simulated data. For Tbx5 ChIP-seq, [GEM](http://groups.csail.mit.edu/cgs/gem/) performed the best, with BCP also scoring highly. For histone H3K36me3 and H3K4me3 data, all methods performed relatively comparably with the exception of ZINBA, which the authors could not get to run properly. [MUSIC](https://github.com/gersteinlab/MUSIC) and BCP had a slight edge over the others for the histone data. More generally, they found that methods that utilize variable window sizes and Poisson test to rank peaks are more powerful than those that use a Binomial test. 
+**Recommendation(s):** Varies. [BCP](http://ranger.sourceforge.net/manual1.18.html) and [MACS2](https://github.com/taoliu/MACS) performed the best across all metrics on the simulated data. 
+For Tbx5 ChIP-seq, [GEM](http://groups.csail.mit.edu/cgs/gem/) performed the best, with BCP also scoring highly. 
+For histone H3K36me3 and H3K4me3 data, all methods performed relatively comparably with the exception of ZINBA, which the authors could not get to run properly. 
+[MUSIC](https://github.com/gersteinlab/MUSIC) and BCP had a slight edge over the others for the histone data. 
+More generally, they found that methods that utilize variable window sizes and Poisson test to rank peaks are more powerful than those that use a Binomial test. 
 
 ## RNA-seq
 
+### Normalisation Methods
+
+**Title:** [A comprehensive evaluation of normalization methods for Illumina high-throughput RNA sequencing data analysis](https://academic.oup.com/bib/article/14/6/671/189645). 
+
+**Authors:** Marie-Agnès Dillies, et al.
+
+**Journal Info:** Briefings in Bioinformatics, November 2013
+
+**Description:** This paper compared seven RNA-seq normalization methods in the context of differential expression analysis on four real datasets and thousands of simulations.
+
+**Tools/methods compared:** `Total Count (TC)`, `Upper Quartile (UQ)`, `Median (Med),` `DESeq`, `edgeR`, `Quantile (Q)`, `RPKM`.
+
+**Recommendation(s):** The authors recommend [DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html)([DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) now available as well) or [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), as those methods are robust to the presence of different library sizes and compositions, whereas the (still common) Total Count and RPKM methods are ineffective and should be abandoned.
+
 ### Differential Gene Expression
+
 
 ### Cell-Type Deconvolution
 
@@ -87,11 +109,148 @@ Additional sections/sub-sections can be added as needed.
 
 ## RNA/cDNA Microarrays
 
+
 ## Variant Callers
 
-### SNP/Indel Callers
+### Germline SNP/Indel Callers
+
+**Title:** [Systematic comparison of germline variant calling pipelines cross multiple next-generation sequencers](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6597787/)
+
+**Authors:** Jiayun Chen, et al.
+
+**Journal Info:** Scientific Reports, June 2019
+
+**Description:** This paper compared three variant callers for WGS and WES samples from NA12878 across five next-gen sequencing platforms
+
+**Tools/methods compared:** `GATK`, `Strelka2`, `Samtools-Varscan2`.
+
+**Recommendation(s):** Though all methods tested generally scored well, [Strelka2](https://github.com/Illumina/strelka) had the highest F-scores for both SNP and indel calling in addition to being the most computationally performant.
+
+---
+
+**Title:** [Comparison of three variant callers for human whole genome sequencing](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6294778/) 
+
+**Authors:** Anna Supernat, et al.
+
+**Journal Info:** Scientific Reports, December 2018
+
+**Description:** The paper compared three variant callers for WGS samples from NA12878 at 10x, 15x, and 30x coverage.
+
+**Tools/methods compared:** `DeepVariant`, `GATK`, `SpeedSeq`.
+
+**Recommendation(s):** All methods had similar F-scores, precision, and recall for SNP calling, but [DeepVariant](https://github.com/google/deepvariant) scored higher across all metrics for indels at all coverages.
+
+---
+
+**Title:** [A Comparison of Variant Calling Pipelines Using Genome in a Bottle as a Reference](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4619817/)
+
+**Authors:** Adam Cornish, et al.
+
+**Journal Info:** BioMed Research International, October 2015
+
+**Description:** This paper compared 30 variant calling pipelines composed of six different variant callers and five different aligners on NA12878 WES data from the Genome in a Bottle consortium.
+
+**Tools/methods compared:** 
+ - Variant callers: `FreeBayes`, `GATK-HaplotypeCaller`, `GATK-UnifiedGenotyper`, `SAMtools mpileup`, `SNPSVM`
+ - Aligners: `bowtie2`, `BWA-mem`, `BWA-sampe`, `CUSHAW3`, `MOSAIK`, `Novoalign`.
+
+**Recommendation(s):** [Novoalign](http://www.novocraft.com/products/novoalign/) with [GATK-UnifiedGenotyper](https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_genotyper_UnifiedGenotyper.php) exhibited the highest sensitivity while producing few false positives. 
+In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligner, and `GATK-UnifiedGenotyper` performed well across the top aligners (BWA, bowtie2, and Novoalign).
+
+
+
+### Somatic SNV/Indel callers
+
+**Title:** [Evaluation of Nine Somatic Variant Callers for Detection of Somatic Mutations in Exome and Targeted Deep Sequencing Data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4803342/)
+
+**Authors:**
+
+**Journal Info:**
+
+**Description:**
+
+**Tools/methods compared:** `EBCall`, `Mutect`, `Seurat`, `Shimmer`, `Indelocator`, `SomaticSniper`, `Strelka`, `VarScan2`, `Virmid`.
+
+**Recommendation(s):**
+
+---
+
+**Title:** [Comparison of somatic mutation calling methods in amplicon and whole exome sequence data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3986649/)
+
+**Authors:**
+
+**Journal Info:**
+
+**Description:**
+
+**Tools/methods compared:**  `GATK-UnifiedGenotyper followed by subtraction`, `MuTect`, `Strelka`, `SomaticSniper`, `VarScan2`.
+
+**Recommendation(s):**
+
 
 ### CNV Callers
+
+**Title:** [Benchmark of tools for CNV detection from NGS panel data in a genetic diagnostics context](https://www.biorxiv.org/content/10.1101/850958v1)
+
+**Authors:**
+
+**Journal Info:** bioRxiv, 2019.
+
+**Description:**
+
+**Tools/methods compared:** `DECoN`, `CoNVaDING`, `panelcn.MOPS`, `ExomeDepth`, `CODEX2`.
+
+**Recommendation(s):**
+
+---
+
+**Title:** [An evaluation of copy number variation detection tools for cancer using whole exome sequencing data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5452530/)
+
+**Authors:**
+
+**Journal Info:**
+
+**Description:**
+
+**Tools/methods compared:** `ADTEx`, `CONTRA`, `cn.MOPS`, `ExomeCNV`, `VarScan2`, `CoNVEX`.
+
+**Recommendation(s):**
+
+
+
+### SV callers
+
+**Title:** [Comprehensive evaluation and characterisation of short read general-purpose structural variant calling software](https://www.nature.com/articles/s41467-019-11146-4)
+
+**Authors:**
+
+**Journal Info:**
+
+**Description:**
+
+**Tools/methods compared:** `BreakDancer`, `cortex`, `CREST`, `DELLY`, `GRIDSS`, `Hydra`, `LUMPY`, `manta`, `Pindel`, `SOCRATES`.
+
+**Recommendation(s):**
+ 
+ ---
+ 
+ **Title:** [Comprehensive evaluation of structural variation detection algorithms for whole genome sequencing](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1720-5)
+
+**Authors:**
+
+**Journal Info:**
+
+**Description:**
+
+**Tools/methods compared:** `1-2-3-SV`, `AS-GENESENG`, `BASIL-ANISE,` `BatVI`, `BICseq2`, `BreakDancer`, `BreakSeek`, `BreakSeq2`, `Breakway`, `CLEVER`, `CNVnator`,
+`Control-FREEC`, `CREST`, `DELLY`, `DINUMT`, `ERDS`, `FermiKit`, `forestSV`, `GASVPro`, `GenomeSTRiP`, `GRIDSS`, `HGT-ID`, `Hydra-sv`, `iCopyDAV`, `inGAP-sv`, `ITIS`,
+`laSV`, `Lumpy`, `Manta`, `MATCHCLIP`, `Meerkat`, `MELT`, `MELT-numt`, `MetaSV`, `MindTheGap`, `Mobster`, `Mobster-numt`, `Mobster-vei`, `OncoSNP-SEQ`, `Pamir`, `PBHoney`,
+`PBHoney-NGM`, `pbsv`, `PennCNV-Seq`, `Pindel`, `PopIns`, `PRISM`, `RAPTR`, `readDepth`, `RetroSeq`, `Sniffles`, `Socrates`, `SoftSearch`, `SoftSV`, `SoloDel`, `Sprites`,
+`SvABA`, `SVDetect`, `Svelter`, `SVfinder`, `SVseq2`, `Tangram`, `Tangram-numt`, `Tangram-vei`, `Tea`, `TEMP`, `TIDDIT`, `Ulysses`, `VariationHunter`, `VirusFinder`, `VirusSeq`, `Wham`.
+
+
+**Recommendation(s):**
+
 
 ## Single Cell
 
@@ -111,10 +270,8 @@ Additional sections/sub-sections can be added as needed.
 
 **Additional links:** The [dynverse site](https://dynverse.org/) contains numerous packages for users to run and compare results from different trajectory methods on their own data without installing each individually by using Docker. Additionally, they provide several tools for developers to wrap and benchmark their own method against those included in the study. 
 
----
-
-
 # Contributors
 
  - Jared Andrews ([@j-andrews7](https://github.com/j-andrews7/))
+ - Kevin Blighe ([@kevinblighe](https://github.com/kevinblighe), [biostars](https://www.biostars.org/u/41557/))
 
