@@ -148,7 +148,7 @@ More generally, they found that methods that utilize variable window sizes and P
 
 **Journal Info:** BioMed Research International, October 2015
 
-**Description:** This paper compared 30 variant calling pipelines composed of six different variant callers and five different aligners on NA12878 WES data from the Genome in a Bottle consortium.
+**Description:** This paper compared 30 variant calling pipelines composed of six different variant callers and five different aligners on NA12878 WES data from the "Genome in a Bottle" consortium.
 
 **Tools/methods compared:** 
  - Variant callers: `FreeBayes`, `GATK-HaplotypeCaller`, `GATK-UnifiedGenotyper`, `SAMtools mpileup`, `SNPSVM`
@@ -163,38 +163,39 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 
 **Title:** [Evaluation of Nine Somatic Variant Callers for Detection of Somatic Mutations in Exome and Targeted Deep Sequencing Data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4803342/)
 
-**Authors:**
+**Authors:** Anne Bruun Krøigård, et al.
 
-**Journal Info:**
+**Journal Info:** PLoS ONE, March 2016
 
-**Description:**
+**Description:** This paper performed comparisons between nine somatic variant callers on five paired tumor-normal samples from breast cancer patients subjected to WES and targeted deep sequencing.
 
 **Tools/methods compared:** `EBCall`, `Mutect`, `Seurat`, `Shimmer`, `Indelocator`, `SomaticSniper`, `Strelka`, `VarScan2`, `Virmid`.
 
-**Recommendation(s):**
+**Recommendation(s):** [EBCall](https://github.com/friend1ws/EBCall), [Mutect](https://github.com/broadinstitute/mutect), [Virmid](https://sourceforge.net/p/virmid/wiki/Home/), and [Strelka](https://github.com/Illumina/strelka) (now Strelka2) were most reliable for both WES and targeted deep sequencing. 
+[EBCall](https://github.com/friend1ws/EBCall) was superior for indel calling due to high sensitivity and robustness to changes in sequencing depths.
 
 ---
 
 **Title:** [Comparison of somatic mutation calling methods in amplicon and whole exome sequence data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3986649/)
 
-**Authors:**
+**Authors:** Huilei Xu, et al.
 
-**Journal Info:**
+**Journal Info:** BMC Genomics, March 2014
 
-**Description:**
+**Description:** Using the "Genome in a Bottle" gold standard variant set, this paper compared five somatic mutation calling methods on matched tumor-normal amplicon and WES data.
 
 **Tools/methods compared:**  `GATK-UnifiedGenotyper followed by subtraction`, `MuTect`, `Strelka`, `SomaticSniper`, `VarScan2`.
 
-**Recommendation(s):**
+**Recommendation(s):** [MuTect](https://github.com/broadinstitute/mutect) and [Strelka](https://github.com/Illumina/strelka) (now Strelka2) had the highest sensitivity, particularly at low frequency alleles, in addition to the highest specificity.  
 
 
 ### CNV Callers
 
 **Title:** [Benchmark of tools for CNV detection from NGS panel data in a genetic diagnostics context](https://www.biorxiv.org/content/10.1101/850958v1)
 
-**Authors:**
+**Authors:** José Marcos Moreno-Cabrera, et al.
 
-**Journal Info:** bioRxiv, 2019.
+**Journal Info:** bioRxiv, November 2019.
 
 **Description:**
 
@@ -206,9 +207,9 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 
 **Title:** [An evaluation of copy number variation detection tools for cancer using whole exome sequencing data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5452530/)
 
-**Authors:**
+**Authors:** Fatima Zare, et al.
 
-**Journal Info:**
+**Journal Info:** BMC Bioinformatics, May 2017
 
 **Description:**
 
@@ -222,9 +223,9 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 
 **Title:** [Comprehensive evaluation and characterisation of short read general-purpose structural variant calling software](https://www.nature.com/articles/s41467-019-11146-4)
 
-**Authors:**
+**Authors:** Daniel L. Cameron, et al.
 
-**Journal Info:**
+**Journal Info:** Nature Communications, July 2019
 
 **Description:**
 
@@ -236,9 +237,9 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
  
  **Title:** [Comprehensive evaluation of structural variation detection algorithms for whole genome sequencing](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1720-5)
 
-**Authors:**
+**Authors:** Shunichi Kosugi, et al.
 
-**Journal Info:**
+**Journal Info:** Genome Biology, June 2019
 
 **Description:**
 
@@ -247,7 +248,6 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 `laSV`, `Lumpy`, `Manta`, `MATCHCLIP`, `Meerkat`, `MELT`, `MELT-numt`, `MetaSV`, `MindTheGap`, `Mobster`, `Mobster-numt`, `Mobster-vei`, `OncoSNP-SEQ`, `Pamir`, `PBHoney`,
 `PBHoney-NGM`, `pbsv`, `PennCNV-Seq`, `Pindel`, `PopIns`, `PRISM`, `RAPTR`, `readDepth`, `RetroSeq`, `Sniffles`, `Socrates`, `SoftSearch`, `SoftSV`, `SoloDel`, `Sprites`,
 `SvABA`, `SVDetect`, `Svelter`, `SVfinder`, `SVseq2`, `Tangram`, `Tangram-numt`, `Tangram-vei`, `Tea`, `TEMP`, `TIDDIT`, `Ulysses`, `VariationHunter`, `VirusFinder`, `VirusSeq`, `Wham`.
-
 
 **Recommendation(s):**
 
@@ -269,6 +269,10 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 **Recommendation(s):** Varies depending on dataset and expected trajectory type, though [PAGA, PAGA Tree](https://scanpy.readthedocs.io/en/latest/examples.html#trajectory-inference), [SCORPIUS](https://github.com/rcannood/SCORPIUS), and [Slingshot](https://bioconductor.org/packages/release/bioc/html/slingshot.html) all scored highly across all metrics. Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide/2-guidelines/) to help users choose the best methods for their data.
 
 **Additional links:** The [dynverse site](https://dynverse.org/) contains numerous packages for users to run and compare results from different trajectory methods on their own data without installing each individually by using Docker. Additionally, they provide several tools for developers to wrap and benchmark their own method against those included in the study. 
+
+### Integration/Batch Correction
+
+### Cell Annotation/Inference
 
 # Contributors
 
