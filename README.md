@@ -197,11 +197,15 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 
 **Journal Info:** bioRxiv, November 2019.
 
-**Description:**
+**Description:** This paper compared five germline copy number variation callers against four genetic diagnostics datasets (495 samples, 231 CNVs validated by MLPA) using both default and optimized parameters.
+Sensitivity, specificity, positive predictive value, negative predictive value, F1 score, and various correlation coefficients were used as benchmarking metrics.
 
 **Tools/methods compared:** `DECoN`, `CoNVaDING`, `panelcn.MOPS`, `ExomeDepth`, `CODEX2`.
 
-**Recommendation(s):**
+**Recommendation(s):** Most tools performed well, but varied based on datasets. 
+The authors felt [DECoN](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology/groups/lunter-group/lunter-group/decon-detection-of-exon-copy-number) and [panelcn.MOPS](https://bioconductor.org/packages/release/bioc/html/panelcn.mops.html) with optimized parameters were sensitive enough to be used as screening methods in genetic dianostics.
+
+**Additional links:** The authors have made their benchmarking code ([CNVbenchmarkeR](https://github.com/TranslationalBioinformaticsIGTP/CNVbenchmarkeR)) available, which can be run to determine optimal parameters for each algorithm for a given user's data.
 
 ---
 
@@ -211,11 +215,12 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 
 **Journal Info:** BMC Bioinformatics, May 2017
 
-**Description:**
+**Description:** This paper compared six copy number variation callers on ten TCGA breast cancer tumor-normal pair WES datasets in addition to simulated datasets from VarSimLab.
+Sensitivity, specificity, and false-discovery rate were used as the benchmarking metrics.
 
 **Tools/methods compared:** `ADTEx`, `CONTRA`, `cn.MOPS`, `ExomeCNV`, `VarScan2`, `CoNVEX`.
 
-**Recommendation(s):**
+**Recommendation(s):** All tools suffered from high FDRs (\~30-60%), but [ExomeCNV]https://github.com/cran/ExomeCNV) (a now defunct R package) had the highest overall sensitivity. [VarScan2](http://dkoboldt.github.io/varscan/) had moderate sensitivity and specificity for both amplifications and deletions.
 
 
 
@@ -227,11 +232,22 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 
 **Journal Info:** Nature Communications, July 2019
 
-**Description:**
+**Description:** This paper compared 10 structural variant callers on four cell line WGS datasets (NA12878, HG002, CHM1, and CHM13) with orthogonal validation data.
+Precision and recall were the benchmarking metrics used.
 
 **Tools/methods compared:** `BreakDancer`, `cortex`, `CREST`, `DELLY`, `GRIDSS`, `Hydra`, `LUMPY`, `manta`, `Pindel`, `SOCRATES`.
 
-**Recommendation(s):**
+**Recommendation(s):** The authors found [GRIDSS](https://github.com/PapenfussLab/gridss) and [manta](https://github.com/Illumina/manta) consistently performed well, but also provide more general guidelines for both users and developers.
+
+ - Use a caller that utilizes multiple sources of evidence and assembly.
+ - Use a caller that can call all events you care about.
+ - Ensemble calling is not a cure-all and generally don't outperform the best individual callers (at least on these datasets).
+ - Do not use callers that rely only on paired-end data.
+ - Calls with high read counts are typically artefacts.
+ - Simulations aren't real - benchmarking solely on simulations is a bad idea.
+ - Developers - be wary of incomplete trust sets and the potential for overfitting. Test tools on multiple datasets.
+ - Developers - make your tool easy to use with basic sanity checks to protect against invalid inputs. Use standard file formats.
+ - Developers - use all available evidence and produce meaningful quality scores.
  
  ---
  
@@ -241,7 +257,8 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 
 **Journal Info:** Genome Biology, June 2019
 
-**Description:**
+**Description:** This study compared 69 structural variation callers on simulated and real (NA12878, HG002, and HG00514) datasets.
+F-scores, precision, and recall were the main benchmarking metrics. 
 
 **Tools/methods compared:** `1-2-3-SV`, `AS-GENESENG`, `BASIL-ANISE,` `BatVI`, `BICseq2`, `BreakDancer`, `BreakSeek`, `BreakSeq2`, `Breakway`, `CLEVER`, `CNVnator`,
 `Control-FREEC`, `CREST`, `DELLY`, `DINUMT`, `ERDS`, `FermiKit`, `forestSV`, `GASVPro`, `GenomeSTRiP`, `GRIDSS`, `HGT-ID`, `Hydra-sv`, `iCopyDAV`, `inGAP-sv`, `ITIS`,
@@ -249,8 +266,11 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 `PBHoney-NGM`, `pbsv`, `PennCNV-Seq`, `Pindel`, `PopIns`, `PRISM`, `RAPTR`, `readDepth`, `RetroSeq`, `Sniffles`, `Socrates`, `SoftSearch`, `SoftSV`, `SoloDel`, `Sprites`,
 `SvABA`, `SVDetect`, `Svelter`, `SVfinder`, `SVseq2`, `Tangram`, `Tangram-numt`, `Tangram-vei`, `Tea`, `TEMP`, `TIDDIT`, `Ulysses`, `VariationHunter`, `VirusFinder`, `VirusSeq`, `Wham`.
 
-**Recommendation(s):**
-
+**Recommendation(s):** Varies greatly depending on type and size of the structural variant in addition to read length. 
+`GRIDSS`, `Lumpy`, `SVseq2`, `SoftSV`, and `Manta` performed well calling deletions of diverse sizes.
+`TIDDIT`, `forestSV`, `ERDS`, and `CNVnator` called large deletions well, while `pbsv`, `Sniffles`, and `PBHoney` were the best performers for small deletions.
+For duplications, good choices included `Wham`, `SoftSV`, `MATCHCLIP`, and `GRIDSS`, while `CNVnator`, `ERDS`, and `iCopyDAV` excelled called large duplications.
+For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data were most effective.
 
 ## Single Cell
 
