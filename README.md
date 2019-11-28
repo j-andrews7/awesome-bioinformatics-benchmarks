@@ -92,6 +92,23 @@ ZINBA was the least performant by a massive margin, requiring much more time to 
 
 ### Differential Gene Expression
 
+**Title:** [How well do RNA-Seq differential gene expression tools perform in a complex eukaryote? A case study in Arabidopsis thaliana.](https://www.ncbi.nlm.nih.gov/pubmed/30726870)
+
+**Authors:** Kimon Froussios\*, Nick J Schurch\*, et al.
+
+**Journal Info:** Bioinformatics, February 2019
+
+**Description:** This paper compared nine differential gene expression tools (and their underlying model distributions) in 17 RNA-seq replicates of *Arabidopsis thaliana*.
+Handling of inter-replicate variability and false positive fraction were the benchmarking metrics used.
+
+**Tools/methods compared:** `baySeq`, `DEGseq`, `DESeq`, `DESeq2`, `EBSeq`, `edgeR`, `limma`, `Poisson-Seq`, `SAM-Seq`.
+
+**Recommendation(s):** Six of the tools that utilize negative binomial or log-normal distributions ([edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), [DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html), [limma](https://bioconductor.org/packages/release/bioc/html/limma.html), and [EBseq](https://bioconductor.org/packages/release/bioc/html/EBSeq.html) control their identification of false positives well.
+
+**Additional links (optional):** The authors released their benchmarking scripts on [Github](https://github.com/bartongroup/KF_arabidopsis-GRNA).
+
+---
+
 **Title:** [How many biological replicates are needed in an RNA-seq experiment and which differential expression tool should you use?](https://www.ncbi.nlm.nih.gov/pubmed/27022035)
 
 **Authors:** Nicholas J. Schurch\*, Pietá Schofield\*, Marek Gierliński\*, Christian Cole\*, Alexander Sherstnev\*, et al. 
@@ -108,7 +125,22 @@ As replicates increased, [DESeq](https://bioconductor.org/packages/release/bioc/
 
 Additionally, the authors recommend at least six biological replicates should be used, rising to at least 12 if users want to identify all significantly differentially expressed genes no matter the fold change magnitude.
 
-**Additional links (optional):**
+---
+
+**Title:** [Comprehensive evaluation of differential gene expression analysis methods for RNA-seq data](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-9-r95)
+
+**Authors:** Franck Rapaport, et al.
+
+**Journal Info:** Genome Biology, September 2013
+
+**Description:** This paper compared six differential expression methods on three cell line data sets from ENCODE (GM12878, H1-hESC, and MCF-7) and two samples from the SEQC study, which had a large fraction of differentially expressed genes validated by qRT-PCR.
+Specificity, sensitivity, and false positive rate were the main benchmarking metrics used. 
+
+**Tools/methods compared:** `Cuffdiff`, `edgeR`, `DESeq`, `PoissonSeq`, `baySeq`, `limma`.
+
+**Recommendation(s):** The more replicates, the better. Replicate numbers (both biological and technical) have a greater impact on differential detection accuracy than sequencing depth.
+Though no method emerged as favorable in all conditions, those that used negative binomial modeling ([DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html), [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html)) generally performed best.
+
 
 ### Cell-Type Deconvolution
 
