@@ -14,7 +14,7 @@ If you have a benchmarking study that is not yet included on this list, please m
  
 Additional guidelines/rules may be added as necessary.
 
-## Format
+## Format & Organization
 Please include the following information when adding papers.
 
 **Title:**
@@ -31,6 +31,8 @@ Please include the following information when adding papers.
 
 **Additional links (optional):**
 
+Papers within each section should be ordered by publication date, with more recent papers listed first.
+
 # Tool/Method Sections
 Additional sections/sub-sections can be added as needed.
 
@@ -38,22 +40,6 @@ Additional sections/sub-sections can be added as needed.
 ## DNase & ChIP-seq
 
 ### Peak Callers
-
-**Title:** [A Comparison of Peak Callers Used for DNase-Seq Data](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0096303)
-
-**Authors:** Hashem Koohy, et al.
-
-**Journal Info:** PLoS ONE, May 2014
-
-**Description:** This paper compares four peak callers specificty and sensitivity on DNase-seq data from two publications composed of three cell types, using ENCODE data for the same cell types as a benchmark. 
-The authors tested multiple parameters for each caller to determine the best settings for DNase-seq data for each.
-
-**Tools/methods compared:** `F-seq`, `Hotspot`, `MACS2`, `ZINBA`.
-
-**Recommendation(s):** [F-seq](https://github.com/aboyle/F-seq) was the most sensitive, though [MACS2](https://github.com/taoliu/MACS) and [Hotspot](https://github.com/rthurman/hotspot) both performed competitively as well. 
-ZINBA was the least performant by a massive margin, requiring much more time to run, and was also the least sensitive.
-
----
 
 **Title:** [Features that define the best ChIP-seq peak calling algorithms](https://academic.oup.com/bib/article/18/3/441/2453291)
 
@@ -71,6 +57,22 @@ For Tbx5 ChIP-seq, [GEM](http://groups.csail.mit.edu/cgs/gem/) performed the bes
 For histone H3K36me3 and H3K4me3 data, all methods performed relatively comparably with the exception of ZINBA, which the authors could not get to run properly. 
 [MUSIC](https://github.com/gersteinlab/MUSIC) and BCP had a slight edge over the others for the histone data. 
 More generally, they found that methods that utilize variable window sizes and Poisson test to rank peaks are more powerful than those that use a Binomial test. 
+
+---
+
+**Title:** [A Comparison of Peak Callers Used for DNase-Seq Data](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0096303)
+
+**Authors:** Hashem Koohy, et al.
+
+**Journal Info:** PLoS ONE, May 2014
+
+**Description:** This paper compares four peak callers specificty and sensitivity on DNase-seq data from two publications composed of three cell types, using ENCODE data for the same cell types as a benchmark. 
+The authors tested multiple parameters for each caller to determine the best settings for DNase-seq data for each.
+
+**Tools/methods compared:** `F-seq`, `Hotspot`, `MACS2`, `ZINBA`.
+
+**Recommendation(s):** [F-seq](https://github.com/aboyle/F-seq) was the most sensitive, though [MACS2](https://github.com/taoliu/MACS) and [Hotspot](https://github.com/rthurman/hotspot) both performed competitively as well. 
+ZINBA was the least performant by a massive margin, requiring much more time to run, and was also the least sensitive.
 
 ## RNA-seq
 
