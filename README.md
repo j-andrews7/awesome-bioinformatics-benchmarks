@@ -78,6 +78,20 @@ ZINBA was the least performant by a massive margin, requiring much more time to 
 
 ### Normalisation Methods
 
+**Title:** [Statistical models for RNA-seq data derived from a two-condition 48-replicate experiment](https://academic.oup.com/bioinformatics/article/31/22/3625/240923)
+
+**Authors:** Marek Gierliński\*, Christian Cole\*, Pietá Schofield\*, Nicholas J. Schurch\*, et al.
+
+**Journal Info:** Bioinformatics, November 2015
+
+**Description:** This paper compares the effect of normal, log-normal, and negative binomial distribution assumptions on RNA-seq gene read-counts from 48 RNA-seq replicates.
+
+**Tools/methods compared:** `normal`, `log-normal`, `negative binomial`.
+
+**Recommendation(s):** Assuming a normal distribution leads to a large number of false positives during differential gene expression. A log-normal distribution model works well unless a sample contains zero counts. Use tools that assumbe a negative binomial distribution (`edgeR`, `DESeq`, `DESeq2`, etc).
+
+---
+
 **Title:** [A comprehensive evaluation of normalization methods for Illumina high-throughput RNA sequencing data analysis](https://academic.oup.com/bib/article/14/6/671/189645). 
 
 **Authors:** Marie-Agnès Dillies, et al.
