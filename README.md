@@ -6,6 +6,29 @@ The credit for this format goes to Sean Davis for his [awesome-single-cell](http
 
 If you have a benchmarking study that is not yet included on this list, please make a [Pull Request](https://github.com/j-andrews7/Awesome-Bioinformatics-Benchmarks/pulls).
 
+## Contents
+   * [Rules for Included Papers](#rules-for-included-papers)
+   * [Format &amp; Organization](#format--organization)
+   * [Tool/Method Sections](#toolmethod-sections)
+      * [DNase &amp; ChIP-seq](#dnase--chip-seq)
+         * [Peak Callers](#peak-callers)
+      * [RNA-seq](#rna-seq)
+         * [Normalisation Methods](#normalisation-methods)
+         * [Differential Gene Expression](#differential-gene-expression)
+         * [Cell-Type Deconvolution](#cell-type-deconvolution)
+      * [RNA/cDNA Microarrays](#rnacdna-microarrays)
+      * [Variant Callers](#variant-callers)
+         * [Germline SNP/Indel Callers](#germline-snpindel-callers)
+         * [Somatic SNV/Indel callers](#somatic-snvindel-callers)
+         * [CNV Callers](#cnv-callers)
+         * [SV callers](#sv-callers)
+      * [Single Cell](#single-cell)
+         * [Trajectory Inference](#trajectory-inference)
+         * [Integration/Batch Correction](#integrationbatch-correction)
+         * [Cell Annotation/Inference](#cell-annotationinference)
+   * [Contributors](#contributors)
+
+
 ## Rules for Included Papers
  - Papers must be objective comparisons of 3 or more tools/methods.
  - Papers should **not** be from authors showing why their tool/method is better than others.
