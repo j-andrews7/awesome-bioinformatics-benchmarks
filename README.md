@@ -66,7 +66,7 @@ More generally, they found that methods that utilize variable window sizes and P
 
 **Journal Info:** PLoS ONE, May 2014
 
-**Description:** This paper compares four peak callers specificty and sensitivity on DNase-seq data from two publications composed of three cell types, using ENCODE data for the same cell types as a benchmark. 
+**Description:** This paper compares four peak callers specificity and sensitivity on DNase-seq data from two publications composed of three cell types, using ENCODE data for the same cell types as a benchmark. 
 The authors tested multiple parameters for each caller to determine the best settings for DNase-seq data for each.
 
 **Tools/methods compared:** `F-seq`, `Hotspot`, `MACS2`, `ZINBA`.
@@ -88,7 +88,7 @@ ZINBA was the least performant by a massive margin, requiring much more time to 
 
 **Tools/methods compared:** `normal`, `log-normal`, `negative binomial`.
 
-**Recommendation(s):** Assuming a normal distribution leads to a large number of false positives during differential gene expression. A log-normal distribution model works well unless a sample contains zero counts. Use tools that assumbe a negative binomial distribution (`edgeR`, `DESeq`, `DESeq2`, etc).
+**Recommendation(s):** Assuming a normal distribution leads to a large number of false positives during differential gene expression. A log-normal distribution model works well unless a sample contains zero counts. Use tools that assume a negative binomial distribution (`edgeR`, `DESeq`, `DESeq2`, etc).
 
 ---
 
@@ -335,7 +335,7 @@ F-scores, precision, and recall were the main benchmarking metrics.
 **Recommendation(s):** Varies greatly depending on type and size of the structural variant in addition to read length. 
 `GRIDSS`, `Lumpy`, `SVseq2`, `SoftSV`, and `Manta` performed well calling deletions of diverse sizes.
 `TIDDIT`, `forestSV`, `ERDS`, and `CNVnator` called large deletions well, while `pbsv`, `Sniffles`, and `PBHoney` were the best performers for small deletions.
-For duplications, good choices included `Wham`, `SoftSV`, `MATCHCLIP`, and `GRIDSS`, while `CNVnator`, `ERDS`, and `iCopyDAV` excelled called large duplications.
+For duplications, good choices included `Wham`, `SoftSV`, `MATCHCLIP`, and `GRIDSS`, while `CNVnator`, `ERDS`, and `iCopyDAV` excelled calling large duplications.
 For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data were most effective.
 
 ## Single Cell
