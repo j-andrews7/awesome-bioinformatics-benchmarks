@@ -13,7 +13,7 @@ If you have a benchmarking study that is not yet included on this list, please m
       * [DNase &amp; ChIP-seq](#dnase--chip-seq)
          * [Peak Callers](#peak-callers)
       * [RNA-seq](#rna-seq)
-         * [Alignment & Quantification Methods](#quantification)
+         * [Alignment/Quantification Methods](#Alignmentquantification-methods)
          * [Normalisation Methods](#normalisation-methods)
          * [Differential Gene Expression](#differential-gene-expression)
          * [Cell-Type Deconvolution](#cell-type-deconvolution)
