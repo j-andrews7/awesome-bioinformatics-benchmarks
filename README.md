@@ -391,7 +391,7 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 **Title:** [A practical guide to methods controlling false discoveries in computational biology](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1716-1)
 
-**Authors:** Keegan Korthauer\*, Patrick K. Kimes\*, Claire Duvallet, Alejandro Reyes, Ayshwarya Subramanian, Mingxiang Teng, Chinmay Shukla, Eric J. Alm & Stephanie C. Hicks 
+**Authors:** Keegan Korthauer\*, Patrick K. Kimes\*, et al.
 
 **Journal Info:** Genome Biology, June 2019
 
@@ -401,7 +401,7 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 **Recommendation(s):** Modern FDR methods that use an informative covariate (as opposed to only _p_-values) leads to more power while controlling the FDR over classic methods. The improvement of the modern FDR methods over the classic methods increases with the informativeness of the covariate, total number of hypothesis tests, and proportion of truly non-null hypotheses. 
 
-**Additional links (optional):** Full analyses of the in silico experiments, simulations, and case studies are provided in Additional files 2–41 at https://pkimes.github.io/benchmark-fdr-html/. The source code to reproduce all results in the manuscript and additional files, as well as all figures, is available on GitHub (https://github.com/pkimes/benchmark-fdr). An `ExperimentHub` package containing the full set of results objects is available through the Bioconductor project, and a Shiny application for interactive exploration of these results is also available on GitHub (https://github.com/kdkorthauer/benchmarkfdr-shiny). The source code, ExperimentHub package, and Shiny application are all made available under the MIT license.
+**Additional links (optional):** Full analyses of the in silico experiments, simulations, and case studies are provided in Additional files 2–41 at https://pkimes.github.io/benchmark-fdr-html/. The source code to reproduce all results in the manuscript and additional files, as well as all figures, is [available on GitHub](https://github.com/pkimes/benchmark-fdr). An `ExperimentHub` package containing the full set of results objects is available through the Bioconductor project, and a Shiny application for interactive exploration of these results is also [available on GitHub](https://github.com/kdkorthauer/benchmarkfdr-shiny). The source code, ExperimentHub package, and Shiny application are all made available under the MIT license.
 
 # Contributors
 
