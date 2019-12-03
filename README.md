@@ -103,7 +103,7 @@ ZINBA was the least performant by a massive margin, requiring much more time to 
 
 ## RNA-seq
 
-### Alignment & Quantification Methods
+### Alignment/Quantification Methods
 
 **Title:** [Alignment and mapping methodology influence transcript abundance estimation](https://www.biorxiv.org/content/10.1101/657874v2)
 
