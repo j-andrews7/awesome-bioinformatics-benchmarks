@@ -16,7 +16,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          * [Alignment/Quantification Methods](#alignmentquantification-methods)
          * [Normalisation Methods](#normalisation-methods)
          * [Differential Gene Expression](#differential-gene-expression)
-         * [Transcript assembly and quantification](#transcript-assembly-and-quantification)
+         * [Transcript Assembly and Quantification](#transcript-assembly-and-quantification)
          * [Cell-Type Deconvolution](#cell-type-deconvolution)
       * [RNA/cDNA Microarrays](#rnacdna-microarrays)
       * [Variant Callers](#variant-callers)
