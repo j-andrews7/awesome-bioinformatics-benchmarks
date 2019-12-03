@@ -16,6 +16,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          * [Alignment/Quantification Methods](#alignmentquantification-methods)
          * [Normalisation Methods](#normalisation-methods)
          * [Differential Gene Expression](#differential-gene-expression)
+         * [Transcript assembly and quantification](#transcript-assembly-and-quantification)
          * [Cell-Type Deconvolution](#cell-type-deconvolution)
       * [RNA/cDNA Microarrays](#rnacdna-microarrays)
       * [Variant Callers](#variant-callers)
@@ -198,6 +199,7 @@ Specificity, sensitivity, and false positive rate were the main benchmarking met
 
 The more replicates, the better. Replicate numbers (both biological and technical) have a greater impact on differential detection accuracy than sequencing depth.
 
+### Transcript assembly and quantification
 
 ### Cell-Type Deconvolution
 
