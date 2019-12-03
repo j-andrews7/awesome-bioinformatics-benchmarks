@@ -13,7 +13,7 @@ If you have a benchmarking study that is not yet included on this list, please m
       * [DNase &amp; ChIP-seq](#dnase--chip-seq)
          * [Peak Callers](#peak-callers)
       * [RNA-seq](#rna-seq)
-         * [Alignment/Quantification Methods](#Alignmentquantification-methods)
+         * [Alignment/Quantification Methods](#alignmentquantification-methods)
          * [Normalisation Methods](#normalisation-methods)
          * [Differential Gene Expression](#differential-gene-expression)
          * [Cell-Type Deconvolution](#cell-type-deconvolution)
@@ -110,9 +110,9 @@ ZINBA was the least performant by a massive margin, requiring much more time to 
 
 **Description:** This paper compares the influence of mapping and alignment on the accuracy of transcript quantification in both simulated and experimental data, as well as the effect on subsequent differential expression analysis.
 
-**Tools/methods compared:** `bowtie2`, `STAR`, `quasi-mapping`, `Selective Alignment`, `RSEM`, `Salmon`.
+**Tools/methods compared:** `Bowtie2`, `STAR`, `quasi-mapping`, `Selective Alignment`, `RSEM`, `Salmon`.
 
-**Recommendation(s):** When trying to choose an approach, a choice can be made by the user performing the analysis based on any time-accuracy tradeoff they wish to make. In terms of speed, quasi-mapping is the fastest approach, followed by SA and SAF and then STAR. Bowtie2 was considerably slower than all three of these approaches. However, in terms of accuracy, SAF yielded the best results, followed by alignment to the genome (with subsequent transcriptomic projection) using STAR and SA (using carefully selected decoy sequences). Bowtie2 generally performed similarly to SA, but without the benefit of decoy sequences, seemed to admit more spurious mappings. Finally, lightweight mapping of sequencing reads to the transcriptome showed the lowest overall consistency with quantifications derived from the oracle alignments.
+**Recommendation(s):** When trying to choose an approach, a choice can be made by the user performing the analysis based on any time-accuracy tradeoff they wish to make. In terms of speed, quasi-mapping is the fastest approach, followed by [Selective Alignment](https://github.com/COMBINE-lab/salmon) (SA) then [STAR](https://github.com/alexdobin/STAR). [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) was considerably slower than all three of these approaches. However, in terms of accuracy, SA yielded the best results, followed by alignment to the genome (with subsequent transcriptomic projection) using STAR and SA (using carefully selected decoy sequences). Bowtie2 generally performed similarly to SA, but without the benefit of decoy sequences, seemed to admit more spurious mappings. Finally, lightweight mapping of sequencing reads to the transcriptome showed the lowest overall consistency with quantifications derived from the oracle alignments. Note: Both Selective Alignment and quasi-mapping are part of salmon codebase.
 
 ---
 
