@@ -201,6 +201,19 @@ The more replicates, the better. Replicate numbers (both biological and technica
 
 ### Transcript assembly and quantification
 
+**Title:** [Benchmark analysis of algorithms for determining and quantifying full-length mRNA splice forms from RNA-seq data](https://doi.org/10.1093/bioinformatics/btv488)
+
+**Authors:** Katharina E. Hayer et al.
+
+**Journal Info:** Bioinformatics, Dec 2015
+
+**Description:** This paper compared both guided and de novo transcript reconstruction algorithms using simulated and in vitro transcription (IVT) generated libraries. Precision/recall metrics were obtained by comparing the reconstructed transcripts to their true models.
+
+**Tools/methods compared:** `Cufflinks`, `CLASS`, `FlipFlop`, `IReckon`, `IsoLasso`, `MiTie`, `StringTie`, `StringTie-SR`, `AUGUSTUS`, `Trinity`, `SOAP`, `Trans-ABySS`
+
+**Recommendation(s):** 
+All tools measured produced less than ideal precision-recall (both <90%) when using imperfect simulated or IVT data and genes producing mulitple isoforms. Cufflinks and StringTie are among the best performers.
+
 ### Cell-Type Deconvolution
 
 **Title:** [Comprehensive evaluation of transcriptome-based cell-type quantification methods for immuno-oncology](https://academic.oup.com/bioinformatics/article/35/14/i436/5529146)
