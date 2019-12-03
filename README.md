@@ -408,4 +408,5 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
  - Jared Andrews ([@j-andrews7](https://github.com/j-andrews7/))
  - Kevin Blighe ([@kevinblighe](https://github.com/kevinblighe), [biostars](https://www.biostars.org/u/41557/))
  - Jeremy Leipzig ([@leipzig](https://github.com/leipzig))
+ - Stephanie Hicks ([@stephaniehicks](https://github.com/stephaniehicks))
 
