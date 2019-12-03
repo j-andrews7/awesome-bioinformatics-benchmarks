@@ -26,6 +26,8 @@ If you have a benchmarking study that is not yet included on this list, please m
          * [Trajectory Inference](#trajectory-inference)
          * [Integration/Batch Correction](#integrationbatch-correction)
          * [Cell Annotation/Inference](#cell-annotationinference)
+      * [Statistics](#statistics)
+         * [False Discovery Rates](#false-discovery-rates)
    * [Contributors](#contributors)
 
 
@@ -387,7 +389,7 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 ## Statistics 
 
-### False discovery rates 
+### False Discovery Rates 
 
 **Title:** [A practical guide to methods controlling false discoveries in computational biology](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1716-1)
 
