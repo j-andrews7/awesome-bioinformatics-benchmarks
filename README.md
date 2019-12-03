@@ -199,7 +199,7 @@ Specificity, sensitivity, and false positive rate were the main benchmarking met
 
 The more replicates, the better. Replicate numbers (both biological and technical) have a greater impact on differential detection accuracy than sequencing depth.
 
-### Transcript assembly and quantification
+### Transcript Assembly and Quantification
 
 **Title:** [Benchmark analysis of algorithms for determining and quantifying full-length mRNA splice forms from RNA-seq data](https://doi.org/10.1093/bioinformatics/btv488)
 
@@ -209,10 +209,10 @@ The more replicates, the better. Replicate numbers (both biological and technica
 
 **Description:** This paper compared both guided and de novo transcript reconstruction algorithms using simulated and in vitro transcription (IVT) generated libraries. Precision/recall metrics were obtained by comparing the reconstructed transcripts to their true models.
 
-**Tools/methods compared:** `Cufflinks`, `CLASS`, `FlipFlop`, `IReckon`, `IsoLasso`, `MiTie`, `StringTie`, `StringTie-SR`, `AUGUSTUS`, `Trinity`, `SOAP`, `Trans-ABySS`
+**Tools/methods compared:** `Cufflinks`, `CLASS`, `FlipFlop`, `IReckon`, `IsoLasso`, `MiTie`, `StringTie`, `StringTie-SR`, `AUGUSTUS`, `Trinity`, `SOAP`, `Trans-ABySS`.
 
 **Recommendation(s):** 
-All tools measured produced less than ideal precision-recall (both <90%) when using imperfect simulated or IVT data and genes producing mulitple isoforms. Cufflinks and StringTie are among the best performers.
+All tools measured produced less than ideal precision-recall (both <90%) when using imperfect simulated or IVT data and genes producing mulitple isoforms. [Cufflinks](https://github.com/cole-trapnell-lab/cufflinks) and [StringTie](https://github.com/gpertea/stringtie) are among the best performers.
 
 ### Cell-Type Deconvolution
 
