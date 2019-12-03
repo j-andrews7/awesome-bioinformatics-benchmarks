@@ -385,6 +385,24 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 ### Cell Annotation/Inference
 
+## Statistics 
+
+### False discovery rates 
+
+**Title:** [A practical guide to methods controlling false discoveries in computational biology](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1716-1)
+
+**Authors:** Keegan Korthauer\*, Patrick K. Kimes\*, Claire Duvallet, Alejandro Reyes, Ayshwarya Subramanian, Mingxiang Teng, Chinmay Shukla, Eric J. Alm & Stephanie C. Hicks 
+
+**Journal Info:** Genome Biology, June 2019
+
+**Description:** An benchmark comparison of the accuracy, applicability, and ease of use of two classic and six modern methods that control for the false discovery rate (FDR). Used simulation studies as well as six case studies in computational biology (specifically differential expression testing in bulk RNA-seq, differential expression testing in single-cell RNA-seq, differential abundance testing and correlation analysis in 16S microbiome data, differential binding testing in ChIP-seq, genome-wide association testing, and gene set analysis). 
+
+**Tools/methods compared:** Benjamini-Hochberg, Storey’s q-value, conditional local FDR (LFDR), FDR regression (FDRreg), independent hypothesis weighting (IHW), adaptive shrinkage (ASH), Boca and Leek’s FDR regression (BL), and adaptive p-value thresholding (AdaPT).  
+
+**Recommendation(s):** Modern FDR methods that use an informative covariate (as opposed to only _p_-values) leads to more power while controlling the FDR over classic methods. The improvement of the modern FDR methods over the classic methods increases with the informativeness of the covariate, total number of hypothesis tests, and proportion of truly non-null hypotheses. 
+
+**Additional links (optional):** Full analyses of the in silico experiments, simulations, and case studies are provided in Additional files 2–41 at https://pkimes.github.io/benchmark-fdr-html/. The source code to reproduce all results in the manuscript and additional files, as well as all figures, is available on GitHub (https://github.com/pkimes/benchmark-fdr). An `ExperimentHub` package containing the full set of results objects is available through the Bioconductor project, and a Shiny application for interactive exploration of these results is also available on GitHub (https://github.com/kdkorthauer/benchmarkfdr-shiny). The source code, ExperimentHub package, and Shiny application are all made available under the MIT license.
+
 # Contributors
 
  - Jared Andrews ([@j-andrews7](https://github.com/j-andrews7/))
