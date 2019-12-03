@@ -268,7 +268,7 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 
 ### Somatic SNV/Indel callers
 
-**Title:** [Evaluation of Nine Somatic Variant Callers for Detection of Somatic Mutations in Exome and Targeted Deep Sequencing Data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4803342/)
+**Title:** [Evaluation of Nine Somatic Variant Callers for Detection of Somatic Mutations in Exome and Targeted Deep Sequencing Data](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0151664)
 
 **Authors:** Anne Bruun Krøigård, et al.
 
