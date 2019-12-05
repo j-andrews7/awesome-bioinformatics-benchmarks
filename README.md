@@ -16,6 +16,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          * [Alignment/Quantification Methods](#alignmentquantification-methods)
          * [Normalisation Methods](#normalisation-methods)
          * [Differential Gene Expression](#differential-gene-expression)
+         * [Differential Splicing](#differential-splicing)
          * [Cell-Type Deconvolution](#cell-type-deconvolution)
       * [RNA/cDNA Microarrays](#rnacdna-microarrays)
       * [Variant Callers](#variant-callers)
@@ -198,6 +199,21 @@ Specificity, sensitivity, and false positive rate were the main benchmarking met
 
 The more replicates, the better. Replicate numbers (both biological and technical) have a greater impact on differential detection accuracy than sequencing depth.
 
+### Differential Splicing
+
+**Title:** [A survey of software for genome-wide discovery of differential splicing in RNA-Seq data](https://humgenomics.biomedcentral.com/articles/10.1186/1479-7364-8-3)
+
+**Authors:** Joan E Hooper
+
+**Journal Info:** Human Genomics, January 2014
+
+**Description:** This paper compares the methodologies, advantages, and disadvantages of eight differential splicing analysis tools, detailing use-cases and features for each.
+
+**Tools/methods compared:** `Cuffdiff2`, `MISO`, `DEXSeq`, `DSGseq`, `MATS`, `DiffSplice`, `Splicing compass`, `AltAnalyze`.
+
+**Recommendation(s):** This is a true breakdown of each tools' advantages and disadvantages. 
+The author makes no recommendation due to the performance reliance on experimental setup, data type (e.g. `AltAnalyze` works best on junction + exon microarrays), and user objectives.
+Table 1 provides a good comparison of the features and methodology of each method.
 
 ### Cell-Type Deconvolution
 
