@@ -17,6 +17,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          * [Normalisation Methods](#normalisation-methods)
          * [Differential Gene Expression](#differential-gene-expression)
          * [Differential Splicing](#differential-splicing)
+         * [Transcript Assembly and Quantification](#transcript-assembly-and-quantification)
          * [Cell-Type Deconvolution](#cell-type-deconvolution)
       * [RNA/cDNA Microarrays](#rnacdna-microarrays)
       * [Variant Callers](#variant-callers)
@@ -103,7 +104,7 @@ ZINBA was the least performant by a massive margin, requiring much more time to 
 
 ## RNA-seq
 
-### Alignment & Quantification Methods
+### Alignment/Quantification Methods
 
 **Title:** [Alignment and mapping methodology influence transcript abundance estimation](https://www.biorxiv.org/content/10.1101/657874v2)
 
@@ -214,6 +215,21 @@ The more replicates, the better. Replicate numbers (both biological and technica
 **Recommendation(s):** This is a true breakdown of each tools' advantages and disadvantages. 
 The author makes no recommendation due to the performance reliance on experimental setup, data type (e.g. `AltAnalyze` works best on junction + exon microarrays), and user objectives.
 Table 1 provides a good comparison of the features and methodology of each method.
+
+### Transcript Assembly and Quantification
+
+**Title:** [Benchmark analysis of algorithms for determining and quantifying full-length mRNA splice forms from RNA-seq data](https://doi.org/10.1093/bioinformatics/btv488)
+
+**Authors:** Katharina E. Hayer et al.
+
+**Journal Info:** Bioinformatics, Dec 2015
+
+**Description:** This paper compared both guided and de novo transcript reconstruction algorithms using simulated and in vitro transcription (IVT) generated libraries. Precision/recall metrics were obtained by comparing the reconstructed transcripts to their true models.
+
+**Tools/methods compared:** `Cufflinks`, `CLASS`, `FlipFlop`, `IReckon`, `IsoLasso`, `MiTie`, `StringTie`, `StringTie-SR`, `AUGUSTUS`, `Trinity`, `SOAP`, `Trans-ABySS`.
+
+**Recommendation(s):** 
+All tools measured produced less than ideal precision-recall (both <90%) when using imperfect simulated or IVT data and genes producing mulitple isoforms. [Cufflinks](https://github.com/cole-trapnell-lab/cufflinks) and [StringTie](https://github.com/gpertea/stringtie) are among the best performers.
 
 ### Cell-Type Deconvolution
 
