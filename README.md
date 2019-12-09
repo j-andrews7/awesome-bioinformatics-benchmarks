@@ -29,6 +29,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          * [Trajectory Inference](#trajectory-inference)
          * [Integration/Batch Correction](#integrationbatch-correction)
          * [Cell Annotation/Inference](#cell-annotationinference)
+         * [Variant Calling](#variant-calling)
       * [Statistics](#statistics)
          * [False Discovery Rates](#false-discovery-rates)
    * [Contributors](#contributors)
@@ -435,6 +436,22 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 ### Integration/Batch Correction
 
 ### Cell Annotation/Inference
+
+### Variant Calling
+
+**Title:** [Systematic comparative analysis of single-nucleotide variant detection methods from single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1863-4)
+
+**Authors:** Fenglin Liu, Yuanyuan Zhang, et al.
+
+**Journal Info:** Genome Biology, November 2019
+
+**Description:** This paper compared seven variant callers using both simulation and real scRNA-seq datasets and identified several elements influencing their performance, including read depth, variant allele frequency, and specific genomic contexts. Sensitivity and specificity were the benchmarking metrics used.
+
+**Tools/methods compared:** `SAMtools`, `GATK`, `CTAT`, `FreeBayes`, `MuTect2`, `Strelka2`, `VarScan2`.
+
+**Recommendation(s):** Varies, see figure 7 for a flowchart breakdown. Generally, [SAMtools](http://www.htslib.org/)(most sensitive, lower specificity in intronic or high-identity regions), [Strelka2](https://github.com/Illumina/strelka)(good performance when read depth >5), [FreeBayes](https://github.com/ekg/freebayes)(good specificity/sensitivity in cases with high variant allele frequencies), and CTAT(no alignment step necessary) were top performers.
+
+**Additional links (optional):** The authors made their benchmarking code available [on Github](https://github.com/fenglin0/benchmarking_variant_callers).
 
 ## Statistics 
 
