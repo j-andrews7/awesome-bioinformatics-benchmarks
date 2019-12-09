@@ -449,7 +449,7 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 **Tools/methods compared:** `SAMtools`, `GATK`, `CTAT`, `FreeBayes`, `MuTect2`, `Strelka2`, `VarScan2`.
 
-**Recommendation(s):** Varies, see figure 7 for a flowchart breakdown. Generally, [SAMtools](http://www.htslib.org/)(most sensitive, lower specificity in intronic or high-identity regions), [Strelka2](https://github.com/Illumina/strelka)(good performance when read depth >5), [FreeBayes](https://github.com/ekg/freebayes)(good specificity/sensitivity in cases with high variant allele frequencies), and CTAT(no alignment step necessary) were top performers.
+**Recommendation(s):** Varies, see figure 7 for a flowchart breakdown. Generally, [SAMtools](http://www.htslib.org/) (most sensitive, lower specificity in intronic or high-identity regions), [Strelka2](https://github.com/Illumina/strelka) (good performance when read depth >5), [FreeBayes](https://github.com/ekg/freebayes) (good specificity/sensitivity in cases with high variant allele frequencies), and CTAT (no alignment step necessary) were top performers.
 
 **Additional links (optional):** The authors made their benchmarking code available [on Github](https://github.com/fenglin0/benchmarking_variant_callers).
 
