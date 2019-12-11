@@ -28,6 +28,7 @@ If you have a benchmarking study that is not yet included on this list, please m
       * [Single Cell](#single-cell)
          * [Trajectory Inference](#trajectory-inference)
          * [Integration/Batch Correction](#integrationbatch-correction)
+         * [Dimensionality Reduction](#dimensionality-reduction)
          * [Cell Annotation/Inference](#cell-annotationinference)
          * [Variant Calling](#variant-calling)
       * [Statistics](#statistics)
@@ -434,6 +435,25 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 **Additional links:** The [dynverse site](https://dynverse.org/) contains numerous packages for users to run and compare results from different trajectory methods on their own data without installing each individually by using Docker. Additionally, they provide several tools for developers to wrap and benchmark their own method against those included in the study. 
 
 ### Integration/Batch Correction
+
+### Dimensionality Reduction
+
+**Title:** [Accuracy, Robustness and Scalability of Dimensionality Reduction Methods for Single Cell RNAseq Analysis](https://www.biorxiv.org/content/10.1101/641142v2)
+
+**Authors:** Shiquan Sun, Jiaqiang Zhu, Ying Ma, Xiang Zhou
+
+**Journal Info:** BioRxiv, October 2019
+
+**Description:** A mammoth comparison of 18 different dimension reduction methods on 30 publicly available scRNAseq data sets in addition to 2 simulated datasets for a variety of purposes ranging from cell clustering to trajectory inference to neighborhood preservation. 
+
+**Tools/methods compared:**
+`factor analysis (FA)`, `principal component analysis (PCA)`, `independent component analysis (ICA)`, `Diffusion Map`, `nonnegative matrix factorization (NMF)`, `Poisson NMF`, `zero-inflated factor analysis (ZIFA)`, `zero-inflated negative binomial based wanted variation extraction (ZINB-WaVE)`, `probabilistic count matrix factorization (pCMF)`, `deep count autoencoder network (DCA)`, `scScope`, `generalized linear model principal component analysis (GLMPCA)`, `multidimensional scaling (MDS)`, `locally linear embedding (LLE)`, `local tangent space alignment (LTSA)`, `Isomap`, `uniform manifold approximation and projection (UMAP)`, `t-distributed stochastic neighbor embedding (tSNE)`.
+
+**Recommendation(s):** Varies depending on use case. 
+[Factor Analysis](https://cran.r-project.org/web/packages/psych/index.html) and [principal component analysis](https://www.rdocumentation.org/packages/stats/versions/3.6.1/topics/prcomp) performed well for most use cases. 
+See figure 5 for pratical guidelines.
+
+**Additional links:** The authors have made their benchmarking code available [on Github](https://github.com/xzhoulab/DRComparison).
 
 ### Cell Annotation/Inference
 
