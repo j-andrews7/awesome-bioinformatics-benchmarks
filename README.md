@@ -31,6 +31,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          * [Dimensionality Reduction](#dimensionality-reduction)
          * [Cell Annotation/Inference](#cell-annotationinference)
          * [Variant Calling](#variant-calling)
+         * [ATAC-seq](#atac-seq)
       * [Statistics](#statistics)
          * [False Discovery Rates](#false-discovery-rates)
    * [Contributors](#contributors)
@@ -165,7 +166,7 @@ Handling of inter-replicate variability and false positive fraction were the ben
 
 **Recommendation(s):** Six of the tools that utilize negative binomial or log-normal distributions ([edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), [DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html), [limma](https://bioconductor.org/packages/release/bioc/html/limma.html), and [EBseq](https://bioconductor.org/packages/release/bioc/html/EBSeq.html) control their identification of false positives well.
 
-**Additional links (optional):** The authors released their benchmarking scripts on [Github](https://github.com/bartongroup/KF_arabidopsis-GRNA).
+**Additional links:** The authors released their benchmarking scripts on [Github](https://github.com/bartongroup/KF_arabidopsis-GRNA).
 
 ---
 
@@ -471,7 +472,23 @@ See figure 5 for pratical guidelines.
 
 **Recommendation(s):** Varies, see figure 7 for a flowchart breakdown. Generally, [SAMtools](http://www.htslib.org/) (most sensitive, lower specificity in intronic or high-identity regions), [Strelka2](https://github.com/Illumina/strelka) (good performance when read depth >5), [FreeBayes](https://github.com/ekg/freebayes) (good specificity/sensitivity in cases with high variant allele frequencies), and CTAT (no alignment step necessary) were top performers.
 
-**Additional links (optional):** The authors made their benchmarking code available [on Github](https://github.com/fenglin0/benchmarking_variant_callers).
+**Additional links:** The authors made their benchmarking code available [on Github](https://github.com/fenglin0/benchmarking_variant_callers).
+
+### ATAC-seq
+
+**Title:** [Assessment of computational methods for the analysis of single-cell ATAC-seq data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1854-5)
+
+**Authors:** Caleb Lareau\*, Tommaso Andreani\*, Micheal E. Vinyard\*, et al.
+
+**Journal Info:** Genome Biology, November 2019
+
+**Description:** This study compares 10 methods for scATAC-seq processing and featurizing using 13 synthetic and real datasets from diverse tissues and organisms.
+
+**Tools/methods compared:** `BROCKMAN`, `chromVAR`, `cisTopic`, `Cicero`, `Gene Scoring`, `Cusanovich2018`, `scABC`, `Scasat`, `SCRAT`, `SnapATAC`.
+
+**Recommendation(s):** [SnapATAC](https://github.com/r3fang/SnapATAC), [Cusanovich2018](https://www.ncbi.nlm.nih.gov/pubmed/30078704), and [cisTopic](https://github.com/aertslab/cisTopic) were the top performers for separating cell populations of different coverages and noise levels. SnapATAC was the only method capable of analyzing a large dataset (>80k cells).
+
+**Additional links:** The authors have made their benchmarking code available [on Github](https://github.com/pinellolab/scATAC-benchmarking/).
 
 ## Statistics 
 
@@ -489,7 +506,7 @@ See figure 5 for pratical guidelines.
 
 **Recommendation(s):** Modern FDR methods that use an informative covariate (as opposed to only _p_-values) leads to more power while controlling the FDR over classic methods. The improvement of the modern FDR methods over the classic methods increases with the informativeness of the covariate, total number of hypothesis tests, and proportion of truly non-null hypotheses. 
 
-**Additional links (optional):** Full analyses of the in silico experiments, simulations, and case studies are provided in Additional files 2–41 at https://pkimes.github.io/benchmark-fdr-html/. The source code to reproduce all results in the manuscript and additional files, as well as all figures, is [available on GitHub](https://github.com/pkimes/benchmark-fdr). An `ExperimentHub` package containing the full set of results objects is available through the Bioconductor project, and a Shiny application for interactive exploration of these results is also [available on GitHub](https://github.com/kdkorthauer/benchmarkfdr-shiny). The source code, ExperimentHub package, and Shiny application are all made available under the MIT license.
+**Additional links:** Full analyses of the in silico experiments, simulations, and case studies are provided in Additional files 2–41 at https://pkimes.github.io/benchmark-fdr-html/. The source code to reproduce all results in the manuscript and additional files, as well as all figures, is [available on GitHub](https://github.com/pkimes/benchmark-fdr). An `ExperimentHub` package containing the full set of results objects is available through the Bioconductor project, and a Shiny application for interactive exploration of these results is also [available on GitHub](https://github.com/kdkorthauer/benchmarkfdr-shiny). The source code, ExperimentHub package, and Shiny application are all made available under the MIT license.
 
 # Contributors
 
