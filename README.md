@@ -393,9 +393,9 @@ Precision and recall were the benchmarking metrics used.
  - Developers - make your tool easy to use with basic sanity checks to protect against invalid inputs. Use standard file formats.
  - Developers - use all available evidence and produce meaningful quality scores.
  
- ---
+---
  
- **Title:** [Comprehensive evaluation of structural variation detection algorithms for whole genome sequencing](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1720-5)
+**Title:** [Comprehensive evaluation of structural variation detection algorithms for whole genome sequencing](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1720-5)
 
 **Authors:** Shunichi Kosugi, et al.
 
@@ -415,6 +415,22 @@ F-scores, precision, and recall were the main benchmarking metrics.
 `TIDDIT`, `forestSV`, `ERDS`, and `CNVnator` called large deletions well, while `pbsv`, `Sniffles`, and `PBHoney` were the best performers for small deletions.
 For duplications, good choices included `Wham`, `SoftSV`, `MATCHCLIP`, and `GRIDSS`, while `CNVnator`, `ERDS`, and `iCopyDAV` excelled calling large duplications.
 For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data were most effective.
+
+---
+
+**Title:** [Evaluating nanopore sequencing data processing pipelines for structural variation identification](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1858-1)
+
+**Authors:** Anbo Zhou, et al.
+
+**Journal Info:** Genome Biology, November 2019
+
+**Description:** This paper evaluated four alignment tools and three SV detection tools on four nanopore datasets (both simulated and real).
+
+**Tools/methods compared:** *aligners* - `minimap2`, `NGMLR`, `GraphMap`, `LAST`. SV Callers - `Sniffles`, `NanoSV`, `Picky`.
+
+**Recommendation(s):** The authors recommend using the [minimap2](https://github.com/lh3/minimap2) aligner in combination with the SV caller [Sniffles](https://github.com/fritzsedlazeck/Sniffles) because of their speed and relatively balanced performance.
+
+**Additional links (optional):** The authors provide [all code used in the study](https://github.com/JXing-Lab/nanopore-sv-evaluation) as well as a singularity package containing pre-installed programs and all seven pipeline.
 
 ## Single Cell
 
