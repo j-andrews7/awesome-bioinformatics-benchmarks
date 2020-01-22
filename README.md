@@ -220,6 +220,17 @@ The more replicates, the better. Replicate numbers (both biological and technica
 The author makes no recommendation due to the performance reliance on experimental setup, data type (e.g. `AltAnalyze` works best on junction + exon microarrays), and user objectives.
 Table 1 provides a good comparison of the features and methodology of each method.
 
+**Title:** [A benchmarking of workflows for detecting differential splicing and differential expression at isoform level in human RNA-seq studies](https://academic.oup.com/bib/article/20/2/471/4524048)
+**Authors:** Gabriela A Merino
+
+**Journal Info:** Briefings in Bioinformatics, March 2019
+
+**Description:** This paper compares nine most commonly used workflows to detect differential isoform expression and splicing.
+
+**Tools/methods compared:** `EBSeq`, `DESeq2`, `NOISeq`, `Limma`, `LimmaDS`, `DEXSeq`, `Cufflinks`, `CufflinksDS`, `SplicingCompass`.
+
+**Recommendation(s):** DESeq2, Limma and NOISeq for differential isoform expression(DIE) analysis and DEXSeq and LimmaDS for differential splicing (DS) testing.
+
 ### Transcript Assembly and Quantification
 
 **Title:** [Benchmark analysis of algorithms for determining and quantifying full-length mRNA splice forms from RNA-seq data](https://doi.org/10.1093/bioinformatics/btv488)
@@ -472,6 +483,21 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 See figure 5 for pratical guidelines.
 
 **Additional links:** The authors have made their benchmarking code available [on Github](https://github.com/xzhoulab/DRComparison).
+
+### Batch Correction
+**Title:** [A benchmark of batch-effect correction methods for single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1850-9)
+
+**Authors:** Hoa Thi Nhu Tran et al.
+
+**Journal Info:** Genome Biology January 2020
+
+**Description:** Authors compared 14 methods in terms of computational runtime, the ability to handle large datasets, and batch-effect correction efficacy while preserving cell type purity.
+
+**Tools/methods compared:**
+`Seurat 2`, `Seurat`, 'Harmony`, `fastMNN`, `MNN Correct`, `ComBat`, `Limma`, `scGen`, `Scanorama`, `MMD-ResNet`, `ZINB-WaVe`, `scMerge`, `LIGER`, `BBKNN`
+
+**Recommendation(s):** Based on the benchmarking results authors suggest `Harmony`, `LIGER`, and `Seurat 3` as best methods for batch integration. 
+
 
 ### Cell Annotation/Inference
 
