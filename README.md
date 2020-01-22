@@ -494,7 +494,7 @@ See figure 5 for pratical guidelines.
 **Description:** Authors compared 14 methods in terms of computational runtime, the ability to handle large datasets, and batch-effect correction efficacy while preserving cell type purity.
 
 **Tools/methods compared:**
-`Seurat 2`, `Seurat`, 'Harmony`, `fastMNN`, `MNN Correct`, `ComBat`, `Limma`, `scGen`, `Scanorama`, `MMD-ResNet`, `ZINB-WaVe`, `scMerge`, `LIGER`, `BBKNN`
+`Seurat 2`, `Seurat`, `Harmony`, `fastMNN`, `MNN Correct`, `ComBat`, `Limma`, `scGen`, `Scanorama`, `MMD-ResNet`, `ZINB-WaVe`, `scMerge`, `LIGER`, `BBKNN`
 
 **Recommendation(s):** Based on the benchmarking results authors suggest `Harmony`, `LIGER`, and `Seurat 3` as best methods for batch integration. 
 
