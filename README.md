@@ -457,13 +457,26 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 
 **Tools/methods compared:** `PAGA`, `RaceID/StemID`, `SLICER`, `Slingshot`, `PAGA Tree`, `MST`, `pCreode`, `SCUBA`, `Monocle DDRTree`, `Monocle ICA`, `cellTree maptpx`, `SLICE`, `cellTree VEM`, `EIPiGraph`, `Sincell`, `URD`, `CellTrails`, `Mpath`, `CellRouter`, `STEMNET`, `FateID`, `MFA`, `GPfates`, `DPT`, `Wishbone`, `SCORPIUS`, `Component 1`, `Embeddr`, `MATCHER`, `TSCAN`, `Wanderlust`, `PhenoPath`, `topslam`, `Waterfall`, `EIPiGraph linear`, `ouijaflow`, `FORKS`, `Angle`, `EIPiGraph cycle`, `reCAT`.
 
-**Recommendation(s):** Varies depending on dataset and expected trajectory type, though [PAGA, PAGA Tree](https://scanpy.readthedocs.io/en/latest/examples.html#trajectory-inference), [SCORPIUS](https://github.com/rcannood/SCORPIUS), and [Slingshot](https://bioconductor.org/packages/release/bioc/html/slingshot.html) all scored highly across all metrics. 
+**Recommendation(s):** Varies depending on dataset and expected trajectory type, though [PAGA, PAGA Tree](https://icb-scanpy.readthedocs-hosted.com/en/stable/tutorials.html#trajectory-inference), [SCORPIUS](https://github.com/rcannood/SCORPIUS), and [Slingshot](https://bioconductor.org/packages/release/bioc/html/slingshot.html) all scored highly across all metrics. 
 
 Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide/2-guidelines/) to help users choose the best methods for their data.
 
 **Additional links:** The [dynverse site](https://dynverse.org/) contains numerous packages for users to run and compare results from different trajectory methods on their own data without installing each individually by using Docker. Additionally, they provide several tools for developers to wrap and benchmark their own method against those included in the study. 
 
 ### Integration/Batch Correction
+
+**Title:** [A benchmark of batch-effect correction methods for single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1850-9)
+
+**Authors:** Hoa Thi Nhu Tran et al.
+
+**Journal Info:** Genome Biology January 2020
+
+**Description:** Authors compared 14 methods in terms of computational runtime, the ability to handle large datasets, and batch-effect correction efficacy while preserving cell type purity.
+
+**Tools/methods compared:**
+`Seurat2`, `Seurat3`, `Harmony`, `fastMNN`, `MNN Correct`, `ComBat`, `Limma`, `scGen`, `Scanorama`, `MMD-ResNet`, `ZINB-WaVe`, `scMerge`, `LIGER`, `BBKNN`
+
+**Recommendation(s):** Based on the benchmarking results authors suggest [Harmony](https://github.com/immunogenomics/harmony), [LIGER](https://github.com/MacoskoLab/liger), and [Seurat3](https://satijalab.org/seurat/) as best methods for batch integration. 
 
 ### Dimensionality Reduction
 
@@ -483,20 +496,6 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 See figure 5 for pratical guidelines.
 
 **Additional links:** The authors have made their benchmarking code available [on Github](https://github.com/xzhoulab/DRComparison).
-
-### Batch Correction
-**Title:** [A benchmark of batch-effect correction methods for single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1850-9)
-
-**Authors:** Hoa Thi Nhu Tran et al.
-
-**Journal Info:** Genome Biology January 2020
-
-**Description:** Authors compared 14 methods in terms of computational runtime, the ability to handle large datasets, and batch-effect correction efficacy while preserving cell type purity.
-
-**Tools/methods compared:**
-`Seurat 2`, `Seurat`, 'Harmony`, `fastMNN`, `MNN Correct`, `ComBat`, `Limma`, `scGen`, `Scanorama`, `MMD-ResNet`, `ZINB-WaVe`, `scMerge`, `LIGER`, `BBKNN`
-
-**Recommendation(s):** Based on the benchmarking results authors suggest `Harmony`, `LIGER`, and `Seurat 3` as best methods for batch integration. 
 
 
 ### Cell Annotation/Inference
@@ -558,6 +557,5 @@ See figure 5 for pratical guidelines.
  - Jeremy Leipzig ([@leipzig](https://github.com/leipzig))
  - Avi Srivastava ([@k3yavi](https://github.com/k3yavi))
  - Stephanie Hicks ([@stephaniehicks](https://github.com/stephaniehicks))
- - Sridhar N Srivatsan ([@sridhar0605])(https://github.com/sridhar0605))
-
+ - Sridhar N Srivatsan ([@sridhar0605](https://github.com/sridhar0605))
 
