@@ -112,7 +112,7 @@ ZINBA was the least performant by a massive margin, requiring much more time to 
 
 **Title:** [Alignment and mapping methodology influence transcript abundance estimation](https://www.biorxiv.org/content/10.1101/657874v2)
 
-**Authors:** Avi Srivastava\* &  Laraib Malik \* et al.
+**Authors:** Avi Srivastava\* &  Laraib Malik\* et al.
 
 **Journal Info:** bioRXiv, October 2019
 
@@ -221,6 +221,9 @@ The author makes no recommendation due to the performance reliance on experiment
 Table 1 provides a good comparison of the features and methodology of each method.
 
 **Title:** [A benchmarking of workflows for detecting differential splicing and differential expression at isoform level in human RNA-seq studies](https://academic.oup.com/bib/article/20/2/471/4524048)
+
+---
+
 **Authors:** Gabriela A Merino
 
 **Journal Info:** Briefings in Bioinformatics, March 2019
