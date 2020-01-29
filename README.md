@@ -503,6 +503,22 @@ See figure 5 for pratical guidelines.
 
 ### Cell Annotation/Inference
 
+**Title:** [A comparison of automatic cell identification methods for single-cell RNA sequencing data](https://doi.org/10.1038/s41587-019-0071-9)
+
+**Authors:** Tamim Abdelaal, Lieke Michielsen, et al.
+
+**Journal Info:** Genome Biology, September 2019
+
+**Description:** The authors benchmarked 22 classification methods that automatically assign cell identities including *single-cell-specific* and *general-purpose* classifiers across 27 publicly available single-cell RNA sequencing datasets of different sizes, technologies, species, and levels of complexity. Two types of experimental setups were used evaluate the performance of each method for within dataset predictions (intra-dataset) and across datasets (inter-dataset) based on accuracy, percentage of unclassified cells, and computation time. 
+
+**Tools/methods compared:** `Garnett`, `Moana`, `DigitalCellSorter`, `SCINA`, `scVI`, `Cell-BLAST`, `ACTINN`, `LAmbDA`, `scmapcluster`, `scmapcell`, `scPred`, `CHETAH`, `CaSTLe`, `SingleR`, `scID`, `singleCellNet`, `LDA`, `NMC`, `RF`, `SVM`, `SVM<sub>rejection</sub>`, `kNN`
+
+**Recommendation(s):** All classifiers performed well. The authors recommended SVM<sub>rejection</sub> classifier (with a linear kernel). Other classifiers include SVM , singleCellNet, scmapcell, and scPred were also of high performances.
+
+ In their experiments, incorporating prior knowledge in the form of marker genes does not improve the performance.
+
+**Additional links:** A Snakemake workflow, [scRNAseq_Benchmark](https://github.com/tabdelaal/scRNAseq_Benchmark/), was provided to automate the benchmarking analyses.
+
 ### Variant Calling
 
 **Title:** [Systematic comparative analysis of single-nucleotide variant detection methods from single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1863-4)
