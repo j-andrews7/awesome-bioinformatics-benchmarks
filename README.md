@@ -16,6 +16,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          - [Alignment/Quantification Methods](#alignmentquantification-methods)
          - [Normalisation Methods](#normalisation-methods)
          - [Differential Gene Expression](#differential-gene-expression)
+         - [Gene Set Enrichment Analysis](#gene-set-enrichment-analysis)
          - [Differential Splicing](#differential-splicing)
          - [Transcript Assembly and Quantification](#transcript-assembly-and-quantification)
          - [Cell-Type Deconvolution](#cell-type-deconvolution)
@@ -203,6 +204,28 @@ Specificity, sensitivity, and false positive rate were the main benchmarking met
 **Recommendation(s):** Though no method emerged as favorable in all conditions, those that used negative binomial modeling ([DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html), [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html)) generally performed best.
 
 The more replicates, the better. Replicate numbers (both biological and technical) have a greater impact on differential detection accuracy than sequencing depth.
+
+### Gene Set Enrichment Analysis
+
+**Title:** [Toward a gold standard for benchmarking gene set enrichment analysis](https://doi.org/10.1093/bib/bbz158)
+
+**Authors:** Ludwig Geistlinger, Gergely Csaba, Mara Santarelli, Marcel Ramos, Lucas Schiffer, Nitesh Turaga, Charity Law, Sean Davis, Vincent Carey, Martin Morgan, Ralf Zimmer, Levi Waldron
+
+**Journal Info:** Briefings in Bioinformatics, February 2020
+
+**Description:** This paper developed a Bioconductor package for reproducible GSEA benchmarking, and used the package to assess 10 widely used enrichment methods with regard to runtime and applicability to RNA-seq data, fraction of enriched gene sets depending on the null hypothesis tested, and recovery of biologically relevant gene sets. The framework can be extended to additional methods, datasets, and benchmark criteria, and should serve as a gold standed for future GSEA benchmarking studies.
+
+**Tools/methods compared:** The paper quantitatively asseses the performance of 10 enrichment methods (`ORA`, `GSEA`, `GSA`, `PADOG`, `SAFE`, `CAMERA`, `ROAST`, `GSVA`, `GLOBALTEST`, `SAMGS`). The paper also compares 10 frequently used enrichment tools implementing these methods (`DAVID`, `ENRICHR`, `CLUSTER-PROFILER`, `GOSTATS`, `WEBGESTALT`, `G:PROFILER`, `GENETRAIL`, `GORILLA`, `TOPPGENE`, `PANTHER`).
+
+
+**Recommendation(s):**
+- `ORA` for the exploratory analysis of simple gene lists, pre-ranked `GSEA` or pre-ranked `CAMERA` for the analysis of pre-ranked gene lists accompanied by gene scores such as fold changes, </br> 
+- For enrichment analysis on the full expression matrix (genes x samples), the paper recommends to provide normalized log2 intensities for microarray data and logTPMs (or logRPKMs/logFPKMs) for RNA-seq data; when given raw read counts, the paper recommends to apply a variance-stabilizing transformation such as `voom` to arrive at library-size normalized logCPMs, </br>
+- `ROAST` (sample group comparisons) or `GSVA` (single sample) if the question of interest is to test for association of any gene in the set with the phenotype (self-contained null hypothesis), </br>
+- `PADOG` (simple experimental designs) or `SAFE` (extended experimental designs) if the question of interest is to test for excess of differential expression in a gene set relative to genes outside the set (competitive null hypothesis).
+
+**Additional links (optional):** http://bioconductor.org/packages/GSEABenchmarkeR
+
 
 ### Differential Splicing
 
@@ -573,6 +596,7 @@ See figure 5 for pratical guidelines.
 
  - Jared Andrews ([@j-andrews7](https://github.com/j-andrews7/))
  - Kevin Blighe ([@kevinblighe](https://github.com/kevinblighe), [biostars](https://www.biostars.org/u/41557/))
+ - Ludwig Geistlinger ([@lgeistlinger](https://github.com/lgeistlinger))
  - Jeremy Leipzig ([@leipzig](https://github.com/leipzig))
  - Avi Srivastava ([@k3yavi](https://github.com/k3yavi))
  - Stephanie Hicks ([@stephaniehicks](https://github.com/stephaniehicks))
