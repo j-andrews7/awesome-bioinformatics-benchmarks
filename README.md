@@ -596,6 +596,7 @@ See figure 5 for pratical guidelines.
 
  - Jared Andrews ([@j-andrews7](https://github.com/j-andrews7/))
  - Kevin Blighe ([@kevinblighe](https://github.com/kevinblighe), [biostars](https://www.biostars.org/u/41557/))
+ - Ludwig Geistlinger ([@lgeistlinger](https://github.com/lgeistlinger))
  - Jeremy Leipzig ([@leipzig](https://github.com/leipzig))
  - Avi Srivastava ([@k3yavi](https://github.com/k3yavi))
  - Stephanie Hicks ([@stephaniehicks](https://github.com/stephaniehicks))
