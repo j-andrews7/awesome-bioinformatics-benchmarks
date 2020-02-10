@@ -213,7 +213,7 @@ The more replicates, the better. Replicate numbers (both biological and technica
 
 **Journal Info:** Briefings in Bioinformatics, February 2020
 
-**Description:** This paper developed a Bioconductor package for reproducible GSEA benchmarking, and used the package to assess 10 widely used enrichment methods with regard to runtime and applicability to RNA-seq data, fraction of enriched gene sets depending on the null hypothesis tested, and recovery of biologically relevant gene sets. The framework can be extended to additional methods, datasets, and benchmark criteria, and should serve as a gold standed for future GSEA benchmarking studies.
+**Description:** This paper developed a Bioconductor package for reproducible GSEA benchmarking, and used the package to assess 10 widely used enrichment methods with regard to runtime and applicability to RNA-seq data, fraction of enriched gene sets depending on the null hypothesis tested, and recovery of biologically relevant gene sets. The framework can be extended to additional methods, datasets, and benchmark criteria, and should serve as a gold standard for future GSEA benchmarking studies.
 
 **Tools/methods compared:** The paper quantitatively asseses the performance of 10 enrichment methods (`ORA`, `GSEA`, `GSA`, `PADOG`, `SAFE`, `CAMERA`, `ROAST`, `GSVA`, `GLOBALTEST`, `SAMGS`). The paper also compares 10 frequently used enrichment tools implementing these methods (`DAVID`, `ENRICHR`, `CLUSTER-PROFILER`, `GOSTATS`, `WEBGESTALT`, `G:PROFILER`, `GENETRAIL`, `GORILLA`, `TOPPGENE`, `PANTHER`).
 
