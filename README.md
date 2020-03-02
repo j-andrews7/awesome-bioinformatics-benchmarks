@@ -526,7 +526,7 @@ See figure 5 for pratical guidelines.
 
 ### Cell Annotation/Inference
 
-**Title:** [A comparison of automatic cell identification methods for single-cell RNA sequencing data](https://doi.org/10.1038/s41587-019-0071-9)
+**Title:** [A comparison of automatic cell identification methods for single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1795-z)
 
 **Authors:** Tamim Abdelaal, Lieke Michielsen, et al.
 
