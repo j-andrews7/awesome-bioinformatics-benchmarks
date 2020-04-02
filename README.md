@@ -28,6 +28,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          - [SV callers](#sv-callers)
       - [Single Cell](#single-cell)
          - [Trajectory Inference](#trajectory-inference)
+         - [Gene Regulatory Network Inference](#gene-regulatory-network-inference)
          - [Integration/Batch Correction](#integrationbatch-correction)
          - [Dimensionality Reduction](#dimensionality-reduction)
          - [Cell Annotation/Inference](#cell-annotationinference)
@@ -40,7 +41,7 @@ If you have a benchmarking study that is not yet included on this list, please m
 
 ## Rules for Included Papers
  - Papers must be objective comparisons of 3 or more tools/methods.
- - Papers must be **awesome**. This list isn't meant to chronicle every benchmarking study ever performed, only those that are particularly useful or well done.
+ - Papers must be **awesome**. This list isn't meant to chronicle every benchmarking study ever performed, only those that are particularly expansive, well done, and/or provide unique insights.
  - Papers should **not** be from authors showing why their tool/method is better than others.
  - Benchmarking data should be publicly available or simulation code/methods must be well-documented and reproducible.
  
@@ -489,15 +490,31 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 **Additional links:** The [dynverse site](https://dynverse.org/) contains numerous packages for users to run and compare results from different trajectory methods on their own data without installing each individually by using Docker. Additionally, they provide several tools for developers to wrap and benchmark their own method against those included in the study. 
 
+### Gene Regulatory Network Inference
+
+**Title:** [Benchmarking algorithms for gene regulatory network inference from single-cell transcriptomic data](https://www.nature.com/articles/s41592-019-0690-6)
+
+**Authors:** Aditya Pratapa, et al.
+
+**Journal Info:** Nature Methods, January 2020
+
+**Description:** The authors compared 12 gene regulatory network (GRN) inference techniques to assess the accuracy, robustness, and efficiency of each method on simulated data from synthetic networks, simulated data from curated models, and real scRNA-seq datasets.
+
+**Tools/methods compared:** `GENIE3`, `PPCOR`, `LEAP`, `SCODE`, `PIDC`, `SINCERITIES`, `SCNS`, `GRNVBEM`, `SCRIBE`, `GRNBoost2`, `GRISLI`, `SINGE`.
+
+**Recommendation(s):** In general, the authors recommend `PIDC`, `GENIE3`, or `GRNBoost2`, as they were the leading and consistent performers for both curated models and experimental datasets in terms of accuracy as well as having multithreaded implementations. Both the `GENIE3` and `GRNBoost2` methods can be used from the [SCENIC](https://aertslab.org/#scenic) workflows in either R or the (much faster) python implementation.
+
+**Additional links:** The authors provide their benchmarking framework, [BEELINE](https://github.com/murali-group/BEELINE) on Github, which also provides an easy-to-use and uniform interface to each method in the form of a Docker image.
+
 ### Integration/Batch Correction
 
 **Title:** [A benchmark of batch-effect correction methods for single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1850-9)
 
 **Authors:** Hoa Thi Nhu Tran et al.
 
-**Journal Info:** Genome Biology January 2020
+**Journal Info:** Genome Biology, January 2020
 
-**Description:** Authors compared 14 methods in terms of computational runtime, the ability to handle large datasets, and batch-effect correction efficacy while preserving cell type purity.
+**Description:** The authors compared 14 methods in terms of computational runtime, the ability to handle large datasets, and batch-effect correction efficacy while preserving cell type purity.
 
 **Tools/methods compared:**
 `Seurat2`, `Seurat3`, `Harmony`, `fastMNN`, `MNN Correct`, `ComBat`, `Limma`, `scGen`, `Scanorama`, `MMD-ResNet`, `ZINB-WaVe`, `scMerge`, `LIGER`, `BBKNN`
