@@ -27,6 +27,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          - [CNV Callers](#cnv-callers)
          - [SV callers](#sv-callers)
       - [Single Cell](#single-cell)
+         - [Differential Gene Expression](#differential-gene-expression)
          - [Trajectory Inference](#trajectory-inference)
          - [Gene Regulatory Network Inference](#gene-regulatory-network-inference)
          - [Integration/Batch Correction](#integrationbatch-correction)
@@ -471,6 +472,22 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 **Additional links (optional):** The authors provide [all code used in the study](https://github.com/JXing-Lab/nanopore-sv-evaluation) as well as a singularity package containing pre-installed programs and all seven pipeline.
 
 ## Single Cell
+
+### Differential Gene Expression
+
+**Title:** [Bias, robustness and scalability in single-cell differential expression analysis](https://www.nature.com/articles/nmeth.4612)
+
+**Authors:** Charlotte Soneson & Mark D Robinson
+
+**Journal Info:** Nature Methods, February 2018
+
+**Description:** This paper evaluated 36 approaches for determining differential gene expression from both synthetic and 36 real scRNA-seq datasets. The authors assess type I error control, FDR control and power, computational efficiency, and consistency.
+
+**Tools/methods compared:** `edgeRQLFDetRate`, `MASTcpmDetRate`, `limmatrend`, `MASTtpmDetRate`, `edgeRQLF`, `ttest`, `voomlimma`, `Wilcoxon`, `MASTcpm`, `MASTtpm`, `SAMseq`, `D3E`, `edgeRLRT`, `metagenomeSeq`, `edgeRLRTcensus`, `edgeRLRTdeconv`, `monoclecensus`, `ROTStpm`, `ROTSvoom`, `DESeq2betapFALSE`, `edgeRLRTrobust`, `monoclecount`, `DESeq2`, `DESeq2nofilt`, `ROTScpm`, `SeuratTobit`, `NODES`, `DESeq2census`, `scDD`, `BPSC`, `SCDE`, `DEsingle`, `monocle`, `SeuratBimodnofilt`, `SeuratBimodlsExpr2`, `SeuratBimod`.
+
+**Recommendation(s):** In general, the authors found that gene prefiltering was essential for good, robust performance from many methods. They note high variability between methods and summarize general performance across all metrics in Figure 5. They do not make recommendations as to a specific method/tool. Of note is that Seurat switched to using the wilcoxon test by default after this study was released, as it performed much better than their previously available methods.
+
+**Additional links:** The authors make their benchmarking pipeline, [conquer](https://github.com/markrobinsonuzh/conquer), available on Github. Their processed data and associated reports have also been [made available](http://imlspenticton.uzh.ch:3838/conquer/) for additional comparisons.
 
 ### Trajectory Inference
 
