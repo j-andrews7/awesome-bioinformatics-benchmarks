@@ -27,7 +27,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          - [CNV Callers](#cnv-callers)
          - [SV callers](#sv-callers)
       - [Single Cell](#single-cell)
-         - [Differential Gene Expression](#differential-gene-expression)
+         - [scRNA Differential Gene Expression](#scrna-differential-gene-expression)
          - [Trajectory Inference](#trajectory-inference)
          - [Gene Regulatory Network Inference](#gene-regulatory-network-inference)
          - [Integration/Batch Correction](#integrationbatch-correction)
@@ -473,7 +473,7 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 
 ## Single Cell
 
-### Differential Gene Expression
+### scRNA Differential Gene Expression
 
 **Title:** [Bias, robustness and scalability in single-cell differential expression analysis](https://www.nature.com/articles/nmeth.4612)
 
