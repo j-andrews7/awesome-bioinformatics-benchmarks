@@ -557,6 +557,21 @@ See figure 5 for pratical guidelines.
 
 **Additional links:** The authors have made their benchmarking code available [on Github](https://github.com/xzhoulab/DRComparison).
 
+---
+
+**Title:** [Benchmarking principal component analysis for large-scale single-cell RNA-sequencing](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1900-3)
+
+**Authors:** Koki Tsuyuzaki, et al.
+
+**Journal Info:** Genome Biology, January 2020
+
+**Description:** This study compared 21 implementations of 10 algorithms across Python, R, and Julia for principal component analysis for scRNA-seq data, measuring scalability, computational efficiency, outlier robustness, t-SNE/UMAP replication, ease of use, and more using both synthetic and real datasets.
+
+**Tools/methods compared:** `PCA (sklearn, full)`, `fit (MultiVariateStats.jl)`, `Downsampling`, `IncrementalPCA (sklearn)`, `irlba (irlba)`, `svds (RSpectra)`, `propack.svd (svd)`, `PCA (sklearn, arpack)`, `irlb (Cell Ranger)`, `svds (Arpack.jl)`, `orthiter (OnlinePCA.jl)`, `gd (OnlinePCA.jl)`, `sgd (OnlinePCA.jl)`, `rsvd (rsvd)`, `oocPCA_CSV (oocRPCA)`, `PCA (sklearn, randomized)`, `randomized_svd (sklearn)`, `PCA (dask-ml)`, `halko (OnlinePCA.jl)`, `algorithm971 (OnlinePCA.jl)`.
+
+**Recommendation(s):** Author recommendations vary based on the language being used and matrix size. See figure 8 for recommendations along with recommended parameter settings.
+
+**Additional links:** The authors published their benchmarking scripts [on Github](https://github.com/rikenbit/onlinePCA-experiments).
 
 ### Cell Annotation/Inference
 
