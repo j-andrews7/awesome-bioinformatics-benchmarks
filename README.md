@@ -523,6 +523,20 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 **Additional links:** The authors provide their benchmarking framework, [BEELINE](https://github.com/murali-group/BEELINE) on Github, which also provides an easy-to-use and uniform interface to each method in the form of a Docker image.
 
+---
+
+**Title:** [Evaluating methods of inferring gene regulatory networks highlights their lack of performance for single cell gene expression data](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2217-z)
+
+**Authors:** Shounan Chen & Jessica C. Mar
+
+**Journal Info:** BMC Bioinformatics, June 2018
+
+**Description:** This study compared 8 gene regulatory network inference methods (5 bulk RNA-seq, 3 specific to scRNA-seq) for scRNA-seq data for precision and recall.
+
+**Tools/methods compared:** `Partial correlation (Pcorr)`, `Bayesian networks`, `GENIE3`, `ARACNE`, `CLR`, `SCENIC`, `SCODE`, `PIDC`.
+
+**Recommendation(s):** Generally, the authors found relatively poor performance across all methods both for simulated and real data. The results from each method had few similarities with other methods and high false positive rates, and the authors recommend caution when interpreting the networks reconstructed with these methods. The authors showed that many of these methods were dramatically affected by dropout events.
+
 ### Integration/Batch Correction
 
 **Title:** [A benchmark of batch-effect correction methods for single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1850-9)
