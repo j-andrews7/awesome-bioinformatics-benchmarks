@@ -213,7 +213,7 @@ The more replicates, the better. Replicate numbers (both biological and technica
 
 **Title:** [Toward a gold standard for benchmarking gene set enrichment analysis](https://doi.org/10.1093/bib/bbz158)
 
-**Authors:** Ludwig Geistlinger, Gergely Csaba, Mara Santarelli, Marcel Ramos, Lucas Schiffer, Nitesh Turaga, Charity Law, Sean Davis, Vincent Carey, Martin Morgan, Ralf Zimmer, Levi Waldron
+**Authors:** Ludwig Geistlinger, et al.
 
 **Journal Info:** Briefings in Bioinformatics, February 2020
 
@@ -479,7 +479,7 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 
 **Title:** [Bias, robustness and scalability in single-cell differential expression analysis](https://www.nature.com/articles/nmeth.4612)
 
-**Authors:** Charlotte Soneson & Mark D Robinson
+**Authors:** Charlotte Soneson\* & Mark D Robinson\*
 
 **Journal Info:** Nature Methods, February 2018
 
@@ -529,7 +529,7 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 **Title:** [Evaluating methods of inferring gene regulatory networks highlights their lack of performance for single cell gene expression data](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2217-z)
 
-**Authors:** Shounan Chen & Jessica C. Mar
+**Authors:** Shounan Chen\* & Jessica C. Mar\*
 
 **Journal Info:** BMC Bioinformatics, June 2018
 
@@ -558,7 +558,7 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 **Title:** [Accuracy, Robustness and Scalability of Dimensionality Reduction Methods for Single Cell RNAseq Analysis](https://www.biorxiv.org/content/10.1101/641142v2)
 
-**Authors:** Shiquan Sun, Jiaqiang Zhu, Ying Ma, Xiang Zhou
+**Authors:** Shiquan Sun, et al.
 
 **Journal Info:** BioRxiv, October 2019
 
@@ -593,7 +593,7 @@ See figure 5 for pratical guidelines.
 
 **Title:** [A comparison of automatic cell identification methods for single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1795-z)
 
-**Authors:** Tamim Abdelaal, Lieke Michielsen, et al.
+**Authors:** Tamim Abdelaal\*, Lieke Michielsen\*, et al.
 
 **Journal Info:** Genome Biology, September 2019
 
@@ -611,7 +611,7 @@ See figure 5 for pratical guidelines.
 
 **Title:** [Systematic comparative analysis of single-nucleotide variant detection methods from single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1863-4)
 
-**Authors:** Fenglin Liu, Yuanyuan Zhang, et al.
+**Authors:** Fenglin Liu\*, Yuanyuan Zhang\*, et al.
 
 **Journal Info:** Genome Biology, November 2019
 
@@ -663,9 +663,9 @@ See figure 5 for pratical guidelines.
 
 **Title:** [Evaluating Bioinformatic Pipeline Performance for Forensic Microbiome Analysis](https://doi.org/10.1111/1556-4029.14213)
 
-**Authors:** Sierra F. Kaszubinski, Jennifer L. Pechal et al.
+**Authors:** Sierra F. Kaszubinski\*, Jennifer L. Pechal\*, et al.
 
-**Journal Info:** Journal of Forensic Sciences
+**Journal Info:** Journal of Forensic Sciences, 2019
 
 **Description:** Sequence reads from postmortem microbiome samples were analyzed with [mothur v1.39.5](https://mothur.org), [QIIME2 v2018.11](https://qiime.org), and [MG-RAST v4.0.3](https://mg-rast.org). For postmortem data, MG-RAST had a much smaller effect size than mothur and QIIME2 due to the twofold reduction in samples. QIIME2 and Mothur returned similar results, with Mothur showing inflated richness due to unclassified taxa. Adjusting minimum library size had significant effects on microbial community structure, sample size less so except for low abundant taxa.
 
