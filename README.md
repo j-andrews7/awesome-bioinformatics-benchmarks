@@ -37,6 +37,8 @@ If you have a benchmarking study that is not yet included on this list, please m
          - [ATAC-seq](#atac-seq)
       - [Statistics](#statistics)
          - [False Discovery Rates](#false-discovery-rates)
+      - [Microbiome](#microbiome)
+         - [Diversity analysis](#diversity-analysis)
    - [Contributors](#contributors)
 
 
@@ -654,6 +656,24 @@ See figure 5 for pratical guidelines.
 **Recommendation(s):** Modern FDR methods that use an informative covariate (as opposed to only _p_-values) leads to more power while controlling the FDR over classic methods. The improvement of the modern FDR methods over the classic methods increases with the informativeness of the covariate, total number of hypothesis tests, and proportion of truly non-null hypotheses. 
 
 **Additional links:** Full analyses of the in silico experiments, simulations, and case studies are provided in Additional files 2–41 at https://pkimes.github.io/benchmark-fdr-html/. The source code to reproduce all results in the manuscript and additional files, as well as all figures, is [available on GitHub](https://github.com/pkimes/benchmark-fdr). An `ExperimentHub` package containing the full set of results objects is available through the Bioconductor project, and a Shiny application for interactive exploration of these results is also [available on GitHub](https://github.com/kdkorthauer/benchmarkfdr-shiny). The source code, ExperimentHub package, and Shiny application are all made available under the MIT license.
+
+## Microbiome 
+
+### Diversity analysis
+
+**Title:** [Evaluating Bioinformatic Pipeline Performance for Forensic Microbiome Analysis](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1716-1)
+
+**Authors:** Sierra F. Kaszubinski, Jennifer L. Pechal et al.
+
+**Journal Info:** Journal of Forensic Sciences
+
+**Description:** Sequence reads from postmortem microbiome samples were analyzed with [mothur v1.39.5](https://mothur.org), [QIIME2 v2018.11](https://qiime.org), and [MG-RAST v4.0.3](https://mg-rast.org). For postmortem data, MG-RAST had a much smaller effect size than mothur and QIIME2 due to the twofold reduction in samples. QIIME2 and Mothur returned similar results, with Mothur showing inflated richness due to unclassified taxa. Adjusting minimum library size had significant effects on microbial community structure, sample size less so except for low abundant taxa.
+
+**Tools/methods compared:** `mothur`, `QIIME2`, `MG-RAST`
+
+**Recommendation(s):** QIIME2 was deemed the most appropriate choice for forensic analysis in this study.
+
+**Additional links:** Sequence data are archived through the European Bioinformatics Institute European Nucleotide Archive (www.ebi.ac.uk/ena) under accession number: PRJEB22642. Pipeline parameters and microbial community analyses are available on GitHub (https://github.com/sierrakasz/postmortem-analysis).
 
 # Contributors
 
