@@ -661,7 +661,7 @@ See figure 5 for pratical guidelines.
 
 ### Diversity analysis
 
-**Title:** [Evaluating Bioinformatic Pipeline Performance for Forensic Microbiome Analysis](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1716-1)
+**Title:** [Evaluating Bioinformatic Pipeline Performance for Forensic Microbiome Analysis](https://doi.org/10.1111/1556-4029.14213)
 
 **Authors:** Sierra F. Kaszubinski, Jennifer L. Pechal et al.
 
