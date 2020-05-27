@@ -27,6 +27,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          - [CNV Callers](#cnv-callers)
          - [SV callers](#sv-callers)
       - [Single Cell](#single-cell)
+         - [scRNA Sequencing Protocols](#scrna-sequencing-protocols)
          - [scRNA Differential Gene Expression](#scrna-differential-gene-expression)
          - [Trajectory Inference](#trajectory-inference)
          - [Gene Regulatory Network Inference](#gene-regulatory-network-inference)
@@ -474,6 +475,22 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 **Additional links (optional):** The authors provide [all code used in the study](https://github.com/JXing-Lab/nanopore-sv-evaluation) as well as a singularity package containing pre-installed programs and all seven pipeline.
 
 ## Single Cell
+
+### scRNA Sequencing Protocols
+
+**Title:** [Benchmarking single-cell RNA-sequencing protocols for cell atlas projects](https://www.nature.com/articles/s41587-020-0469-4)
+
+**Authors:** Elisabetta Mereu\*, Atefeh Lafzi\*, et al.
+
+**Journal Info:** Nature Biotechnology, April 2020
+
+**Description:** This paper evaluated 13 single cell/nuclei RNA-seq protocols to evaluate their aptitude for use in cell atlas-like projects. Using a single cell, multi-species mixture, the authors measured each protocol's ability to capture cell markers, gene detection power, clusterability (with and without integration with other protocols), mappability, and mixability.
+
+**Tools/methods compared:** `Quartz-seq2`, `Chromium`, `Smart-seq2`, `CEL-seq2`, `C1HT-medium`, `C1HT-small`, `ddSEQ`, `Chromium (single nuclei)`, `Drop-seq`, `inDrop`, `ICELL8`, `MARS-seq`, `gmcSCRB-seq`.
+
+**Recommendation(s):** See figure 6 for a summary of benchmarking results for each method. `Quartz-seq2` was the overall best performing, yielding superior results for gene detection and marker expression over other methods, though `Chromium`, `Smart-seq2`, and `CEL-seq2` were also strong performers.
+
+**Additional links:** The authors provide benchmarking code and analysis code in two different Github repositories - [here](https://github.com/ati-lz/HCA_Benchmarking) and [here](https://github.com/elimereu/matchSCore2).
 
 ### scRNA Differential Gene Expression
 
