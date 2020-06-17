@@ -46,7 +46,7 @@ If you have a benchmarking study that is not yet included on this list, please m
 ## Rules for Included Papers
  - Papers must be objective comparisons of 3 or more tools/methods.
  - Papers must be **awesome**. This list isn't meant to chronicle every benchmarking study ever performed, only those that are particularly expansive, well done, and/or provide unique insights.
- - Papers should **not** be from authors showing why their tool/method is better than others.
+ - Papers should generally **not** be from authors showing why their tool/method is better than others.
  - Benchmarking data should be publicly available or simulation code/methods must be well-documented and reproducible.
  
 Additional guidelines/rules may be added as necessary.
@@ -491,6 +491,38 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 **Recommendation(s):** See figure 6 for a summary of benchmarking results for each method. `Quartz-seq2` was the overall best performing, yielding superior results for gene detection and marker expression over other methods, though `Chromium`, `Smart-seq2`, and `CEL-seq2` were also strong performers.
 
 **Additional links:** The authors provide benchmarking code and analysis code in two different Github repositories - [here](https://github.com/ati-lz/HCA_Benchmarking) and [here](https://github.com/elimereu/matchSCore2).
+
+---
+
+**Title:** [Systematic comparison of single-cell and single-nucleus RNA-sequencing methods](https://www.nature.com/articles/s41587-020-0465-8)
+
+**Authors:** Jiarui Ding, et al.
+
+**Journal Info:** Nature Biotechnology, April 2020
+
+**Description:** This study evaluated seven methods for single-cell and/or single-nucleus RNA-sequencing on three types of samples: cell lines, PBMCs, and brain tissue. Evaluation metrics included the structure and alignment of reads, number of multiplets and detection sensitivity, and ability to recover known biological information.
+
+**Tools/methods compared:** `Smart-seq2`, `CEL-Seq2`, `3' 10X Chromium`, `Drop-Seq`, `Seq-Well`, `inDrops`, `sci-RNA-seq`.
+
+**Recommendation(s):** Overall, the authors found `3' 10X Chromium` to have the strongest consistent performance among the high-throughput methods, yielding the highest sensitivity, though it did not perform any better for cell type classification. When greater sensitivity is required, the authors recommend `Smart-seq2` or `CEL-Seq2`, which both performed similarly. Supplementary table 7 includes an overview of each method's relative merits.
+
+**Additional links:** The authors made their unified analysis pipeline (scumi) available as a [python package](https://bitbucket.org/jerry00/scumi-dev/src/master/), the repo of which also includes their R scripts used for cell filtering and cell type assignment.
+
+### scRNA Imputation Methods
+
+**Title:** [A Systematic Evaluation of Single-cell RNA-sequencing Imputation Methods](https://www.biorxiv.org/content/10.1101/2020.01.29.925974v1.full)
+
+**Authors:** Wenpin Hou, et al.
+
+**Journal Info:** bioRxiv, January 2020
+
+**Description:** This paper evaluated 18 scRNA-seq imputation methods using seven datasets containing cell line and tissue data from several experimental protocols. The authors assessed the similarity of imputed cell profiles to bulk samples and investigated whether imputation improves signal recovery or introduces noise in three downstream applications - differential expression, unsupervised clustering, and trajectory inference.
+
+**Tools/methods compared:** `scVI`, `DCA`, `MAGIC`, `scImpute`, `kNN-smoothing`, `mcImpute`, `SAUCIE`, `DrImpute`, `PBLR`, `SAVER`, `VIPER`, `SAVERX`, `DeepImpute`, `scRecover`, `ALRA`, `bayNorm`, `AutoImpute`, `scScope`.
+
+**Recommendation(s):** Figure 6 provides a performance summary of the tested methods. In general, the authors recommend caution using any of these methods, as they can introduce significant variability and noise into downstream analyses. Of the methods tested, `MAGIC`, `kNN-smoothing`, and `SAVER` outperformed the other methods most consistently, though this varied widely across evaluation criteria, protocols, datasets, and downstream analysis. Many methods show no clear improvement over no imputation, and in some cases, perform significantly worse in downstream analyses.
+
+**Additional links (optional):** The authors placed all of their benchmaking code on [Github](https://github.com/Winnie09/imputationBenchmark).
 
 ### scRNA Differential Gene Expression
 
