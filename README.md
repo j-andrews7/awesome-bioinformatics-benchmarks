@@ -28,6 +28,8 @@ If you have a benchmarking study that is not yet included on this list, please m
          - [SV callers](#sv-callers)
       - [Single Cell](#single-cell)
          - [scRNA Sequencing Protocols](#scrna-sequencing-protocols)
+         - [scRNA Analysis Pipelines](#scrna-analysis-pipelines)
+         - [scRNA Imputation Methods](#scrna-imputation-methods)
          - [scRNA Differential Gene Expression](#scrna-differential-gene-expression)
          - [Trajectory Inference](#trajectory-inference)
          - [Gene Regulatory Network Inference](#gene-regulatory-network-inference)
@@ -507,6 +509,22 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 **Recommendation(s):** Overall, the authors found `3' 10X Chromium` to have the strongest consistent performance among the high-throughput methods, yielding the highest sensitivity, though it did not perform any better for cell type classification. When greater sensitivity is required, the authors recommend `Smart-seq2` or `CEL-Seq2`, which both performed similarly. Supplementary table 7 includes an overview of each method's relative merits.
 
 **Additional links:** The authors made their unified analysis pipeline (scumi) available as a [python package](https://bitbucket.org/jerry00/scumi-dev/src/master/), the repo of which also includes their R scripts used for cell filtering and cell type assignment.
+
+### scRNA Analysis Pipelines
+
+**Title:** [A systematic evaluation of single cell RNA-seq analysis pipelines](https://www.nature.com/articles/s41467-019-12266-7)
+
+**Authors:** Beate Veith, et al.
+
+**Journal Info:** Nature Communications, October 2019
+
+**Description:** This study evaluated \~3000 pipeline combinations based on three mapping, three annotation, four imputation, seven normalization, and four differential expression testing approaches with five scRNA-seq library protocols on simulated data.
+
+**Tools/methods compared:** scRNA-seq library prep protocols - `SCRB-seq`, `Smart-seq2`, `CEL-seq2`, `Drop-seq`, `10X Genomics`. Mapping - `bwa`, `STAR`, `kallisto`. Annotation - `gencode`, `refseq`, `vega`. Imputation - `filtering`, `DrImpute`, `scone`, `SAVER`. Normalization - `scran`, `SCnorm`, `Linnorm`, `Census`, `MR`, `TMM`. Differential testing - `edgeR-zingeR`, `limma`, `MAST`, `T-test`.  
+
+**Recommendation(s):** **Figure 5F** contains a flowchart with the authors' recommendations. For alignment, `STAR` with Gencode annotations generally had the highest mapping and assignment rates. All mappers performed best with Gencode annotations. For normalization, `scran` was found to best handle potential assymetric differential expression and large numbers of differentially expressed genes. They also note that normalization is overall the most influential step, particularly if asymmetric DE is present (**Figure 5**). For Smart-seq2 data without spike-ins, the authors suggest `Census` may be the best choice. The authors found little benefit to imputation in most scenarios, particularly if one of the better normalization methods (e.g. `scran`) was used. The authors found library prep and normalization strategies to have a stronger effect on pipeline performance than the choice of differential expression tool, but generally found `limma-trend` to have the most robust performance. 
+
+**Additional links:** The authors made their simulation tool (powsimR) available on [Github](https://github.com/bvieth/powsimR) along with their [pipeline scripts](https://github.com/bvieth/scRNA-seq-pipelines) to reproduce their analyses.
 
 ### scRNA Imputation Methods
 
