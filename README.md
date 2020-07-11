@@ -526,6 +526,20 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 
 **Additional links:** The authors made their simulation tool (powsimR) available on [Github](https://github.com/bvieth/powsimR) along with their [pipeline scripts](https://github.com/bvieth/scRNA-seq-pipelines) to reproduce their analyses.
 
+---
+
+**Title:** [Comparison of high-throughput single-cell RNA sequencing data processing pipelines](https://doi.org/10.1093/bib/bbaa116)
+
+**Authors:** Mingxuan Gao, et al.
+
+**Journal Info:** Briefings in Bioinformatics, July 2020
+
+**Description:** This study evaluated 7 scRNA-seq pipelines on 8 data sets.
+
+**Tools/methods compared:** `Drop-seq-tools version-2.3.0`, `Cell Ranger version-3.0.2`, `scPipe version-1.4.1`, `zUMIs version-2.4.5b`, `UMI-tools version-1.0.0`, `umis version-1.0.3`, `dropEst version-0.8.6`
+
+**Recommendation(s):** Cell Ranger shows the highest algorithm complexity and parallelization, whereas scPipe, umis and zUMIs have lower complexity that is suitable for large-scale scRNA-seq integration analysis. UMI-tools show the highest transcript quantification accuracy on ERCC datasets from three scRNA-seq platforms. Integration of expression matrices from different pipelines will introduce confounding factors akin to batch effect. zUMIs and dropEst have higher sensitivity to detectmore genes for single cells, which may also bring unwanted factors. For most downstream analysis, Drop-seq-tools, Cell Ranger and UMI-tools show high consistency, whereas umis and zUMIs show inconsistent results compared with the other pipelines.
+
 ### scRNA Imputation Methods
 
 **Title:** [A Systematic Evaluation of Single-cell RNA-sequencing Imputation Methods](https://www.biorxiv.org/content/10.1101/2020.01.29.925974v1.full)
