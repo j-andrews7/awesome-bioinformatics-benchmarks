@@ -50,7 +50,7 @@ If you have a benchmarking study that is not yet included on this list, please m
  - Papers must be **awesome**. This list isn't meant to chronicle every benchmarking study ever performed, only those that are particularly expansive, well done, and/or provide unique insights.
  - Papers should generally **not** be from authors showing why their tool/method is better than others.
  - Benchmarking data should be publicly available or simulation code/methods must be well-documented and reproducible.
- 
+
 Additional guidelines/rules may be added as necessary.
 
 ## Format & Organization
@@ -113,6 +113,28 @@ The authors tested multiple parameters for each caller to determine the best set
 
 **Recommendation(s):** [F-seq](https://github.com/aboyle/F-seq) was the most sensitive, though [MACS2](https://github.com/taoliu/MACS) and [Hotspot](https://github.com/rthurman/hotspot) both performed competitively as well. 
 ZINBA was the least performant by a massive margin, requiring much more time to run, and was also the least sensitive.
+
+## ATAC-Seq
+
+### Normalisation Methods
+
+**Title:** [ATAC-seq normalization method can significantly affect differential accessibility analysis and interpretation](https://epigeneticsandchromatin.biomedcentral.com/articles/10.1186/s13072-020-00342-y)
+
+**Authors:** Jake J. Reske, et al.
+
+**Journal Info:** Epigenetics & Chromatin, April 2020
+
+**Description:** This paper compares the effect of normalization method during differential ATAC-seq analysis. 
+
+**Tools/methods compared:**  `MACS2`, `DiffBind`, `csaw`, `voom`, `DEseq2`, `edgeR`, `limma`
+
+**Recommendation(s):**  This paper compares 8 analytical approaches to calculate ATAC-seq differential accessibility (the description of different combination can be seen in paper Table1). The authors found different analytical approaches can produce very differential chromatin accessibility results using MA-plots. 
+
+The authors also proposed a generalized workflow for differential accessibility analysis, which can be found in [Github](https://github.com/reskejak/ATAC-seq)
+
+**Additional links (optional):**  For ATAC-Seq data anlysis, there is another paper: [From reads to insight: a hitchhiker’s guide to ATAC-seq data analysis](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-1929-3)
+
+---
 
 ## RNA-seq
 
@@ -436,9 +458,9 @@ Precision and recall were the benchmarking metrics used.
  - Developers - be wary of incomplete trust sets and the potential for overfitting. Test tools on multiple datasets.
  - Developers - make your tool easy to use with basic sanity checks to protect against invalid inputs. Use standard file formats.
  - Developers - use all available evidence and produce meaningful quality scores.
- 
+
 ---
- 
+
 **Title:** [Comprehensive evaluation of structural variation detection algorithms for whole genome sequencing](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1720-5)
 
 **Authors:** Shunichi Kosugi, et al.
@@ -766,4 +788,4 @@ See figure 5 for pratical guidelines.
  - Stephanie Hicks ([@stephaniehicks](https://github.com/stephaniehicks))
  - Sridhar N Srivatsan ([@sridhar0605](https://github.com/sridhar0605))
  - Qingzhou Zhang ([@zqzneptune](https://github.com/zqzneptune))
-
+ - Guandong Shang ([@shangguandong1996](https://github.com/shangguandong1996), [@GuandongS](https://twitter.com/GuandongS))
