@@ -134,6 +134,8 @@ The authors also proposed a generalized workflow for differential accessibility 
 
 **Additional links (optional):**  For ATAC-Seq data anlysis, there is another paper: [From reads to insight: a hitchhiker’s guide to ATAC-seq data analysis](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-1929-3)
 
+---
+
 ## RNA-seq
 
 ### Alignment/Quantification Methods
@@ -786,5 +788,4 @@ See figure 5 for pratical guidelines.
  - Stephanie Hicks ([@stephaniehicks](https://github.com/stephaniehicks))
  - Sridhar N Srivatsan ([@sridhar0605](https://github.com/sridhar0605))
  - Qingzhou Zhang ([@zqzneptune](https://github.com/zqzneptune))
-
-- Guandong Shang ([@shangguandong1996](https://github.com/shangguandong1996), [@GuandongS](https://twitter.com/GuandongS))
+ - Guandong Shang ([@shangguandong1996](https://github.com/shangguandong1996), [@GuandongS](https://twitter.com/GuandongS))
