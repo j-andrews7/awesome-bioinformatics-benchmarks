@@ -10,8 +10,9 @@ If you have a benchmarking study that is not yet included on this list, please m
    - [Rules for Included Papers](#rules-for-included-papers)
    - [Format &amp; Organization](#format--organization)
    - [Tool/Method Sections](#toolmethod-sections)
-      - [DNase &amp; ChIP-seq](#dnase--chip-seq)
+      - [DNase, ATAC, &amp; ChIP-seq](#dnase-atac-and-chip-seq)
          - [Peak Callers](#peak-callers)
+         - [Normalization Methods](#normalization-methods)
       - [RNA-seq](#rna-seq)
          - [Alignment/Quantification Methods](#alignmentquantification-methods)
          - [Normalisation Methods](#normalisation-methods)
@@ -76,7 +77,7 @@ Papers within each section should be ordered by publication date, with more rece
 Additional sections/sub-sections can be added as needed.
 
 
-## DNase & ChIP-seq
+## DNase, ATAC, and ChIP-seq
 
 ### Peak Callers
 
@@ -114,9 +115,7 @@ The authors tested multiple parameters for each caller to determine the best set
 **Recommendation(s):** [F-seq](https://github.com/aboyle/F-seq) was the most sensitive, though [MACS2](https://github.com/taoliu/MACS) and [Hotspot](https://github.com/rthurman/hotspot) both performed competitively as well. 
 ZINBA was the least performant by a massive margin, requiring much more time to run, and was also the least sensitive.
 
-## ATAC-Seq
-
-### Normalisation Methods
+### Normalization Methods
 
 **Title:** [ATAC-seq normalization method can significantly affect differential accessibility analysis and interpretation](https://epigeneticsandchromatin.biomedcentral.com/articles/10.1186/s13072-020-00342-y)
 
@@ -132,9 +131,7 @@ ZINBA was the least performant by a massive margin, requiring much more time to 
 
 The authors also proposed a generalized workflow for differential accessibility analysis, which can be found in [Github](https://github.com/reskejak/ATAC-seq)
 
-**Additional links (optional):**  For ATAC-Seq data anlysis, there is another paper: [From reads to insight: a hitchhiker’s guide to ATAC-seq data analysis](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-1929-3)
-
----
+**Additional links:**  For ATAC-Seq data anlysis, there is another paper: [From reads to insight: a hitchhiker’s guide to ATAC-seq data analysis](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-1929-3)
 
 ## RNA-seq
 
