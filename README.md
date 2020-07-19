@@ -787,3 +787,4 @@ See figure 5 for pratical guidelines.
  - Sridhar N Srivatsan ([@sridhar0605](https://github.com/sridhar0605))
  - Qingzhou Zhang ([@zqzneptune](https://github.com/zqzneptune))
 
+- Guandong Shang ([@shangguandong1996](https://github.com/shangguandong1996), [@GuandongS](https://twitter.com/GuandongS))
