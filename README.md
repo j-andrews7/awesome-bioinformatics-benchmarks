@@ -321,6 +321,20 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 ### Germline SNP/Indel Callers
 
+**Title:** [Benchmarking variant callers in next-generation and third-generation sequencing analysis](https://doi.org/10.1093/bib/bbaa148)
+
+**Authors:** Surui Pei, et al.
+
+**Journal Info:** Briefings in Bioinformatics, July 2020
+
+**Description:** This paper compared evaluated 11 modes among 6 variant callers on 12 NGS and TGS datasets on germline and somatic variant calling.
+
+**Tools/methods compared:** `Sentieon` (`TNscope`, `TNseq`, `DNAseq`), `DeepVariant` (`WGS`), `GATK` (`HC` & `MuTect2`), `NeuSomatic`, `VarScan2`, `Strelka2`
+
+**Recommendation(s):** All the four germline callers had comparable performance on NGS data. For TGS data, all the three callers had similar performance in SNP calling, while DeepVariant outperformed the others in InDel calling. For somatic variant calling on NGS, Sentieon TNscope and GATK Mutect2 outperformed the other callers. Sentieon required the least computational cost. 
+
+--
+
 **Title:** [Systematic comparison of germline variant calling pipelines cross multiple next-generation sequencers](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6597787/)
 
 **Authors:** Jiayun Chen, et al.
