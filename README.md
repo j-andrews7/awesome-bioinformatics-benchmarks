@@ -250,7 +250,7 @@ The more replicates, the better. Replicate numbers (both biological and technica
 - `ROAST` (sample group comparisons) or `GSVA` (single sample) if the question of interest is to test for association of any gene in the set with the phenotype (self-contained null hypothesis), </br>
 - `PADOG` (simple experimental designs) or `SAFE` (extended experimental designs) if the question of interest is to test for excess of differential expression in a gene set relative to genes outside the set (competitive null hypothesis).
 
-**Additional links (optional):** http://bioconductor.org/packages/GSEABenchmarkeR
+**Additional links:** http://bioconductor.org/packages/GSEABenchmarkeR
 
 
 ### Differential Splicing
@@ -269,9 +269,9 @@ The more replicates, the better. Replicate numbers (both biological and technica
 The author makes no recommendation due to the performance reliance on experimental setup, data type (e.g. `AltAnalyze` works best on junction + exon microarrays), and user objectives.
 Table 1 provides a good comparison of the features and methodology of each method.
 
-**Title:** [A benchmarking of workflows for detecting differential splicing and differential expression at isoform level in human RNA-seq studies](https://academic.oup.com/bib/article/20/2/471/4524048)
-
 ---
+
+**Title:** [A benchmarking of workflows for detecting differential splicing and differential expression at isoform level in human RNA-seq studies](https://academic.oup.com/bib/article/20/2/471/4524048)
 
 **Authors:** Gabriela A Merino
 
