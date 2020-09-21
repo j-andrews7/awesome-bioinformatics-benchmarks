@@ -340,7 +340,23 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Recommendation(s):** Varies. In general, the authors recommend [EPIC](https://gfellerlab.shinyapps.io/EPIC_1-1/) and [quanTIseq](http://icbi.at/software/quantiseq/doc/index.html) due to their overall robustness and absolute (rather than relative) scoring, though [xCell](http://xcell.ucsf.edu/) is recommended for binary presence/absence of cell types and [MCPcounter](https://github.com/ebecht/MCPcounter) was their recommended relative scoring method.
 
-**Additional links:** The authors created an [R package called immunedeconv](https://github.com/icbi-lab/immunedeconv) for easy installation and use of all these methods. For developers, they have made available their [benchmarking pipeline](https://github.com/icbi-lab/immune_deconvolution_benchmark) so that others can reproduce/extend it to test their own tools/methods.
+**Additional links:** The authors created an [R package called immunedeconv](https://github.com/icbi-lab/immunedeconv) for easy installation and use of all these methods. For developers, they have made their [benchmarking pipeline](https://github.com/icbi-lab/immune_deconvolution_benchmark) available so that others can reproduce/extend it to test their own tools/methods.
+
+---
+
+**Title:** [Comprehensive benchmarking of computational deconvolution of transcriptomics data](https://www.biorxiv.org/content/10.1101/2020.01.10.897116v1.full)
+
+**Authors:** Francisco Avila Cobos, et al.
+
+**Journal Info:** bioRxiv, January 2020
+
+**Description:** This paper compared the effects of transformation, scaling/normalization, marker selection, cell type composition, and deconvolution methods on computing cell type proportions in mixed bulk RNA-seq samples. Performance is assessed by means of Pearson correlation and root-mean-square-error (RMSE) between the cell type proportions computed by the different deconvolution methods and known compositions of 1000 pseudo-bulk mixtures from 4 different single cell RNA-seq datasets with varying numbers of cells.
+
+**Tools/methods compared:** Transformation methods: `linear (none)`, `log`, `VST (DESeq2)`, `sqrt`. Scaling/normalization methods (bulk): `column-wise`, `min-max`, `z-score`, `QN`, `UQ`, `row-wise`, `global min-max`, `global z-score`, `TPM`, `TMM`, `median ratios`, `LogNormalize`. Scaling/normalization methods (single cell): `RNBR`, `scran`, `scater`, `Linnorm`. Deconvolution methods (bulk): `OLS`, `NNLS`, `FARDEEP`, `RLR`, `lasso`, `ridge`, `DCQ`, `elastic net`, `DSA`, `EPIC`, `CIBERSORT`, `dtangle`, `ssFrobenius`, `ssKL`, `DeconRNASeq`. Deconvolution methods (scRNA-seq reference): `BisqueRNA`, `deconvSeq`, `DWLS`, `MuSiC`, `SCDC`.
+
+**Recommendation(s):** The authors strongly recommend keeping data in the linear scale for deconvolution, avoiding the use of `column min-max`, `column z-score`, and `QN` for normalization/scaling of bulk RNA-seq data, avoiding the use of `row-normalization`, `column min-max`, and `TPM` for normalization/scaling of single cell RNA-seq data, use all possible cell markers, ensure that all possible cell types are represented in the reference matrix, and use one of the top performing deconvolution methods - `OLS`, `nnls`, `RLR`, `FARDEEP`, `CIBERSORT`, `DWLS`, `MuSiC`, or `SCDC`. 
+
+**Additional links:** The authors provide their benchmarking code [on Github](https://github.com/favilaco/deconv_benchmark).
 
 ## RNA/cDNA Microarrays
 
@@ -359,7 +375,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Tools/methods compared:** `Sentieon` (`TNscope`, `TNseq`, `DNAseq`), `DeepVariant` (`WGS`), `GATK` (`HC` & `MuTect2`), `NeuSomatic`, `VarScan2`, `Strelka2`
 
-**Recommendation(s):** All the four germline callers had comparable performance on NGS data. For TGS data, all the three callers had similar performance in SNP calling, while DeepVariant outperformed the others in InDel calling. For somatic variant calling on NGS, Sentieon TNscope and GATK Mutect2 outperformed the other callers. Sentieon required the least computational cost. 
+**Recommendation(s):** All the four germline callers had comparable performance on NGS data. For TGS data, all the three callers had similar performance in SNP calling, while [DeepVariant]9https://github.com/google/deepvariant) outperformed the others in InDel calling. For somatic variant calling on NGS, Sentieon TNscope and [GATK Mutect2](https://gatk.broadinstitute.org/hc/en-us) outperformed the other callers. Sentieon had the computational cost. 
 
 --
 
