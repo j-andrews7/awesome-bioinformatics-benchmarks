@@ -19,7 +19,7 @@ If you have a benchmarking study that is not yet included on this list, please m
          - [Differential Gene Expression](#differential-gene-expression)
          - [Gene Set Enrichment Analysis](#gene-set-enrichment-analysis)
          - [Differential Splicing](#differential-splicing)
-         - [Transcript Assembly and Quantification](#transcript-assembly-and-quantification)
+         - [_de novo_ Assembly and Quantification](#de-novo-assembly-and-quantification)
          - [Cell-Type Deconvolution](#cell-type-deconvolution)
       - [RNA/cDNA Microarrays](#rnacdna-microarrays)
       - [Variant Callers](#variant-callers)
@@ -295,7 +295,7 @@ Table 1 provides a good comparison of the features and methodology of each metho
 
 **Recommendation(s):** DESeq2, Limma and NOISeq for differential isoform expression(DIE) analysis and DEXSeq and LimmaDS for differential splicing (DS) testing.
 
-### Transcript Assembly and Quantification
+### _de novo_ Assembly and Quantification
 
 **Title:** [Benchmark analysis of algorithms for determining and quantifying full-length mRNA splice forms from RNA-seq data](https://doi.org/10.1093/bioinformatics/btv488)
 
@@ -309,6 +309,22 @@ Table 1 provides a good comparison of the features and methodology of each metho
 
 **Recommendation(s):** 
 All tools measured produced less than ideal precision-recall (both <90%) when using imperfect simulated or IVT data and genes producing mulitple isoforms. [Cufflinks](https://github.com/cole-trapnell-lab/cufflinks) and [StringTie](https://github.com/gpertea/stringtie) are among the best performers.
+
+---
+
+**Title:** [De novo transcriptome assembly: A comprehensive cross-species comparison of short-read RNA-Seq assemblers](https://academic.oup.com/gigascience/article/8/5/giz039/5488105)
+
+**Authors:** Martin Holzer & Manja Marz
+
+**Journal Info:** GigaScience, May 2019
+
+**Description:** This paper compares 10 _de novo_ assembly tools across 9 RNA-seq datasets spanning multiple species and kingdoms for 20 biological-based and reference-free metrics.
+
+**Tools/methods compared:** `Trinity`, `Oases`, `Trans-ABySS`, `SOAPdenovo-Trans`, `IDBA-Tran`, `Bridger`, `BinPacker`, `Shannon`, `SPAdes-sc`, `SPAdes-rna`.
+
+**Recommendation(s):** The authors found that no tool's performance was dominant for all data sets, but [Trinity](https://github.com/trinityrnaseq/trinityrnaseq), [SPAdes](https://cab.spbu.ru/software/spades/), and [Trans-ABySS](https://github.com/bcgsc/transabyss) were typically among the best. For assembly evaluation, the authors recommend a hybrid approach combining both biological-based (BUSCO, # of full length transcripts) and reference-free metric (e.g. `TransRate`, `DETONATE`).
+
+**Additional links:** The authors provide a comprehensive [electronic supplement website](https://www.rna.uni-jena.de/supplements/assembly/index.html) containing all metrics and assembly commands in addition to many supplementary figures.
 
 ### Cell-Type Deconvolution
 
