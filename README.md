@@ -24,7 +24,7 @@ If you have a benchmarking study that is not yet included on this list, please m
       - [RNA/cDNA Microarrays](#rnacdna-microarrays)
       - [Variant Callers](#variant-callers)
          - [Germline SNP/Indel Callers](#germline-snpindel-callers)
-         - [Somatic SNV/Indel callers](#somatic-snvindel-callers)
+         - [Somatic SNV/Indel Callers](#somatic-snvindel-callers)
          - [CNV Callers](#cnv-callers)
          - [SV callers](#sv-callers)
       - [Single Cell](#single-cell)
@@ -42,7 +42,7 @@ If you have a benchmarking study that is not yet included on this list, please m
       - [Statistics](#statistics)
          - [False Discovery Rates](#false-discovery-rates)
       - [Microbiome](#microbiome)
-         - [Diversity analysis](#diversity-analysis)
+         - [Diversity Analysis](#diversity-analysis)
    - [Contributors](#contributors)
 
 
@@ -150,6 +150,18 @@ The authors also proposed a generalized workflow for differential accessibility 
 **Recommendation(s):** When trying to choose an approach, a choice can be made by the user performing the analysis based on any time-accuracy tradeoff they wish to make. In terms of speed, quasi-mapping is the fastest approach, followed by [Selective Alignment](https://github.com/COMBINE-lab/salmon) (SA) then [STAR](https://github.com/alexdobin/STAR). [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) was considerably slower than all three of these approaches. However, in terms of accuracy, SA yielded the best results, followed by alignment to the genome (with subsequent transcriptomic projection) using STAR and SA (using carefully selected decoy sequences). Bowtie2 generally performed similarly to SA, but without the benefit of decoy sequences, seemed to admit more spurious mappings. Finally, lightweight mapping of sequencing reads to the transcriptome showed the lowest overall consistency with quantifications derived from the oracle alignments. Note: Both Selective Alignment and quasi-mapping are part of the [salmon](https://combine-lab.github.io/salmon/) codebase.
 
 ---
+
+**Title:** [A comprehensive evaluation of ensembl, RefSeq, and UCSC annotations in the context of RNA-seq read mapping and gene quantification](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-015-1308-8)
+
+**Authors:** Shanrong Zhao\* & Baohong Zhang
+
+**Journal Info:** BMC Genomics, February 2015
+
+**Description:** This paper compares the effect of different gene annotations in the context of RNA-seq mapping and gene quantification using data from the Human Body Map 2.0 Project.
+
+**Tools/methods compared:** `Ensembl`, `Refseq`, `UCSC`.
+
+**Recommendation(s):** Though the authors warn there is no "best" set of annotations to use, they do emphasize the impact that annotation choice can have on downstream analyses such as differential gene expression, as genes with identical gene symbols can map to completely different regions in different annotations. Though Ensembl annotations are much more comprehensive than the others, the authors recommend a less complex genome annotation, such as the Refseq annotation, if the RNA-seq is being used as a replacement for microarrays. Conversely, the Ensembl annotations are preferrable if non-coding RNAs are of particular interest.
 
 ### Normalisation Methods
 
