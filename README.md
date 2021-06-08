@@ -94,6 +94,9 @@ Papers within each section should be ordered by publication date, with more rece
 
 **Description:** A survey of 25 benchmarking studies published between 2011 and 2017 in terms of design, methods, and information types. Discusses overfitting, sharing, incentives.
 
+# Tool/Method Sections
+Additional sections/sub-sections can be added as needed.
+
 ## DNase, ATAC, and ChIP-seq
 
 ### Peak Callers
