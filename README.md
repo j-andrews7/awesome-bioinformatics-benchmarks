@@ -9,6 +9,7 @@ If you have a benchmarking study that is not yet included on this list, please m
 ## Contents
    - [Rules for Included Papers](#rules-for-included-papers)
    - [Format &amp; Organization](#format--organization)
+   - [Benchmarking Theory](#benchmarking-theory)
    - [Tool/Method Sections](#toolmethod-sections)
       - [DNase, ATAC, &amp; ChIP-seq](#dnase-atac-and-chip-seq)
          - [Peak Callers](#peak-callers)
@@ -73,9 +74,25 @@ Please include the following information when adding papers.
 
 Papers within each section should be ordered by publication date, with more recent papers listed first.
 
-# Tool/Method Sections
-Additional sections/sub-sections can be added as needed.
+# Benchmarking Theory
 
+**Title:** [Essential guidelines for computational method benchmarking](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1738-8)
+
+**Authors:** Lukas Weber, et al.
+
+**Journal Info:** Genome Biology, June 2019
+
+**Description:** This paper presents 10 main guidelines for conducting and writing benchmark papers which data, methods and metric choices, reproducible research, and documentation
+
+---
+
+**Title:** [Essential guidelines for computational method benchmarking](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1738-8)
+
+**Authors:** Lukas Weber, et al.
+
+**Journal Info:** Nature Communications, March 2019
+
+**Description:** A survey of 25 benchmarking studies published between 2011 and 2017 in terms of design, methods, and information types. Discusses overfitting, sharing, incentives.
 
 ## DNase, ATAC, and ChIP-seq
 
