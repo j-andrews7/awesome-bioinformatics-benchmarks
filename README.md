@@ -86,9 +86,9 @@ Papers within each section should be ordered by publication date, with more rece
 
 ---
 
-**Title:** [Essential guidelines for computational method benchmarking](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1738-8)
+**Title:** [Systematic benchmarking of omics computational tools](https://www.nature.com/articles/s41467-019-09406-4)
 
-**Authors:** Lukas Weber, et al.
+**Authors:** Sergei Mangul, et al.
 
 **Journal Info:** Nature Communications, March 2019
 
