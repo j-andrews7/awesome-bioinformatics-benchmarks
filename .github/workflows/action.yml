@@ -1,0 +1,13 @@
+name: Check Markdown links
+
+on:
+  push
+  schedule:
+    - cron: "0 9 1 * *" # First of each month at 9 AM
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
