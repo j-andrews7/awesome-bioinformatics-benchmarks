@@ -1,7 +1,9 @@
 name: Check Markdown links
 
 on:
-  push
+  push:
+    branches:
+    - master
   schedule:
     - cron: "0 9 1 * *" # First of each month at 9 AM
 
