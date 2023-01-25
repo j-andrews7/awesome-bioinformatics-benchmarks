@@ -1,4 +1,4 @@
-# Awesome Bioinformatics Benchmarks [![Build Status](https://travis-ci.org/j-andrews7/Awesome-Bioinformatics-Benchmarks.svg?branch=master)](https://travis-ci.org/j-andrews7/Awesome-Bioinformatics-Benchmarks)
+# Awesome Bioinformatics Benchmarks ![Build Status](https://github.com/j-andrews7/awesome-bioinformatics-benchmarks/actions/workflows/action.yml/badge.svg)
 
 A curated list of bioinformatics benchmarking papers and resources.
 
@@ -7,44 +7,46 @@ The credit for this format goes to Sean Davis for his [awesome-single-cell](http
 If you have a benchmarking study that is not yet included on this list, please make a [Pull Request](https://github.com/j-andrews7/Awesome-Bioinformatics-Benchmarks/pulls).
 
 ## Contents
-   - [Rules for Included Papers](#rules-for-included-papers)
-   - [Format &amp; Organization](#format--organization)
-   - [Benchmarking Theory](#benchmarking-theory)
-   - [Tool/Method Sections](#toolmethod-sections)
-      - [DNase, ATAC, &amp; ChIP-seq](#dnase-atac-and-chip-seq)
-         - [Peak Callers](#peak-callers)
-         - [Normalization Methods](#normalization-methods)
-      - [RNA-seq](#rna-seq)
-         - [Alignment/Quantification Methods](#alignmentquantification-methods)
-         - [Normalisation Methods](#normalisation-methods)
-         - [Differential Gene Expression](#differential-gene-expression)
-         - [Gene Set Enrichment Analysis](#gene-set-enrichment-analysis)
-         - [Differential Splicing](#differential-splicing)
-         - [_de novo_ Assembly and Quantification](#de-novo-assembly-and-quantification)
-         - [Cell-Type Deconvolution](#cell-type-deconvolution)
-      - [RNA/cDNA Microarrays](#rnacdna-microarrays)
-      - [Variant Callers](#variant-callers)
-         - [Germline SNP/Indel Callers](#germline-snpindel-callers)
-         - [Somatic SNV/Indel Callers](#somatic-snvindel-callers)
-         - [CNV Callers](#cnv-callers)
-         - [SV callers](#sv-callers)
-      - [Single Cell](#single-cell)
-         - [scRNA Sequencing Protocols](#scrna-sequencing-protocols)
-         - [scRNA Analysis Pipelines](#scrna-analysis-pipelines)
-         - [scRNA Imputation Methods](#scrna-imputation-methods)
-         - [scRNA Differential Gene Expression](#scrna-differential-gene-expression)
-         - [Trajectory Inference](#trajectory-inference)
-         - [Gene Regulatory Network Inference](#gene-regulatory-network-inference)
-         - [Integration/Batch Correction](#integrationbatch-correction)
-         - [Dimensionality Reduction](#dimensionality-reduction)
-         - [Cell Annotation/Inference](#cell-annotationinference)
-         - [Variant Calling](#variant-calling)
-         - [ATAC-seq](#atac-seq)
-      - [Statistics](#statistics)
-         - [False Discovery Rates](#false-discovery-rates)
-      - [Microbiome](#microbiome)
-         - [Diversity Analysis](#diversity-analysis)
-   - [Contributors](#contributors)
+- [Awesome Bioinformatics Benchmarks ](#awesome-bioinformatics-benchmarks-)
+  - [Contents](#contents)
+  - [Rules for Included Papers](#rules-for-included-papers)
+  - [Format \& Organization](#format--organization)
+- [Benchmarking Theory](#benchmarking-theory)
+- [Tool/Method Sections](#toolmethod-sections)
+  - [DNase, ATAC, and ChIP-seq](#dnase-atac-and-chip-seq)
+    - [Peak Callers](#peak-callers)
+    - [Normalization Methods](#normalization-methods)
+  - [RNA-seq](#rna-seq)
+    - [Alignment/Quantification Methods](#alignmentquantification-methods)
+    - [Normalisation Methods](#normalisation-methods)
+    - [Differential Gene Expression](#differential-gene-expression)
+    - [Gene Set Enrichment Analysis](#gene-set-enrichment-analysis)
+    - [Differential Splicing](#differential-splicing)
+    - [_de novo_ Assembly and Quantification](#de-novo-assembly-and-quantification)
+    - [Cell-Type Deconvolution](#cell-type-deconvolution)
+  - [RNA/cDNA Microarrays](#rnacdna-microarrays)
+  - [Variant Callers](#variant-callers)
+    - [Germline SNP/Indel Callers](#germline-snpindel-callers)
+    - [Somatic SNV/Indel callers](#somatic-snvindel-callers)
+    - [CNV Callers](#cnv-callers)
+    - [SV callers](#sv-callers)
+  - [Single Cell](#single-cell)
+    - [scRNA Sequencing Protocols](#scrna-sequencing-protocols)
+    - [scRNA Analysis Pipelines](#scrna-analysis-pipelines)
+    - [scRNA Imputation Methods](#scrna-imputation-methods)
+    - [scRNA Differential Gene Expression](#scrna-differential-gene-expression)
+    - [Trajectory Inference](#trajectory-inference)
+    - [Gene Regulatory Network Inference](#gene-regulatory-network-inference)
+    - [Integration/Batch Correction](#integrationbatch-correction)
+    - [Dimensionality Reduction](#dimensionality-reduction)
+    - [Cell Annotation/Inference](#cell-annotationinference)
+    - [Variant Calling](#variant-calling)
+    - [ATAC-seq](#atac-seq)
+  - [Statistics](#statistics)
+    - [False Discovery Rates](#false-discovery-rates)
+  - [Microbiome](#microbiome)
+    - [Diversity analysis](#diversity-analysis)
+- [Contributors](#contributors)
 
 
 ## Rules for Included Papers
@@ -609,19 +611,20 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 
 ### scRNA Analysis Pipelines
 
-**Title:** [A systematic evaluation of single cell RNA-seq analysis pipelines](https://www.nature.com/articles/s41467-019-12266-7)
+**Title:** [Comparison of visualization tools for single-cell RNAseq data](https://doi.org/10.1093/nargab/lqaa052)
 
-**Authors:** Beate Veith, et al.
+**Authors:** Batuhan Cakir, et al.
 
-**Journal Info:** Nature Communications, October 2019
+**Journal Info:** NAR Genomics and Bioinformatics, September 2020
 
-**Description:** This study evaluated \~3000 pipeline combinations based on three mapping, three annotation, four imputation, seven normalization, and four differential expression testing approaches with five scRNA-seq library protocols on simulated data.
+**Description:** This study evaluated 13 scRNA-seq visualization platforms based on their features, performance, cloud and web support, containerization, and inter-operability between analysis platforms and data formats (loom, h5ad, SingleCellExperiment, Seurat, raw txt/csv.) with varying numbers of cells (5k to 2 million).
 
-**Tools/methods compared:** scRNA-seq library prep protocols - `SCRB-seq`, `Smart-seq2`, `CEL-seq2`, `Drop-seq`, `10X Genomics`. Mapping - `bwa`, `STAR`, `kallisto`. Annotation - `gencode`, `refseq`, `vega`. Imputation - `filtering`, `DrImpute`, `scone`, `SAVER`. Normalization - `scran`, `SCnorm`, `Linnorm`, `Census`, `MR`, `TMM`. Differential testing - `edgeR-zingeR`, `limma`, `MAST`, `T-test`.  
+**Tools/methods compared:** `ASAP`, `Bbrowser`, `cellxgene`, `Granatum`, `iSEE`, `Loom viewer`, `Loupe Cell Browser`, `SCope`, `scSVA`, `scVI`, `Single Cell Explorer`, `SPRING`, and `UCSC Cell Browser`.  
 
-**Recommendation(s):** **Figure 5F** contains a flowchart with the authors' recommendations. For alignment, `STAR` with Gencode annotations generally had the highest mapping and assignment rates. All mappers performed best with Gencode annotations. For normalization, `scran` was found to best handle potential assymetric differential expression and large numbers of differentially expressed genes. They also note that normalization is overall the most influential step, particularly if asymmetric DE is present (**Figure 5**). For Smart-seq2 data without spike-ins, the authors suggest `Census` may be the best choice. The authors found little benefit to imputation in most scenarios, particularly if one of the better normalization methods (e.g. `scran`) was used. The authors found library prep and normalization strategies to have a stronger effect on pipeline performance than the choice of differential expression tool, but generally found `limma-trend` to have the most robust performance. 
+**Recommendation(s):** **Table 1** provides an overview of the tool capabilities and current support. The authors further compared tools that could be used for web sharing - `cellxgene`, `iSEE` with SCE files, `iSEE` with loom files, `loom-viewer`, `SCope`, `Single Cell Explorer`, `scSVA`, and `UCSC Cell Browser` for preprocessing memory and time requirements with varying numbers of cells. `iSEE-loom`, `SCope`, `scSVA` and `loom-viewer` all enable efficient integration with the hierarchical data format (HDF5) from which loom and h5ad formats are derived, and as such, have the lowest preprocessing time requirements. `iSEE-SCE` performed poorly with large numbers of cells (>50k) with the default number of panels (8) but performed better with a more limited set of visualizations. Some of the tools had unexplainable resource spikes with high numbers of cells, e.g. loom-viewer dramatically increasing in both time and memory requirements with 2M cells versus 1.5M. `cellxgene` was generally recommended due to its ease of use, expansive community support and active maintenance, and ability to handle large datasets. `Single Cell Explorer` and `UCSC Cell Browser` both were among the poorest performers resource-wise, with their usage increasing linearly with cell number. `iSEE` was generally commended for its flexibility and support of custom visualizations.
 
-**Additional links:** The authors made their simulation tool (powsimR) available on [Github](https://github.com/bvieth/powsimR) along with their [pipeline scripts](https://github.com/bvieth/scRNA-seq-pipelines) to reproduce their analyses.
+**Additional links:** The authors made their package (sceasy) to convert between Seurat, SCE, Loom, and AnnData objects available via [GitHub](https://github.com/cellgeni/sceasy).
+
 
 ---
 
@@ -636,6 +639,23 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 **Tools/methods compared:** `Drop-seq-tools version-2.3.0`, `Cell Ranger version-3.0.2`, `scPipe version-1.4.1`, `zUMIs version-2.4.5b`, `UMI-tools version-1.0.0`, `umis version-1.0.3`, `dropEst version-0.8.6`
 
 **Recommendation(s):** Cell Ranger shows the highest algorithm complexity and parallelization, whereas scPipe, umis and zUMIs have lower complexity that is suitable for large-scale scRNA-seq integration analysis. UMI-tools show the highest transcript quantification accuracy on ERCC datasets from three scRNA-seq platforms. Integration of expression matrices from different pipelines will introduce confounding factors akin to batch effect. zUMIs and dropEst have higher sensitivity to detectmore genes for single cells, which may also bring unwanted factors. For most downstream analysis, Drop-seq-tools, Cell Ranger and UMI-tools show high consistency, whereas umis and zUMIs show inconsistent results compared with the other pipelines.
+
+---
+
+**Title:** [A systematic evaluation of single cell RNA-seq analysis pipelines](https://www.nature.com/articles/s41467-019-12266-7)
+
+**Authors:** Beate Veith, et al.
+
+**Journal Info:** Nature Communications, October 2019
+
+**Description:** This study evaluated \~3000 pipeline combinations based on three mapping, three annotation, four imputation, seven normalization, and four differential expression testing approaches with five scRNA-seq library protocols on simulated data.
+
+**Tools/methods compared:** scRNA-seq library prep protocols - `SCRB-seq`, `Smart-seq2`, `CEL-seq2`, `Drop-seq`, `10X Genomics`. Mapping - `bwa`, `STAR`, `kallisto`. Annotation - `gencode`, `refseq`, `vega`. Imputation - `filtering`, `DrImpute`, `scone`, `SAVER`. Normalization - `scran`, `SCnorm`, `Linnorm`, `Census`, `MR`, `TMM`. Differential testing - `edgeR-zingeR`, `limma`, `MAST`, `T-test`.  
+
+**Recommendation(s):** **Figure 5F** contains a flowchart with the authors' recommendations. For alignment, `STAR` with Gencode annotations generally had the highest mapping and assignment rates. All mappers performed best with Gencode annotations. For normalization, `scran` was found to best handle potential assymetric differential expression and large numbers of differentially expressed genes. They also note that normalization is overall the most influential step, particularly if asymmetric DE is present (**Figure 5**). For Smart-seq2 data without spike-ins, the authors suggest `Census` may be the best choice. The authors found little benefit to imputation in most scenarios, particularly if one of the better normalization methods (e.g. `scran`) was used. The authors found library prep and normalization strategies to have a stronger effect on pipeline performance than the choice of differential expression tool, but generally found `limma-trend` to have the most robust performance. 
+
+**Additional links:** The authors made their simulation tool (powsimR) available on [Github](https://github.com/bvieth/powsimR) along with their [pipeline scripts](https://github.com/bvieth/scRNA-seq-pipelines) to reproduce their analyses.
+
 
 ### scRNA Imputation Methods
 
