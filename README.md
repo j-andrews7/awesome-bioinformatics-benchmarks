@@ -46,6 +46,8 @@ If you have a benchmarking study that is not yet included on this list, please m
     - [False Discovery Rates](#false-discovery-rates)
   - [Microbiome](#microbiome)
     - [Diversity analysis](#diversity-analysis)
+  - [Hi-C/Hi-ChIP](#hi-chi-chip)
+    - [TAD Calling](#tad-calling)
 - [Contributors](#contributors)
 
 
@@ -872,6 +874,23 @@ See figure 5 for pratical guidelines.
 **Recommendation(s):** QIIME2 was deemed the most appropriate choice for forensic analysis in this study.
 
 **Additional links:** Sequence data are archived through the European Bioinformatics Institute European Nucleotide Archive (www.ebi.ac.uk/ena) under accession number: PRJEB22642. Pipeline parameters and microbial community analyses are available on GitHub (https://github.com/sierrakasz/postmortem-analysis).
+
+## Hi-C/Hi-ChIP
+
+### TAD Calling
+
+**Title:** [Comparison of computational methods for the identification of topologically associating domains](https://doi.org/10.1186/s13059-018-1596-9)
+
+**Authors:** Marie Zufferey\*, Daniele Tavernari\*, et al.
+
+**Journal Info:** Genome Biology, December 2018
+
+**Description:** In this study, the authors compared the performance of 22 TAD callers, each on 20 different conditions (4 map resolutions each normalized with 2 independent strategies, plus 12 additional contact maps with variable sequencing depth) and assessed their performance via concordance, robustness to data resolution and normalization method, and ability to recapitulate biological features typically associated with TADs and TAD boundaries. Assessments were performed on high-resolution Hi-C data from GM12878 and validated in other datasets for select callers.
+
+**Tools/methods compared:** `3DNetMod`, `armatus`, `arrowhead`, `CaTCH`, `CHDF`, `chromoR`, `ClusterTAD`, `DI`, `EAST`, `GMAP`, `HiCExplorer`, `HiCseq`, `HiTAD`, `ICFinder`, `IS`, `matryoshka`, `MrTADFinder`, `PSYCHIC`, `spectral`, `TADbit`, `TADtree`, and `TopDom`.
+
+**Recommendation(s):** See **Table 2** for a succinct results summary. In general, the authors found that `TopDom`, `HiCseg`, and `CaTCH` satisfied at least four out of five criteria: robustness with respect to bin size (resolution) and normalization strategy (ICE and LGF); cost-effective performance based on the ability of the caller to identify concordant TADs with <1% of reads; reproducibility of TADs called by other callers; computational efficiency; and biological relevance based on previosly reported TAD-associated features. The authors do, however, note that callers that attempt to call hierarchical TAD structures generally performed worse than those that do not, potentially due to requiring higher data resolution.
+
 
 # Contributors
 
