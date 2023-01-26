@@ -400,7 +400,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Tools/methods compared:** `Sentieon` (`TNscope`, `TNseq`, `DNAseq`), `DeepVariant` (`WGS`), `GATK` (`HC` & `MuTect2`), `NeuSomatic`, `VarScan2`, `Strelka2`
 
-**Recommendation(s):** All the four germline callers had comparable performance on NGS data. For TGS data, all the three callers had similar performance in SNP calling, while [DeepVariant]9https://github.com/google/deepvariant) outperformed the others in InDel calling. For somatic variant calling on NGS, Sentieon TNscope and [GATK Mutect2](https://gatk.broadinstitute.org/hc/en-us) outperformed the other callers. Sentieon had the computational cost. 
+**Recommendation(s):** All the four germline callers had comparable performance on NGS data. For TGS data, all the three callers had similar performance in SNP calling, while [DeepVariant](https://github.com/google/deepvariant) outperformed the others in InDel calling. For somatic variant calling on NGS, Sentieon TNscope and [GATK Mutect2](https://gatk.broadinstitute.org/hc/en-us) outperformed the other callers. Sentieon had the computational cost. 
 
 --
 
