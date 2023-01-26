@@ -48,6 +48,7 @@ If you have a benchmarking study that is not yet included on this list, please m
     - [Diversity analysis](#diversity-analysis)
   - [Hi-C/Hi-ChIP](#hi-chi-chip)
     - [TAD Calling](#tad-calling)
+    - [Normalization Methods](#normalization-methods-1)
 - [Contributors](#contributors)
 
 
@@ -508,7 +509,7 @@ Sensitivity, specificity, and false-discovery rate were used as the benchmarking
 
 **Tools/methods compared:** `ADTEx`, `CONTRA`, `cn.MOPS`, `ExomeCNV`, `VarScan2`, `CoNVEX`.
 
-**Recommendation(s):** All tools suffered from high FDRs (\~30-60%), but [ExomeCNV]https://github.com/cran/ExomeCNV) (a now defunct R package) had the highest overall sensitivity. 
+**Recommendation(s):** All tools suffered from high FDRs (\~30-60%), but [ExomeCNV](https://github.com/cran/ExomeCNV) (a now defunct R package) had the highest overall sensitivity. 
 [VarScan2](http://dkoboldt.github.io/varscan/) had moderate sensitivity and specificity for both amplifications and deletions.
 
 
@@ -873,7 +874,7 @@ See figure 5 for pratical guidelines.
 
 **Recommendation(s):** QIIME2 was deemed the most appropriate choice for forensic analysis in this study.
 
-**Additional links:** Sequence data are archived through the European Bioinformatics Institute European Nucleotide Archive (www.ebi.ac.uk/ena) under accession number: PRJEB22642. Pipeline parameters and microbial community analyses are available on GitHub (https://github.com/sierrakasz/postmortem-analysis).
+**Additional links:** Sequence data are archived through the European Bioinformatics Institute European Nucleotide Archive (www.ebi.ac.uk/ena) under accession number: PRJEB22642. Pipeline parameters and microbial community analyses are available on [GitHub](https://github.com/sierrakasz/postmortem-analysis).
 
 ## Hi-C/Hi-ChIP
 
@@ -891,6 +892,9 @@ See figure 5 for pratical guidelines.
 
 **Recommendation(s):** See **Table 2** for a succinct results summary. In general, the authors found that `TopDom`, `HiCseg`, and `CaTCH` satisfied at least four out of five criteria: robustness with respect to bin size (resolution) and normalization strategy (ICE and LGF); cost-effective performance based on the ability of the caller to identify concordant TADs with <1% of reads; reproducibility of TADs called by other callers; computational efficiency; and biological relevance based on previosly reported TAD-associated features. The authors do, however, note that callers that attempt to call hierarchical TAD structures generally performed worse than those that do not, potentially due to requiring higher data resolution.
 
+### Normalization Methods
+
+**Title:** [Comparison of normalization methods for Hi-C data](https://doi.org/10.2144/btn-2019-0105)
 
 # Contributors
 
