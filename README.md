@@ -1,4 +1,4 @@
-# Awesome Bioinformatics Benchmarks [![Build Status](https://travis-ci.org/j-andrews7/Awesome-Bioinformatics-Benchmarks.svg?branch=master)](https://travis-ci.org/j-andrews7/Awesome-Bioinformatics-Benchmarks)
+# Awesome Bioinformatics Benchmarks ![Build Status](https://github.com/j-andrews7/awesome-bioinformatics-benchmarks/actions/workflows/action.yml/badge.svg)
 
 A curated list of bioinformatics benchmarking papers and resources.
 
@@ -7,44 +7,49 @@ The credit for this format goes to Sean Davis for his [awesome-single-cell](http
 If you have a benchmarking study that is not yet included on this list, please make a [Pull Request](https://github.com/j-andrews7/Awesome-Bioinformatics-Benchmarks/pulls).
 
 ## Contents
-   - [Rules for Included Papers](#rules-for-included-papers)
-   - [Format &amp; Organization](#format--organization)
-   - [Benchmarking Theory](#benchmarking-theory)
-   - [Tool/Method Sections](#toolmethod-sections)
-      - [DNase, ATAC, &amp; ChIP-seq](#dnase-atac-and-chip-seq)
-         - [Peak Callers](#peak-callers)
-         - [Normalization Methods](#normalization-methods)
-      - [RNA-seq](#rna-seq)
-         - [Alignment/Quantification Methods](#alignmentquantification-methods)
-         - [Normalisation Methods](#normalisation-methods)
-         - [Differential Gene Expression](#differential-gene-expression)
-         - [Gene Set Enrichment Analysis](#gene-set-enrichment-analysis)
-         - [Differential Splicing](#differential-splicing)
-         - [_de novo_ Assembly and Quantification](#de-novo-assembly-and-quantification)
-         - [Cell-Type Deconvolution](#cell-type-deconvolution)
-      - [RNA/cDNA Microarrays](#rnacdna-microarrays)
-      - [Variant Callers](#variant-callers)
-         - [Germline SNP/Indel Callers](#germline-snpindel-callers)
-         - [Somatic SNV/Indel Callers](#somatic-snvindel-callers)
-         - [CNV Callers](#cnv-callers)
-         - [SV callers](#sv-callers)
-      - [Single Cell](#single-cell)
-         - [scRNA Sequencing Protocols](#scrna-sequencing-protocols)
-         - [scRNA Analysis Pipelines](#scrna-analysis-pipelines)
-         - [scRNA Imputation Methods](#scrna-imputation-methods)
-         - [scRNA Differential Gene Expression](#scrna-differential-gene-expression)
-         - [Trajectory Inference](#trajectory-inference)
-         - [Gene Regulatory Network Inference](#gene-regulatory-network-inference)
-         - [Integration/Batch Correction](#integrationbatch-correction)
-         - [Dimensionality Reduction](#dimensionality-reduction)
-         - [Cell Annotation/Inference](#cell-annotationinference)
-         - [Variant Calling](#variant-calling)
-         - [ATAC-seq](#atac-seq)
-      - [Statistics](#statistics)
-         - [False Discovery Rates](#false-discovery-rates)
-      - [Microbiome](#microbiome)
-         - [Diversity Analysis](#diversity-analysis)
-   - [Contributors](#contributors)
+- [Awesome Bioinformatics Benchmarks ](#awesome-bioinformatics-benchmarks-)
+  - [Contents](#contents)
+  - [Rules for Included Papers](#rules-for-included-papers)
+  - [Format \& Organization](#format--organization)
+- [Benchmarking Theory](#benchmarking-theory)
+- [Tool/Method Sections](#toolmethod-sections)
+  - [DNase, ATAC, and ChIP-seq](#dnase-atac-and-chip-seq)
+    - [Peak Callers](#peak-callers)
+    - [Normalization Methods](#normalization-methods)
+  - [RNA-seq](#rna-seq)
+    - [Alignment/Quantification Methods](#alignmentquantification-methods)
+    - [Normalisation Methods](#normalisation-methods)
+    - [Differential Gene Expression](#differential-gene-expression)
+    - [Gene Set Enrichment Analysis](#gene-set-enrichment-analysis)
+    - [Differential Splicing](#differential-splicing)
+    - [_de novo_ Assembly and Quantification](#de-novo-assembly-and-quantification)
+    - [Cell-Type Deconvolution](#cell-type-deconvolution)
+  - [RNA/cDNA Microarrays](#rnacdna-microarrays)
+  - [Variant Callers](#variant-callers)
+    - [Germline SNP/Indel Callers](#germline-snpindel-callers)
+    - [Somatic SNV/Indel callers](#somatic-snvindel-callers)
+    - [CNV Callers](#cnv-callers)
+    - [SV callers](#sv-callers)
+  - [Single Cell](#single-cell)
+    - [scRNA Sequencing Protocols](#scrna-sequencing-protocols)
+    - [scRNA Analysis Pipelines](#scrna-analysis-pipelines)
+    - [scRNA Imputation Methods](#scrna-imputation-methods)
+    - [scRNA Differential Gene Expression](#scrna-differential-gene-expression)
+    - [Trajectory Inference](#trajectory-inference)
+    - [Gene Regulatory Network Inference](#gene-regulatory-network-inference)
+    - [Integration/Batch Correction](#integrationbatch-correction)
+    - [Dimensionality Reduction](#dimensionality-reduction)
+    - [Cell Annotation/Inference](#cell-annotationinference)
+    - [Variant Calling](#variant-calling)
+    - [ATAC-seq](#atac-seq)
+  - [Statistics](#statistics)
+    - [False Discovery Rates](#false-discovery-rates)
+  - [Microbiome](#microbiome)
+    - [Diversity analysis](#diversity-analysis)
+  - [Hi-C/Hi-ChIP](#hi-chi-chip)
+    - [TAD Calling](#tad-calling)
+    - [Normalization Methods](#normalization-methods-1)
+- [Contributors](#contributors)
 
 
 ## Rules for Included Papers
@@ -209,7 +214,7 @@ The authors also proposed a generalized workflow for differential accessibility 
 
 **Tools/methods compared:** `Total Count (TC)`, `Upper Quartile (UQ)`, `Median (Med),` `DESeq`, `edgeR`, `Quantile (Q)`, `RPKM`.
 
-**Recommendation(s):** The authors recommend [DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html) ([DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) now available as well) or [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), as those methods are robust to the presence of different library sizes and compositions, whereas the (still common) Total Count and RPKM methods are ineffective and should be abandoned.
+**Recommendation(s):** The authors recommend DESeq (now deprecated and replaced by [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)) or [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), as those methods are robust to the presence of different library sizes and compositions, whereas the (still common) Total Count and RPKM methods are ineffective and should be abandoned.
 
 ### Differential Gene Expression
 
@@ -224,7 +229,7 @@ Handling of inter-replicate variability and false positive fraction were the ben
 
 **Tools/methods compared:** `baySeq`, `DEGseq`, `DESeq`, `DESeq2`, `EBSeq`, `edgeR`, `limma`, `Poisson-Seq`, `SAM-Seq`.
 
-**Recommendation(s):** Six of the tools that utilize negative binomial or log-normal distributions ([edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), [DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html), [limma](https://bioconductor.org/packages/release/bioc/html/limma.html), and [EBseq](https://bioconductor.org/packages/release/bioc/html/EBSeq.html) control their identification of false positives well.
+**Recommendation(s):** Six of the tools that utilize negative binomial or log-normal distributions ([edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), DESeq (now deprecated and replaced by [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html), [limma](https://bioconductor.org/packages/release/bioc/html/limma.html), and [EBseq](https://bioconductor.org/packages/release/bioc/html/EBSeq.html) control their identification of false positives well.
 
 **Additional links:** The authors released their benchmarking scripts on [Github](https://github.com/bartongroup/KF_arabidopsis-GRNA).
 
@@ -242,7 +247,7 @@ Each tool was compared against itself as a standard (using all replicates) and a
 **Tools/methods compared:** `baySeq`, `cuffdiff`, `DEGSeq`, `DESeq`, `DESeq2`, `EBSeq`, `edgeR (exact and glm modes)`, `limma`, `NOISeq`, `PoissonSeq`, `SAMSeq`. 
 
 **Recommendation(s):** With fewer than 12 biological replicates, [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) and [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) were the top performers. 
-As replicates increased, [DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html) did a better job minimizing false positives than other tools.
+As replicates increased, DESeq (now deprecated and replaced by [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) did a better job minimizing false positives than other tools.
 
 Additionally, the authors recommend at least six biological replicates should be used, rising to at least 12 if users want to identify all significantly differentially expressed genes no matter the fold change magnitude.
 
@@ -259,7 +264,7 @@ Specificity, sensitivity, and false positive rate were the main benchmarking met
 
 **Tools/methods compared:** `Cuffdiff`, `edgeR`, `DESeq`, `PoissonSeq`, `baySeq`, `limma`.
 
-**Recommendation(s):** Though no method emerged as favorable in all conditions, those that used negative binomial modeling ([DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html), [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html)) generally performed best.
+**Recommendation(s):** Though no method emerged as favorable in all conditions, those that used negative binomial modeling (DESeq (now deprecated and replaced by [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)), [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html)) generally performed best.
 
 The more replicates, the better. Replicate numbers (both biological and technical) have a greater impact on differential detection accuracy than sequencing depth.
 
@@ -358,7 +363,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Tools/methods compared:** `quanTIseq`, `TIMER`, `CIBERSORT`, `CIBERSORT abs. mode`, `MCPCounter`, `xCell`, `EPIC`.
 
-**Recommendation(s):** Varies. In general, the authors recommend [EPIC](https://gfellerlab.shinyapps.io/EPIC_1-1/) and [quanTIseq](http://icbi.at/software/quantiseq/doc/index.html) due to their overall robustness and absolute (rather than relative) scoring, though [xCell](http://xcell.ucsf.edu/) is recommended for binary presence/absence of cell types and [MCPcounter](https://github.com/ebecht/MCPcounter) was their recommended relative scoring method.
+**Recommendation(s):** Varies. In general, the authors recommend [EPIC](https://github.com/GfellerLab/EPIC) and [quanTIseq](http://icbi.at/software/quantiseq/doc/index.html) due to their overall robustness and absolute (rather than relative) scoring, though [xCell](http://xcell.ucsf.edu/) is recommended for binary presence/absence of cell types and [MCPcounter](https://github.com/ebecht/MCPcounter) was their recommended relative scoring method.
 
 **Additional links:** The authors created an [R package called immunedeconv](https://github.com/icbi-lab/immunedeconv) for easy installation and use of all these methods. For developers, they have made their [benchmarking pipeline](https://github.com/icbi-lab/immune_deconvolution_benchmark) available so that others can reproduce/extend it to test their own tools/methods.
 
@@ -395,7 +400,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Tools/methods compared:** `Sentieon` (`TNscope`, `TNseq`, `DNAseq`), `DeepVariant` (`WGS`), `GATK` (`HC` & `MuTect2`), `NeuSomatic`, `VarScan2`, `Strelka2`
 
-**Recommendation(s):** All the four germline callers had comparable performance on NGS data. For TGS data, all the three callers had similar performance in SNP calling, while [DeepVariant]9https://github.com/google/deepvariant) outperformed the others in InDel calling. For somatic variant calling on NGS, Sentieon TNscope and [GATK Mutect2](https://gatk.broadinstitute.org/hc/en-us) outperformed the other callers. Sentieon had the computational cost. 
+**Recommendation(s):** All the four germline callers had comparable performance on NGS data. For TGS data, all the three callers had similar performance in SNP calling, while [DeepVariant](https://github.com/google/deepvariant) outperformed the others in InDel calling. For somatic variant calling on NGS, Sentieon TNscope and [GATK Mutect2](https://gatk.broadinstitute.org/hc/en-us) outperformed the other callers.
 
 --
 
@@ -439,7 +444,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
  - Variant callers: `FreeBayes`, `GATK-HaplotypeCaller`, `GATK-UnifiedGenotyper`, `SAMtools mpileup`, `SNPSVM`
  - Aligners: `bowtie2`, `BWA-mem`, `BWA-sampe`, `CUSHAW3`, `MOSAIK`, `Novoalign`.
 
-**Recommendation(s):** [Novoalign](http://www.novocraft.com/products/novoalign/) with [GATK-UnifiedGenotyper](https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_genotyper_UnifiedGenotyper.php) exhibited the highest sensitivity while producing few false positives. 
+**Recommendation(s):** [Novoalign](http://www.novocraft.com/products/novoalign/) with [GATK-UnifiedGenotyper](https://gatk.broadinstitute.org/hc/en-us) exhibited the highest sensitivity while producing few false positives. 
 In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligner, and `GATK-UnifiedGenotyper` performed well across the top aligners (BWA, bowtie2, and Novoalign).
 
 
@@ -487,7 +492,7 @@ Sensitivity, specificity, positive predictive value, negative predictive value, 
 **Tools/methods compared:** `DECoN`, `CoNVaDING`, `panelcn.MOPS`, `ExomeDepth`, `CODEX2`.
 
 **Recommendation(s):** Most tools performed well, but varied based on datasets. 
-The authors felt [DECoN](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology/groups/lunter-group/lunter-group/decon-detection-of-exon-copy-number) and [panelcn.MOPS](https://bioconductor.org/packages/release/bioc/html/panelcn.mops.html) with optimized parameters were sensitive enough to be used as screening methods in genetic dianostics.
+The authors felt [DECoN](https://www.well.ox.ac.uk/research/research-groups/lunter-group/lunter-group/decon-detection-of-exon-copy-number) and [panelcn.MOPS](https://bioconductor.org/packages/release/bioc/html/panelcn.mops.html) with optimized parameters were sensitive enough to be used as screening methods in genetic dianostics.
 
 **Additional links:** The authors have made their benchmarking code ([CNVbenchmarkeR](https://github.com/TranslationalBioinformaticsIGTP/CNVbenchmarkeR)) available, which can be run to determine optimal parameters for each algorithm for a given user's data.
 
@@ -504,7 +509,7 @@ Sensitivity, specificity, and false-discovery rate were used as the benchmarking
 
 **Tools/methods compared:** `ADTEx`, `CONTRA`, `cn.MOPS`, `ExomeCNV`, `VarScan2`, `CoNVEX`.
 
-**Recommendation(s):** All tools suffered from high FDRs (\~30-60%), but [ExomeCNV]https://github.com/cran/ExomeCNV) (a now defunct R package) had the highest overall sensitivity. 
+**Recommendation(s):** All tools suffered from high FDRs (\~30-60%), but [ExomeCNV](https://github.com/cran/ExomeCNV) (a now defunct R package) had the highest overall sensitivity. 
 [VarScan2](http://dkoboldt.github.io/varscan/) had moderate sensitivity and specificity for both amplifications and deletions.
 
 
@@ -609,19 +614,20 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 
 ### scRNA Analysis Pipelines
 
-**Title:** [A systematic evaluation of single cell RNA-seq analysis pipelines](https://www.nature.com/articles/s41467-019-12266-7)
+**Title:** [Comparison of visualization tools for single-cell RNAseq data](https://doi.org/10.1093/nargab/lqaa052)
 
-**Authors:** Beate Veith, et al.
+**Authors:** Batuhan Cakir, et al.
 
-**Journal Info:** Nature Communications, October 2019
+**Journal Info:** NAR Genomics and Bioinformatics, September 2020
 
-**Description:** This study evaluated \~3000 pipeline combinations based on three mapping, three annotation, four imputation, seven normalization, and four differential expression testing approaches with five scRNA-seq library protocols on simulated data.
+**Description:** This study evaluated 13 scRNA-seq visualization platforms based on their features, performance, cloud and web support, containerization, and inter-operability between analysis platforms and data formats (loom, h5ad, SingleCellExperiment, Seurat, raw txt/csv.) with varying numbers of cells (5k to 2 million).
 
-**Tools/methods compared:** scRNA-seq library prep protocols - `SCRB-seq`, `Smart-seq2`, `CEL-seq2`, `Drop-seq`, `10X Genomics`. Mapping - `bwa`, `STAR`, `kallisto`. Annotation - `gencode`, `refseq`, `vega`. Imputation - `filtering`, `DrImpute`, `scone`, `SAVER`. Normalization - `scran`, `SCnorm`, `Linnorm`, `Census`, `MR`, `TMM`. Differential testing - `edgeR-zingeR`, `limma`, `MAST`, `T-test`.  
+**Tools/methods compared:** `ASAP`, `Bbrowser`, `cellxgene`, `Granatum`, `iSEE`, `Loom viewer`, `Loupe Cell Browser`, `SCope`, `scSVA`, `scVI`, `Single Cell Explorer`, `SPRING`, and `UCSC Cell Browser`.  
 
-**Recommendation(s):** **Figure 5F** contains a flowchart with the authors' recommendations. For alignment, `STAR` with Gencode annotations generally had the highest mapping and assignment rates. All mappers performed best with Gencode annotations. For normalization, `scran` was found to best handle potential assymetric differential expression and large numbers of differentially expressed genes. They also note that normalization is overall the most influential step, particularly if asymmetric DE is present (**Figure 5**). For Smart-seq2 data without spike-ins, the authors suggest `Census` may be the best choice. The authors found little benefit to imputation in most scenarios, particularly if one of the better normalization methods (e.g. `scran`) was used. The authors found library prep and normalization strategies to have a stronger effect on pipeline performance than the choice of differential expression tool, but generally found `limma-trend` to have the most robust performance. 
+**Recommendation(s):** **Table 1** provides an overview of the tool capabilities and current support. The authors further compared tools that could be used for web sharing - `cellxgene`, `iSEE` with SCE files, `iSEE` with loom files, `loom-viewer`, `SCope`, `Single Cell Explorer`, `scSVA`, and `UCSC Cell Browser` for preprocessing memory and time requirements with varying numbers of cells. `iSEE-loom`, `SCope`, `scSVA` and `loom-viewer` all enable efficient integration with the hierarchical data format (HDF5) from which loom and h5ad formats are derived, and as such, have the lowest preprocessing time requirements. `iSEE-SCE` performed poorly with large numbers of cells (>50k) with the default number of panels (8) but performed better with a more limited set of visualizations. Some of the tools had unexplainable resource spikes with high numbers of cells, e.g. loom-viewer dramatically increasing in both time and memory requirements with 2M cells versus 1.5M. `cellxgene` was generally recommended due to its ease of use, expansive community support and active maintenance, and ability to handle large datasets. `Single Cell Explorer` and `UCSC Cell Browser` both were among the poorest performers resource-wise, with their usage increasing linearly with cell number. `iSEE` was generally commended for its flexibility and support of custom visualizations.
 
-**Additional links:** The authors made their simulation tool (powsimR) available on [Github](https://github.com/bvieth/powsimR) along with their [pipeline scripts](https://github.com/bvieth/scRNA-seq-pipelines) to reproduce their analyses.
+**Additional links:** The authors made their package (sceasy) to convert between Seurat, SCE, Loom, and AnnData objects available via [GitHub](https://github.com/cellgeni/sceasy).
+
 
 ---
 
@@ -636,6 +642,23 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 **Tools/methods compared:** `Drop-seq-tools version-2.3.0`, `Cell Ranger version-3.0.2`, `scPipe version-1.4.1`, `zUMIs version-2.4.5b`, `UMI-tools version-1.0.0`, `umis version-1.0.3`, `dropEst version-0.8.6`
 
 **Recommendation(s):** Cell Ranger shows the highest algorithm complexity and parallelization, whereas scPipe, umis and zUMIs have lower complexity that is suitable for large-scale scRNA-seq integration analysis. UMI-tools show the highest transcript quantification accuracy on ERCC datasets from three scRNA-seq platforms. Integration of expression matrices from different pipelines will introduce confounding factors akin to batch effect. zUMIs and dropEst have higher sensitivity to detectmore genes for single cells, which may also bring unwanted factors. For most downstream analysis, Drop-seq-tools, Cell Ranger and UMI-tools show high consistency, whereas umis and zUMIs show inconsistent results compared with the other pipelines.
+
+---
+
+**Title:** [A systematic evaluation of single cell RNA-seq analysis pipelines](https://www.nature.com/articles/s41467-019-12266-7)
+
+**Authors:** Beate Veith, et al.
+
+**Journal Info:** Nature Communications, October 2019
+
+**Description:** This study evaluated \~3000 pipeline combinations based on three mapping, three annotation, four imputation, seven normalization, and four differential expression testing approaches with five scRNA-seq library protocols on simulated data.
+
+**Tools/methods compared:** scRNA-seq library prep protocols - `SCRB-seq`, `Smart-seq2`, `CEL-seq2`, `Drop-seq`, `10X Genomics`. Mapping - `bwa`, `STAR`, `kallisto`. Annotation - `gencode`, `refseq`, `vega`. Imputation - `filtering`, `DrImpute`, `scone`, `SAVER`. Normalization - `scran`, `SCnorm`, `Linnorm`, `Census`, `MR`, `TMM`. Differential testing - `edgeR-zingeR`, `limma`, `MAST`, `T-test`.  
+
+**Recommendation(s):** **Figure 5F** contains a flowchart with the authors' recommendations. For alignment, `STAR` with Gencode annotations generally had the highest mapping and assignment rates. All mappers performed best with Gencode annotations. For normalization, `scran` was found to best handle potential assymetric differential expression and large numbers of differentially expressed genes. They also note that normalization is overall the most influential step, particularly if asymmetric DE is present (**Figure 5**). For Smart-seq2 data without spike-ins, the authors suggest `Census` may be the best choice. The authors found little benefit to imputation in most scenarios, particularly if one of the better normalization methods (e.g. `scran`) was used. The authors found library prep and normalization strategies to have a stronger effect on pipeline performance than the choice of differential expression tool, but generally found `limma-trend` to have the most robust performance. 
+
+**Additional links:** The authors made their simulation tool (powsimR) available on [Github](https://github.com/bvieth/powsimR) along with their [pipeline scripts](https://github.com/bvieth/scRNA-seq-pipelines) to reproduce their analyses.
+
 
 ### scRNA Imputation Methods
 
@@ -839,7 +862,7 @@ See figure 5 for pratical guidelines.
 
 ### Diversity analysis
 
-**Title:** [Evaluating Bioinformatic Pipeline Performance for Forensic Microbiome Analysis](https://doi.org/10.1111/1556-4029.14213)
+**Title:** [Evaluating Bioinformatic Pipeline Performance for Forensic Microbiome Analysis](https://onlinelibrary.wiley.com/doi/10.1111/1556-4029.14213)
 
 **Authors:** Sierra F. Kaszubinski\*, Jennifer L. Pechal\*, et al.
 
@@ -851,7 +874,39 @@ See figure 5 for pratical guidelines.
 
 **Recommendation(s):** QIIME2 was deemed the most appropriate choice for forensic analysis in this study.
 
-**Additional links:** Sequence data are archived through the European Bioinformatics Institute European Nucleotide Archive (www.ebi.ac.uk/ena) under accession number: PRJEB22642. Pipeline parameters and microbial community analyses are available on GitHub (https://github.com/sierrakasz/postmortem-analysis).
+**Additional links:** Sequence data are archived through the European Bioinformatics Institute European Nucleotide Archive (www.ebi.ac.uk/ena) under accession number: PRJEB22642. Pipeline parameters and microbial community analyses are available on [GitHub](https://github.com/sierrakasz/postmortem-analysis).
+
+## Hi-C/Hi-ChIP
+
+### TAD Calling
+
+**Title:** [Comparison of computational methods for the identification of topologically associating domains](https://doi.org/10.1186/s13059-018-1596-9)
+
+**Authors:** Marie Zufferey\*, Daniele Tavernari\*, et al.
+
+**Journal Info:** Genome Biology, December 2018
+
+**Description:** In this study, the authors compared the performance of 22 TAD callers, each on 20 different conditions (4 map resolutions each normalized with 2 independent strategies, plus 12 additional contact maps with variable sequencing depth) and assessed their performance via concordance, robustness to data resolution and normalization method, and ability to recapitulate biological features typically associated with TADs and TAD boundaries. Assessments were performed on high-resolution Hi-C data from GM12878 and validated in other datasets for select callers.
+
+**Tools/methods compared:** `3DNetMod`, `armatus`, `arrowhead`, `CaTCH`, `CHDF`, `chromoR`, `ClusterTAD`, `DI`, `EAST`, `GMAP`, `HiCExplorer`, `HiCseq`, `HiTAD`, `ICFinder`, `IS`, `matryoshka`, `MrTADFinder`, `PSYCHIC`, `spectral`, `TADbit`, `TADtree`, and `TopDom`.
+
+**Recommendation(s):** See **Table 2** for a succinct results summary. In general, the authors found that `TopDom`, `HiCseg`, and `CaTCH` satisfied at least four out of five criteria: robustness with respect to bin size (resolution) and normalization strategy (ICE and LGF); cost-effective performance based on the ability of the caller to identify concordant TADs with <1% of reads; reproducibility of TADs called by other callers; computational efficiency; and biological relevance based on previosly reported TAD-associated features. The authors do, however, note that callers that attempt to call hierarchical TAD structures generally performed worse than those that do not, potentially due to requiring higher data resolution.
+
+### Normalization Methods
+
+**Title:** [Comparison of normalization methods for Hi-C data](https://doi.org/10.2144/btn-2019-0105)
+
+**Authors:** Hongqiang Lyu, Erhu Liu, Zhifang Wu
+
+**Journal Info:** Biotechniques, October 2019
+
+**Description:** In this study, the authors compared the performance of 6 Hi-C normalization methods at 8 different resolution levels - 2.5M, 1M, 500k, 250k, 100k, 50k, 10k, and 5k from 4 different Hi-C studies. These methods were compared for heat map texture, statistical quality, influence of resolution, consistency of distance stratum, and reproducibility of TAD architecture. The authors assessed the quality of statistics by comparing the distribution of interaction frequency, correlation of replicates, and comparability of replicates between contexts.
+
+**Tools/methods compared:** `SCN`, `HiCNorm`, `ICE`, `KR`, `chromoR`, and `multiHiCcompare`.
+
+**Recommendation(s):** See **Table 2** for a succinct results summary. In summary, the authors found that use-case determines the best tool. All of these methods except `multiHiCcompare` are single sample methods, which led to `multiHiCcompare` performing the best in many considerations, including distribution of interaction frequency, comparability between contexts, and consistency of distance stratum. However, `multiHiCcompare` is by far the most computationally expensive and requires a large number of samples to be useful. `SCN` and `KR` show the best reproducibility of TAD architecture across various resolutions. `chromoR` was found to blur interaction heatmaps at lower resolutions due to its de-noising procedure, though it was also found the achieve the best correlation of replicates at mid-resolutions (500k, 250k).
+
+**Additional links:** The authors have made their implementations to run the various methods available on [GitHub](https://github.com/lhqxinghun/bioinformatics/tree/master/Hi-C/NormCompare).
 
 # Contributors
 
