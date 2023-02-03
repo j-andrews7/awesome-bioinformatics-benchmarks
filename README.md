@@ -400,7 +400,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Tools/methods compared:** `Sentieon` (`TNscope`, `TNseq`, `DNAseq`), `DeepVariant` (`WGS`), `GATK` (`HC` & `MuTect2`), `NeuSomatic`, `VarScan2`, `Strelka2`
 
-**Recommendation(s):** All the four germline callers had comparable performance on NGS data. For TGS data, all the three callers had similar performance in SNP calling, while [DeepVariant](https://github.com/google/deepvariant) outperformed the others in InDel calling. For somatic variant calling on NGS, Sentieon TNscope and [GATK Mutect2](https://gatk.broadinstitute.org/hc/en-us) outperformed the other callers.
+**Recommendation(s):** All the four germline callers had comparable performance on NGS data. For TGS data, all the three callers had similar performance in SNP calling, while [DeepVariant](https://github.com/google/deepvariant) outperformed the others in InDel calling. For somatic variant calling on NGS, Sentieon TNscope and [GATK Mutect2](https://github.com/broadinstitute/gatk) outperformed the other callers.
 
 --
 
@@ -444,7 +444,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
  - Variant callers: `FreeBayes`, `GATK-HaplotypeCaller`, `GATK-UnifiedGenotyper`, `SAMtools mpileup`, `SNPSVM`
  - Aligners: `bowtie2`, `BWA-mem`, `BWA-sampe`, `CUSHAW3`, `MOSAIK`, `Novoalign`.
 
-**Recommendation(s):** [Novoalign](http://www.novocraft.com/products/novoalign/) with [GATK-UnifiedGenotyper](https://gatk.broadinstitute.org/hc/en-us) exhibited the highest sensitivity while producing few false positives. 
+**Recommendation(s):** [Novoalign](http://www.novocraft.com/products/novoalign/) with [GATK-UnifiedGenotyper](https://github.com/broadinstitute/gatk) exhibited the highest sensitivity while producing few false positives. 
 In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligner, and `GATK-UnifiedGenotyper` performed well across the top aligners (BWA, bowtie2, and Novoalign).
 
 
@@ -690,7 +690,7 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 
 **Recommendation(s):** In general, the authors found that gene prefiltering was essential for good, robust performance from many methods. They note high variability between methods and summarize general performance across all metrics in Figure 5. They do not make recommendations as to a specific method/tool. Of note is that Seurat switched to using the wilcoxon test by default after this study was released, as it performed much better than their previously available methods.
 
-**Additional links:** The authors make their benchmarking pipeline, [conquer](https://github.com/markrobinsonuzh/conquer), available on Github. Their processed data and associated reports have also been [made available](http://imlspenticton.uzh.ch:3838/conquer/) for additional comparisons.
+**Additional links:** The authors make their benchmarking pipeline, [conquer](https://github.com/markrobinsonuzh/conquer), available on Github.
 
 ### Trajectory Inference
 
@@ -862,7 +862,7 @@ See figure 5 for pratical guidelines.
 
 ### Diversity analysis
 
-**Title:** [Evaluating Bioinformatic Pipeline Performance for Forensic Microbiome Analysis](https://onlinelibrary.wiley.com/doi/10.1111/1556-4029.14213)
+**Title:** [Evaluating Bioinformatic Pipeline Performance for Forensic Microbiome Analysis](https://pubmed.ncbi.nlm.nih.gov/31657871/)
 
 **Authors:** Sierra F. Kaszubinski\*, Jennifer L. Pechal\*, et al.
 
