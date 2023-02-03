@@ -214,7 +214,7 @@ The authors also proposed a generalized workflow for differential accessibility 
 
 **Tools/methods compared:** `Total Count (TC)`, `Upper Quartile (UQ)`, `Median (Med),` `DESeq`, `edgeR`, `Quantile (Q)`, `RPKM`.
 
-**Recommendation(s):** The authors recommend [DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html) ([DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) now available as well) or [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), as those methods are robust to the presence of different library sizes and compositions, whereas the (still common) Total Count and RPKM methods are ineffective and should be abandoned.
+**Recommendation(s):** The authors recommend DESeq (now deprecated and replaced by [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)) or [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), as those methods are robust to the presence of different library sizes and compositions, whereas the (still common) Total Count and RPKM methods are ineffective and should be abandoned.
 
 ### Differential Gene Expression
 
@@ -229,7 +229,7 @@ Handling of inter-replicate variability and false positive fraction were the ben
 
 **Tools/methods compared:** `baySeq`, `DEGseq`, `DESeq`, `DESeq2`, `EBSeq`, `edgeR`, `limma`, `Poisson-Seq`, `SAM-Seq`.
 
-**Recommendation(s):** Six of the tools that utilize negative binomial or log-normal distributions ([edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), [DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html), [limma](https://bioconductor.org/packages/release/bioc/html/limma.html), and [EBseq](https://bioconductor.org/packages/release/bioc/html/EBSeq.html) control their identification of false positives well.
+**Recommendation(s):** Six of the tools that utilize negative binomial or log-normal distributions ([edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), DESeq (now deprecated and replaced by [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html), [limma](https://bioconductor.org/packages/release/bioc/html/limma.html), and [EBseq](https://bioconductor.org/packages/release/bioc/html/EBSeq.html) control their identification of false positives well.
 
 **Additional links:** The authors released their benchmarking scripts on [Github](https://github.com/bartongroup/KF_arabidopsis-GRNA).
 
@@ -247,7 +247,7 @@ Each tool was compared against itself as a standard (using all replicates) and a
 **Tools/methods compared:** `baySeq`, `cuffdiff`, `DEGSeq`, `DESeq`, `DESeq2`, `EBSeq`, `edgeR (exact and glm modes)`, `limma`, `NOISeq`, `PoissonSeq`, `SAMSeq`. 
 
 **Recommendation(s):** With fewer than 12 biological replicates, [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) and [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) were the top performers. 
-As replicates increased, [DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html) did a better job minimizing false positives than other tools.
+As replicates increased, DESeq (now deprecated and replaced by [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) did a better job minimizing false positives than other tools.
 
 Additionally, the authors recommend at least six biological replicates should be used, rising to at least 12 if users want to identify all significantly differentially expressed genes no matter the fold change magnitude.
 
@@ -264,7 +264,7 @@ Specificity, sensitivity, and false positive rate were the main benchmarking met
 
 **Tools/methods compared:** `Cuffdiff`, `edgeR`, `DESeq`, `PoissonSeq`, `baySeq`, `limma`.
 
-**Recommendation(s):** Though no method emerged as favorable in all conditions, those that used negative binomial modeling ([DESeq](https://bioconductor.org/packages/release/bioc/html/DESeq.html), [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html)) generally performed best.
+**Recommendation(s):** Though no method emerged as favorable in all conditions, those that used negative binomial modeling (DESeq (now deprecated and replaced by [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)), [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [baySeq](https://bioconductor.org/packages/release/bioc/html/baySeq.html)) generally performed best.
 
 The more replicates, the better. Replicate numbers (both biological and technical) have a greater impact on differential detection accuracy than sequencing depth.
 
@@ -363,7 +363,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Tools/methods compared:** `quanTIseq`, `TIMER`, `CIBERSORT`, `CIBERSORT abs. mode`, `MCPCounter`, `xCell`, `EPIC`.
 
-**Recommendation(s):** Varies. In general, the authors recommend [EPIC](https://gfellerlab.shinyapps.io/EPIC_1-1/) and [quanTIseq](http://icbi.at/software/quantiseq/doc/index.html) due to their overall robustness and absolute (rather than relative) scoring, though [xCell](http://xcell.ucsf.edu/) is recommended for binary presence/absence of cell types and [MCPcounter](https://github.com/ebecht/MCPcounter) was their recommended relative scoring method.
+**Recommendation(s):** Varies. In general, the authors recommend [EPIC](https://github.com/GfellerLab/EPIC) and [quanTIseq](http://icbi.at/software/quantiseq/doc/index.html) due to their overall robustness and absolute (rather than relative) scoring, though [xCell](http://xcell.ucsf.edu/) is recommended for binary presence/absence of cell types and [MCPcounter](https://github.com/ebecht/MCPcounter) was their recommended relative scoring method.
 
 **Additional links:** The authors created an [R package called immunedeconv](https://github.com/icbi-lab/immunedeconv) for easy installation and use of all these methods. For developers, they have made their [benchmarking pipeline](https://github.com/icbi-lab/immune_deconvolution_benchmark) available so that others can reproduce/extend it to test their own tools/methods.
 
@@ -400,7 +400,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Tools/methods compared:** `Sentieon` (`TNscope`, `TNseq`, `DNAseq`), `DeepVariant` (`WGS`), `GATK` (`HC` & `MuTect2`), `NeuSomatic`, `VarScan2`, `Strelka2`
 
-**Recommendation(s):** All the four germline callers had comparable performance on NGS data. For TGS data, all the three callers had similar performance in SNP calling, while [DeepVariant](https://github.com/google/deepvariant) outperformed the others in InDel calling. For somatic variant calling on NGS, Sentieon TNscope and [GATK Mutect2](https://gatk.broadinstitute.org/hc/en-us) outperformed the other callers. Sentieon had the computational cost. 
+**Recommendation(s):** All the four germline callers had comparable performance on NGS data. For TGS data, all the three callers had similar performance in SNP calling, while [DeepVariant](https://github.com/google/deepvariant) outperformed the others in InDel calling. For somatic variant calling on NGS, Sentieon TNscope and [GATK Mutect2](https://gatk.broadinstitute.org/hc/en-us) outperformed the other callers.
 
 --
 
@@ -444,7 +444,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
  - Variant callers: `FreeBayes`, `GATK-HaplotypeCaller`, `GATK-UnifiedGenotyper`, `SAMtools mpileup`, `SNPSVM`
  - Aligners: `bowtie2`, `BWA-mem`, `BWA-sampe`, `CUSHAW3`, `MOSAIK`, `Novoalign`.
 
-**Recommendation(s):** [Novoalign](http://www.novocraft.com/products/novoalign/) with [GATK-UnifiedGenotyper](https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_genotyper_UnifiedGenotyper.php) exhibited the highest sensitivity while producing few false positives. 
+**Recommendation(s):** [Novoalign](http://www.novocraft.com/products/novoalign/) with [GATK-UnifiedGenotyper](https://gatk.broadinstitute.org/hc/en-us) exhibited the highest sensitivity while producing few false positives. 
 In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligner, and `GATK-UnifiedGenotyper` performed well across the top aligners (BWA, bowtie2, and Novoalign).
 
 
@@ -492,7 +492,7 @@ Sensitivity, specificity, positive predictive value, negative predictive value, 
 **Tools/methods compared:** `DECoN`, `CoNVaDING`, `panelcn.MOPS`, `ExomeDepth`, `CODEX2`.
 
 **Recommendation(s):** Most tools performed well, but varied based on datasets. 
-The authors felt [DECoN](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology/groups/lunter-group/lunter-group/decon-detection-of-exon-copy-number) and [panelcn.MOPS](https://bioconductor.org/packages/release/bioc/html/panelcn.mops.html) with optimized parameters were sensitive enough to be used as screening methods in genetic dianostics.
+The authors felt [DECoN](https://www.well.ox.ac.uk/research/research-groups/lunter-group/lunter-group/decon-detection-of-exon-copy-number) and [panelcn.MOPS](https://bioconductor.org/packages/release/bioc/html/panelcn.mops.html) with optimized parameters were sensitive enough to be used as screening methods in genetic dianostics.
 
 **Additional links:** The authors have made their benchmarking code ([CNVbenchmarkeR](https://github.com/TranslationalBioinformaticsIGTP/CNVbenchmarkeR)) available, which can be run to determine optimal parameters for each algorithm for a given user's data.
 
@@ -862,7 +862,7 @@ See figure 5 for pratical guidelines.
 
 ### Diversity analysis
 
-**Title:** [Evaluating Bioinformatic Pipeline Performance for Forensic Microbiome Analysis](https://doi.org/10.1111/1556-4029.14213)
+**Title:** [Evaluating Bioinformatic Pipeline Performance for Forensic Microbiome Analysis](https://onlinelibrary.wiley.com/doi/10.1111/1556-4029.14213)
 
 **Authors:** Sierra F. Kaszubinski\*, Jennifer L. Pechal\*, et al.
 
