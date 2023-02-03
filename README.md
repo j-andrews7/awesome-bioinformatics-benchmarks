@@ -896,6 +896,18 @@ See figure 5 for pratical guidelines.
 
 **Title:** [Comparison of normalization methods for Hi-C data](https://doi.org/10.2144/btn-2019-0105)
 
+**Authors:** Hongqiang Lyu, Erhu Liu, Zhifang Wu
+
+**Journal Info:** Biotechniques, October 2019
+
+**Description:** In this study, the authors compared the performance of 6 Hi-C normalization methods at 8 different resolution levels - 2.5M, 1M, 500k, 250k, 100k, 50k, 10k, and 5k from 4 different Hi-C studies. These methods were compared for heat map texture, statistical quality, influence of resolution, consistency of distance stratum, and reproducibility of TAD architecture. The authors assessed the quality of statistics by comparing the distribution of interaction frequency, correlation of replicates, and comparability of replicates between contexts.
+
+**Tools/methods compared:** `SCN`, `HiCNorm`, `ICE`, `KR`, `chromoR`, and `multiHiCcompare`.
+
+**Recommendation(s):** See **Table 2** for a succinct results summary. In summary, the authors found that use-case determines the best tool. All of these methods except `multiHiCcompare` are single sample methods, which led to `multiHiCcompare` performing the best in many considerations, including distribution of interaction frequency, comparability between contexts, and consistency of distance stratum. However, `multiHiCcompare` is by far the most computationally expensive and requires a large number of samples to be useful. `SCN` and `KR` show the best reproducibility of TAD architecture across various resolutions. `chromoR` was found to blur interaction heatmaps at lower resolutions due to its de-noising procedure, though it was also found the achieve the best correlation of replicates at mid-resolutions (500k, 250k).
+
+**Additional links:** The authors have made their implementations to run the various methods available on [GitHub](https://github.com/lhqxinghun/bioinformatics/tree/master/Hi-C/NormCompare).
+
 # Contributors
 
  - Jared Andrews ([@j-andrews7](https://github.com/j-andrews7/))
