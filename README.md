@@ -148,11 +148,11 @@ ZINBA was the least performant by a massive margin, requiring much more time to 
 
 **Journal Info:** Epigenetics & Chromatin, April 2020
 
-**Description:** This paper compares the effect of normalization method during differential ATAC-seq analysis. 
+**Description:** The study examines how different ATAC-seq data normalization methods impact the analysis and interpretation of differential chromatin accessibility (DA). Using both in vivo and published yeast ATAC-seq datasets, the authors demonstrate that the choice of normalization method can significantly alter the identification of differentially accessible regions in the genome.
 
 **Tools/methods compared:**  `MACS2`, `DiffBind`, `csaw`, `voom`, `DEseq2`, `edgeR`, `limma`
 
-**Recommendation(s):**  This paper compares 8 analytical approaches to calculate ATAC-seq differential accessibility (the description of different combination can be seen in paper Table1). The authors found different analytical approaches can produce very differential chromatin accessibility results using MA-plots. 
+**Recommendation(s):**  The authors recommend systematic comparison of multiple normalization methods before proceeding with differential accessibility analysis. They stress the importance of understanding the potential biases and assumptions of each method. They also propose a generalized workflow for differential ATAC-seq data analysis, emphasizing the need for standardizing molecular complexity before quantification. This workflow is based on the standardized ENCODE pipeline with modifications for ATAC-seq.
 
 The authors also proposed a generalized workflow for differential accessibility analysis, which can be found in [Github](https://github.com/reskejak/ATAC-seq)
 
@@ -379,7 +379,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Tools/methods compared:** `quanTIseq`, `TIMER`, `CIBERSORT`, `CIBERSORT abs. mode`, `MCPCounter`, `xCell`, `EPIC`.
 
-**Recommendation(s):** Varies. In general, the authors recommend [EPIC](https://github.com/GfellerLab/EPIC) and [quanTIseq](http://icbi.at/software/quantiseq/doc/index.html) due to their overall robustness and absolute (rather than relative) scoring, though [xCell](http://xcell.ucsf.edu/) is recommended for binary presence/absence of cell types and [MCPcounter](https://github.com/ebecht/MCPcounter) was their recommended relative scoring method.
+**Recommendation(s):** Varies. In general, the authors recommend [EPIC](https://github.com/GfellerLab/EPIC) and [quanTIseq](http://icbi.at/software/quantiseq/doc/index.html) due to their overall robustness and absolute (rather than relative) scoring, though [xCell](https://comphealth.ucsf.edu/app/xcell) is recommended for binary presence/absence of cell types and [MCPcounter](https://github.com/ebecht/MCPcounter) was their recommended relative scoring method.
 
 **Additional links:** The authors created an [R package called immunedeconv](https://github.com/icbi-lab/immunedeconv) for easy installation and use of all these methods. For developers, they have made their [benchmarking pipeline](https://github.com/icbi-lab/immune_deconvolution_benchmark) available so that others can reproduce/extend it to test their own tools/methods.
 
@@ -508,7 +508,7 @@ Sensitivity, specificity, positive predictive value, negative predictive value, 
 **Tools/methods compared:** `DECoN`, `CoNVaDING`, `panelcn.MOPS`, `ExomeDepth`, `CODEX2`.
 
 **Recommendation(s):** Most tools performed well, but varied based on datasets. 
-The authors felt [DECoN](https://www.well.ox.ac.uk/research/research-groups/lunter-group/lunter-group/decon-detection-of-exon-copy-number) and [panelcn.MOPS](https://bioconductor.org/packages/release/bioc/html/panelcn.mops.html) with optimized parameters were sensitive enough to be used as screening methods in genetic dianostics.
+The authors felt [DECoN](https://github.com/RahmanTeam/DECoN) and [panelcn.MOPS](https://bioconductor.org/packages/release/bioc/html/panelcn.mops.html) with optimized parameters were sensitive enough to be used as screening methods in genetic dianostics.
 
 **Additional links:** The authors have made their benchmarking code ([CNVbenchmarkeR](https://github.com/TranslationalBioinformaticsIGTP/CNVbenchmarkeR)) available, which can be run to determine optimal parameters for each algorithm for a given user's data.
 
