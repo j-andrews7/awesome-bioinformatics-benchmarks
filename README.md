@@ -191,9 +191,9 @@ The authors also proposed a generalized workflow for differential accessibility 
 
 ### Normalisation Methods
 
-**Title:** [Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions](file-08LbwxSaTiUWbVaD8yufA6hB)
+**Title:** [Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions](https://academic.oup.com/bib/article/19/5/776/3056951)
 
-**Authors:** Ciaran Evans, Johanna Hardin, Daniel M. Stoebel
+**Authors:** Ciaran Evans, et al.
 
 **Journal Info:** Briefings in Bioinformatics, February 2017
 
@@ -615,7 +615,7 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 
 **Recommendation(s):** The authors recommend using the [minimap2](https://github.com/lh3/minimap2) aligner in combination with the SV caller [Sniffles](https://github.com/fritzsedlazeck/Sniffles) because of their speed and relatively balanced performance.
 
-**Additional links (optional):** The authors provide [all code used in the study](https://github.com/JXing-Lab/nanopore-sv-evaluation) as well as a singularity package containing pre-installed programs and all seven pipeline.
+**Additional links:** The authors provide [all code used in the study](https://github.com/JXing-Lab/nanopore-sv-evaluation) as well as a singularity package containing pre-installed programs and all seven pipeline.
 
 ## Single Cell
 
@@ -645,6 +645,23 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 - Overall, despite extensive research in preprocessing methods for single-cell RNA-seq data, the shifted logarithm still ranks among the best, underlining the utility of lower-dimensional embeddings of the transformed count matrix for noise reduction and fidelity increase.
 
 **Additional links:** An [interactive website](https://shiny-portal.embl.de/shinyapps/app/08_single-cell_transformation_benchmark) with all results for all tested parameter combinations is provided.
+
+### Gene Signature Scoring
+
+**Title:** [Signature-scoring methods developed for bulk samples are not adequate for cancer single-cell RNA sequencing data](https://elifesciences.org/articles/71994)
+
+**Authors:** Nighat Noureen, et al.
+
+**Journal Info:** eLife, February 2022
+
+**Description:** This study benchmarks five signature-scoring methods in the context of cancer single-cell RNA sequencing data. The authors highlight that methods developed for bulk sample analysis, specifically single sample gene set enrichment analysis (ssGSEA) and Gene Set Variation Analysis (GSVA), show biases and inaccuracies when applied to single-cell data. This is attributed to the higher gene counts in cancer cells compared to normal cells, which affects the performance of ssGSEA and GSVA. The study emphasizes the importance of considering cellular context in signature scoring, especially the effect of dropouts in single-cell data.
+
+**Tools/methods compared:** `ssGSEA`, `GSVA`, `AUCell`, `Single Cell Signature Explorer (SCSE)`, `Jointly Assessing Signature Mean and Inferring Enrichment (JASMINE)`
+
+**Recommendation(s):** The study recommends caution when using bulk-sample-based methods like ssGSEA and GSVA for single-cell RNA sequencing data due to their susceptibility to biases caused by high gene counts and dropouts in cancer cells. Single-cell-based methods, particularly JASMINE and SCSE, are more robust in this context. JASMINE, a new method developed in this study, showed particular effectiveness in accounting for dropouts and evaluating average expression levels of expressed signature genes. Typically, I'd avoid adding a paper in which the author's are touting their new tool, but I feel the contextual information therein is invaluable in this case.
+
+**Additional links:** The GitHub repository for JASMINE is available [here](https://github.com/NNoureen/JASMINE).
+
 
 ### scRNA Sequencing Protocols
 
