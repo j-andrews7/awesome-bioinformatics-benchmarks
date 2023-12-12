@@ -190,6 +190,22 @@ The authors also proposed a generalized workflow for differential accessibility 
 
 ### Normalisation Methods
 
+**Title:** [Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions](file-08LbwxSaTiUWbVaD8yufA6hB)
+
+**Authors:** Ciaran Evans, Johanna Hardin, Daniel M. Stoebel
+
+**Journal Info:** Briefings in Bioinformatics, February 2017
+
+**Description:** This study underscores the importance of selecting appropriate normalization methods in RNA-Seq studies based on their underlying assumptions. It highlights how normalization choices impact gene behavior analysis under various biological conditions. The paper emphasizes the critical role of assumptions in normalization methods and their effects on the accuracy of downstream analyses, such as detecting differential expression. The study utilized simulations to evaluate normalization methods under varying conditions of mRNA/cell levels and asymmetry in gene expression, assessing error in fold change estimates and empirical error rates in detecting differential expression.
+
+**Tools/methods compared:** The paper provides a general discussion on RNA-Seq normalization methods, focusing on the types (e.g., normalization by library size, normalization by distribution, normalization by testing) rather than specific tools. The simulations used various methods, including DEGES, DESeq, Oracle, PoissonSeq, TMM, and Total Count.
+
+**Recommendation(s):** The authors suggest selecting normalization methods based on the specific conditions of the biological experiment. Library size normalization is effective when total mRNA/cell is consistent across conditions, whereas normalization by distribution/testing is better suited for conditions with symmetry in differential expression, regardless of mRNA/cell differences. In scenarios with both asymmetry and varying mRNA/cell levels, both methods are expected to perform poorly.
+
+**Additional links:** The authors' simulation code is available on [Github](https://github.com/ciaranlevans/rnaSeqAssumptions).
+
+---
+
 **Title:** [Statistical models for RNA-seq data derived from a two-condition 48-replicate experiment](https://academic.oup.com/bioinformatics/article/31/22/3625/240923)
 
 **Authors:** Marek Gierliński\*, Christian Cole\*, Pietá Schofield\*, Nicholas J. Schurch\*, et al.
