@@ -24,6 +24,7 @@ If you have a benchmarking study that is not yet included on this list, please m
     - [Differential Splicing](#differential-splicing)
     - [_de novo_ Assembly and Quantification](#de-novo-assembly-and-quantification)
     - [Cell-Type Deconvolution](#cell-type-deconvolution)
+  - [CRISPR Screens](#crispr-screens)
   - [RNA/cDNA Microarrays](#rnacdna-microarrays)
   - [Variant Callers](#variant-callers)
     - [Germline SNP/Indel Callers](#germline-snpindel-callers)
@@ -87,7 +88,7 @@ Papers within each section should be ordered by publication date, with more rece
 
 **Journal Info:** Genome Biology, June 2019
 
-**Description:** This paper presents 10 main guidelines for conducting and writing benchmark papers which data, methods and metric choices, reproducible research, and documentation
+**Description:** This paper presents 10 main guidelines for conducting and writing benchmark papers covering necessary data, methods and metric choices, reproducible research, and documentation.
 
 ---
 
@@ -399,7 +400,29 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Additional links:** The authors provide their benchmarking code [on Github](https://github.com/favilaco/deconv_benchmark).
 
-## RNA/cDNA Microarrays
+## CRISPR Screens
+
+### Hit/Dependency Identification
+
+**Title:** [A benchmark of algorithms for the analysis of pooled CRISPR screens](https://doi.org/10.1186/s13059-020-01972-x)
+
+**Authors:** Sunil Bodapati*, Timothy P. Daley*, et al.
+
+**Journal Info:** Genome Biology, March 2020
+
+**Description:** This study evaluates and compares various algorithms used for analyzing data from pooled CRISPR screens, using a comprehensive simulation framework and real datasets. The algorithms were benchmarked for their ability to accurately identify essential genes in CRISPR knockout (CRISPRko), CRISPR interference (CRISPRi), and CRISPR activation (CRISPRa) screens. Key parameters such as the number of guides per gene, guide binding efficiency, sequencing depth, and control guides were varied to assess the robustness of these algorithms under different conditions.
+
+**Tools/methods compared:** The study compared several algorithms, including Redundant siRNA Activity (RSA), MAGeCK Robust Ranking Algorithm (RRA), HiTSelect, MAGeCK Maximum Likelihood Estimation (MLE), CRISPhieRmix, CERES, JACKS, and a standard t test. BAGEL was also discussed, but not included in the testing due to its requirement of a priori knowledge.
+
+**Recommendation(s):** 
+1. MAGeCK RRA is recommended for general use due to its robustness and consistent performance across various conditions.
+2. CRISPhieRmix is suggested for screens with high variable guide efficiency, such as in CRISPRi or CRISPRa screens.
+3. For multiple screens across different cell types or lines, MAGeCK MLE, JACKS, and CERES are good options.
+4. The study also highlights that a simple t test can be effective when suitable control guides are used.
+5. The number of guides per gene is crucial, with four being the minimum recommended for reliable results. More guides may be necessary for low-signal phenotypes.
+6. Sequencing depth is less critical than previously thought, with the performance of most algorithms plateauing at 25 reads per guide.
+
+**Additional links (optional):** The simulation framework and scripts used in the study are available at [GitHub - CRISPR Benchmarking Algorithms](https://github.com/sbodapati/CRISPR_Benchmarking_Algorithms).
 
 
 ## Variant Callers
