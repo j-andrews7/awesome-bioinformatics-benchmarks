@@ -742,9 +742,23 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 ### Integration/Batch Correction
 
+**Title:** [Benchmarking multi-omics integration algorithms across single-cell RNA and ATAC data](https://www.biorxiv.org/content/10.1101/2023.11.15.564963v1.full)
+
+**Authors:** Chuxi Xiao, et al.
+
+**Journal Info:** bioRxiv, November 2023
+
+**Description:** This study benchmarks 12 multi-omics integration methods across three integration tasks, assessing their performance in combining single-cell RNA (scRNA-seq) and ATAC (scATAC-seq) data. The evaluation considers aspects such as the extent of mixing between different omics, cell type conservation, single-cell level alignment accuracy, trajectory preservation, scalability, and ease of use.
+
+**Tools/methods compared:** `scMVP`, `MOFA+`, `MultiVI`, `Cobolt`, `scDART`, `UnionCom`, `MMD-MA`, `scJoint`, `Harmony`, `Seurat (v4.3)`, `LIGER`, `GLUE`.
+
+**Recommendation(s):** The study recommends different methods based on dataset type and size. For unpaired datasets, `GLUE` is preferred. In paired tasks, `GLUE` and `MultiVI` are top choices, with the latter excelling in trajectory conservation. For omics mixing, `scDART`, `LIGER`, and `Seurat` are recommended. For cell type conservation, `MOFA+` and `scMVP` are viable options. In terms of scalability, `Seurat`, `LIGER`, and `MOFA+` are efficient. For ease of use, `scDART`, `scJoint`, and `Seurat` are highlighted for their detailed guidance.
+
+---
+
 **Title:** [A benchmark of batch-effect correction methods for single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1850-9)
 
-**Authors:** Hoa Thi Nhu Tran et al.
+**Authors:** Hoa Thi Nhu Tran, et al.
 
 **Journal Info:** Genome Biology, January 2020
 
