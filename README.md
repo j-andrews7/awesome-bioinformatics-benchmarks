@@ -422,7 +422,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 5. The number of guides per gene is crucial, with four being the minimum recommended for reliable results. More guides may be necessary for low-signal phenotypes.
 6. Sequencing depth is less critical than previously thought, with the performance of most algorithms plateauing at 25 reads per guide.
 
-**Additional links (optional):** The simulation framework and scripts used in the study are available at [GitHub - CRISPR Benchmarking Algorithms](https://github.com/sbodapati/CRISPR_Benchmarking_Algorithms).
+**Additional links:** The simulation framework and scripts used in the study are available at [GitHub - CRISPR Benchmarking Algorithms](https://github.com/sbodapati/CRISPR_Benchmarking_Algorithms).
 
 
 ## Variant Callers
@@ -618,6 +618,33 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 **Additional links (optional):** The authors provide [all code used in the study](https://github.com/JXing-Lab/nanopore-sv-evaluation) as well as a singularity package containing pre-installed programs and all seven pipeline.
 
 ## Single Cell
+
+### scRNA Transformations/Normalization
+
+**Title:** [Comparison of transformations for single-cell RNA-seq data](https://doi.org/10.1038/s41592-023-01814-1)
+
+**Authors:** Constantin Ahlmann-Eltze & Wolfgang Huber
+
+**Journal Info:** Nature Methods, May 2023
+
+**Description:** This study evaluates 22 transformations for preprocessing single-cell RNA-sequencing data. These transformations are aimed at adjusting counts for variable sampling efficiency and making variance similar across the dynamic range. The research focuses on understanding cell types and states in terms of lower-dimensional mathematical structures, with benchmarks designed to assess the ability of transformations to recover latent cell structures.
+
+**Tools/methods compared:**
+1. **Delta method-based variance-stabilizing transformations:** acosh transformation, shifted logarithm (with pseudo-count y0 = 1 or y0 = 1/4α), shifted logarithm with CPM, and additional variations including HVG selection, z scoring, and output rescaling.
+2. **Residuals-based variance-stabilizing transformations:** clipped and unclipped Pearson residuals (implemented by sctransform and transformGamPoi), randomized quantile residuals, clipped Pearson residuals with HVG selection, z scoring, and an analytical approximation to the Pearson residuals.
+3. **Latent gene expression-based transformations (Lat Expr):** Sanity Distance, Sanity MAP, Dino, Normalisr.
+4. **Count-based factor analysis models (Count):** GLM PCA, NewWave.
+5. **Negative controls:** raw untransformed counts (y) and raw counts scaled by the size factor (y/s).
+
+**Recommendation(s):**
+- The shifted logarithm transformation (log(y/s + y0) with y0 = 1) followed by PCA performed well, often better than more sophisticated alternatives.
+- The study advises against using CPM as input for the shifted logarithm due to unrealistic large overdispersion assumptions.
+- Pearson residuals-based transformation has good theoretical properties and performed similarly to the shifted logarithm. However, it has limitations in handling genes with large dynamic range across cells.
+- Latent expression state transformations and count-based latent factor models did not outperform the shifted logarithm and were computationally expensive.
+- The delta method-based transformation produced more consistent results on the 10x datasets.
+- Overall, despite extensive research in preprocessing methods for single-cell RNA-seq data, the shifted logarithm still ranks among the best, underlining the utility of lower-dimensional embeddings of the transformed count matrix for noise reduction and fidelity increase.
+
+**Additional links:** An [interactive website](https://shiny-portal.embl.de/shinyapps/app/08_single-cell_transformation_benchmark) with all results for all tested parameter combinations is provided.
 
 ### scRNA Sequencing Protocols
 
