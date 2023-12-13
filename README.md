@@ -25,7 +25,7 @@ If you have a benchmarking study that is not yet included on this list, please m
     - [_de novo_ Assembly and Quantification](#de-novo-assembly-and-quantification)
     - [Cell-Type Deconvolution](#cell-type-deconvolution)
   - [CRISPR Screens](#crispr-screens)
-  - [RNA/cDNA Microarrays](#rnacdna-microarrays)
+  - [DNA Methylation](#dna-methylation)
   - [Variant Callers](#variant-callers)
     - [Germline SNP/Indel Callers](#germline-snpindel-callers)
     - [Somatic SNV/Indel callers](#somatic-snvindel-callers)
@@ -425,6 +425,31 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 6. Sequencing depth is less critical than previously thought, with the performance of most algorithms plateauing at 25 reads per guide.
 
 **Additional links:** The simulation framework and scripts used in the study are available at [GitHub - CRISPR Benchmarking Algorithms](https://github.com/sbodapati/CRISPR_Benchmarking_Algorithms).
+
+## DNA Methylation
+
+### Platforms and Library Prep Methods
+
+**Title:** [Systematic evaluation of library preparation methods and sequencing platforms for high-throughput whole genome bisulfite sequencing](https://www.nature.com/articles/s41598-019-46875-5)
+
+**Authors:** Li Zhou, Hong Kiat Ng, Daniela I. Drautz-Moses, Stephan C. Schuster, Stephan Beck, Changhoon Kim, John Campbell Chambers, & Marie Loh
+
+**Journal Info:** Scientific Reports, 2019
+
+**Description:** This study focuses on improving strategies for whole genome bisulfite sequencing (WGBS) used in large-scale epidemiological studies. It systematically compares three WGBS library preparation methods (Swift Biosciences Accel-NGS, Illumina TruSeq, and QIAGEN QIAseq) across two Illumina sequencing platforms (NovaSeq and HiSeq X). The study also examines the concordance between WGBS and methylation array data. The study assayed quality metrics (Q20 and Q30 fractions), insert size, adaptor contamination, overlapping bases, read duplication rate, alignment rate, coverage depth, and genome coverage uniformity across the platforms.
+
+**Tools/methods compared:** 
+- Library Preparation Methods: Swift Biosciences Accel-NGS, Illumina TruSeq, QIAGEN QIAseq.
+- Sequencing Platforms: Illumina NovaSeq, HiSeq X.
+
+**Recommendation(s):**
+- Swift Biosciences Accel-NGS achieved the highest proportion of CpG sites assayed and effective coverage, making it the most recommended method.
+- Illumina TruSeq had a high proportion of PCR duplicates, while QIAGEN QIAseq generally underperformed across all quality metrics.
+- NovaSeq and HiSeq X platforms showed similar performance, except for a higher read duplication rate in NovaSeq.
+- WGBS was less precise than methylation arrays, requiring a minimum coverage of 100x for comparable precision.
+- Swift outperformed other methods in terms of uniform genome coverage and CpG site coverage at lower depths.
+- No significant differences in nucleotide amplification bias were observed between NovaSeq and HiSeq X.
+- For quantifying DNA methylation, WGBS with Swift on HiSeq X outperformed methylation arrays in CpG coverage.
 
 
 ## Variant Callers
