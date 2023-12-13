@@ -432,7 +432,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Title:** [Systematic evaluation of library preparation methods and sequencing platforms for high-throughput whole genome bisulfite sequencing](https://www.nature.com/articles/s41598-019-46875-5)
 
-**Authors:** Li Zhou, Hong Kiat Ng, Daniela I. Drautz-Moses, Stephan C. Schuster, Stephan Beck, Changhoon Kim, John Campbell Chambers, & Marie Loh
+**Authors:** Li Zhou, et al.
 
 **Journal Info:** Scientific Reports, 2019
 
@@ -451,6 +451,30 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 - No significant differences in nucleotide amplification bias were observed between NovaSeq and HiSeq X.
 - For quantifying DNA methylation, WGBS with Swift on HiSeq X outperformed methylation arrays in CpG coverage.
 
+---
+
+**Title:** [Comparison and imputation-aided integration of five commercial platforms for targeted DNA methylome analysis](https://doi.org/10.1038/s41587-022-01336-9)
+
+**Authors:** Miljana Tanić, et al.
+
+**Journal Info:** Nature Biotechnology, October 2022.
+
+**Description:** This study benchmarks five commercial Targeted Bisulfite Sequencing (TBS) platforms for analyzing human DNA methylomes at base-pair resolution. The platforms include three hybridization capture-based (Agilent, Roche, and Illumina) and two reduced-representation-based (Diagenode and NuGen). Eleven sample types were analyzed, including cell lines and DNA methylation standards. Two samples were also compared with whole-genome DNA methylation sequencing using Illumina and Oxford Nanopore platforms. Key assessment parameters included workflow complexity, on/off-target performance, coverage accuracy, and reproducibility.
+
+**Tools/methods compared:** 
+- Hybridization capture-based platforms: Agilent SureSelect Methyl-Seq, Roche NimbleGen SeqCap EpiGiant, and Illumina TruSeq Methyl Capture EPIC.
+- Reduced-representation-based platforms: Diagenode Premium RRBS and NuGen Ovation RRBS Methyl-Seq.
+
+**Recommendation(s):**
+- Each platform exhibited strengths and limitations in coverage, reproducibility, and concordance of DNA methylation levels. 
+- RRBS platforms (Diagenode and NuGen) showed more uniform CpG coverage compared to hybridization capture-based methods (Agilent, Roche, Illumina). 
+- Illumina’s platform had the highest on-target capture efficiency (~90.6%), followed by Agilent's (~78.2%) and Roche's (~61.5%).
+- Differences in CpG coverage between platforms indicated varying suitability for specific genomic features. For instance, RRBS platforms had higher coverage in CpG islands and shores, while Roche excelled in covering open-sea regions and Illumina in enhancer regions.
+- High intra-platform and inter-platform correlation in DNA methylation levels were observed, except for Diagenode, which slightly underperformed.
+- All TBS platforms showed a strong correlation to whole-genome bisulfite sequencing (WGBS) and Oxford Nanopore data, suggesting their reliability for DNA methylome analysis.
+- The study suggests considering specific genomic feature coverage and desired analysis depth when choosing a TBS platform.
+
+**Additional links:** The authors provide their analysis code on [Github](https://github.com/ucl-medical-genomics/EpiCapture).
 
 ## Variant Callers
 
