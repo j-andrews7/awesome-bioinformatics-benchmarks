@@ -32,6 +32,8 @@ If you have a benchmarking study that is not yet included on this list, please m
     - [CNV Callers](#cnv-callers)
     - [SV callers](#sv-callers)
   - [Single Cell](#single-cell)
+    - [scRNA Transformation/Normalization](#scrna-transformationsnormalization)
+    - [Gene Signature Scoring](#gene-signature-scoring)
     - [scRNA Sequencing Protocols](#scrna-sequencing-protocols)
     - [scRNA Analysis Pipelines](#scrna-analysis-pipelines)
     - [scRNA Imputation Methods](#scrna-imputation-methods)
