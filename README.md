@@ -24,13 +24,18 @@ If you have a benchmarking study that is not yet included on this list, please m
     - [Differential Splicing](#differential-splicing)
     - [_de novo_ Assembly and Quantification](#de-novo-assembly-and-quantification)
     - [Cell-Type Deconvolution](#cell-type-deconvolution)
-  - [RNA/cDNA Microarrays](#rnacdna-microarrays)
+  - [CRISPR Screens](#crispr-screens)
+  - [DNA Methylation](#dna-methylation)
+    - [Platforms and Library Prep Methods](#platforms-and-library-prep-methods)
+    - [Cpg Methylation from Nanopore Data](#cpg-methylation-from-nanopore-data)
   - [Variant Callers](#variant-callers)
     - [Germline SNP/Indel Callers](#germline-snpindel-callers)
     - [Somatic SNV/Indel callers](#somatic-snvindel-callers)
     - [CNV Callers](#cnv-callers)
     - [SV callers](#sv-callers)
   - [Single Cell](#single-cell)
+    - [scRNA Transformation/Normalization](#scrna-transformationsnormalization)
+    - [Gene Signature Scoring](#gene-signature-scoring)
     - [scRNA Sequencing Protocols](#scrna-sequencing-protocols)
     - [scRNA Analysis Pipelines](#scrna-analysis-pipelines)
     - [scRNA Imputation Methods](#scrna-imputation-methods)
@@ -87,7 +92,7 @@ Papers within each section should be ordered by publication date, with more rece
 
 **Journal Info:** Genome Biology, June 2019
 
-**Description:** This paper presents 10 main guidelines for conducting and writing benchmark papers which data, methods and metric choices, reproducible research, and documentation
+**Description:** This paper presents 10 main guidelines for conducting and writing benchmark papers covering necessary data, methods and metric choices, reproducible research, and documentation.
 
 ---
 
@@ -148,11 +153,11 @@ ZINBA was the least performant by a massive margin, requiring much more time to 
 
 **Journal Info:** Epigenetics & Chromatin, April 2020
 
-**Description:** This paper compares the effect of normalization method during differential ATAC-seq analysis. 
+**Description:** The study examines how different ATAC-seq data normalization methods impact the analysis and interpretation of differential chromatin accessibility (DA). Using both in vivo and published yeast ATAC-seq datasets, the authors demonstrate that the choice of normalization method can significantly alter the identification of differentially accessible regions in the genome.
 
 **Tools/methods compared:**  `MACS2`, `DiffBind`, `csaw`, `voom`, `DEseq2`, `edgeR`, `limma`
 
-**Recommendation(s):**  This paper compares 8 analytical approaches to calculate ATAC-seq differential accessibility (the description of different combination can be seen in paper Table1). The authors found different analytical approaches can produce very differential chromatin accessibility results using MA-plots. 
+**Recommendation(s):**  The authors recommend systematic comparison of multiple normalization methods before proceeding with differential accessibility analysis. They stress the importance of understanding the potential biases and assumptions of each method. They also propose a generalized workflow for differential ATAC-seq data analysis, emphasizing the need for standardizing molecular complexity before quantification. This workflow is based on the standardized ENCODE pipeline with modifications for ATAC-seq.
 
 The authors also proposed a generalized workflow for differential accessibility analysis, which can be found in [Github](https://github.com/reskejak/ATAC-seq)
 
@@ -189,6 +194,22 @@ The authors also proposed a generalized workflow for differential accessibility 
 **Recommendation(s):** Though the authors warn there is no "best" set of annotations to use, they do emphasize the impact that annotation choice can have on downstream analyses such as differential gene expression, as genes with identical gene symbols can map to completely different regions in different annotations. Though Ensembl annotations are much more comprehensive than the others, the authors recommend a less complex genome annotation, such as the Refseq annotation, if the RNA-seq is being used as a replacement for microarrays. Conversely, the Ensembl annotations are preferrable if non-coding RNAs are of particular interest.
 
 ### Normalisation Methods
+
+**Title:** [Selecting between-sample RNA-Seq normalization methods from the perspective of their assumptions](https://academic.oup.com/bib/article/19/5/776/3056951)
+
+**Authors:** Ciaran Evans, et al.
+
+**Journal Info:** Briefings in Bioinformatics, February 2017
+
+**Description:** This study underscores the importance of selecting appropriate normalization methods in RNA-Seq studies based on their underlying assumptions. It highlights how normalization choices impact gene behavior analysis under various biological conditions. The paper emphasizes the critical role of assumptions in normalization methods and their effects on the accuracy of downstream analyses, such as detecting differential expression. The study utilized simulations to evaluate normalization methods under varying conditions of mRNA/cell levels and asymmetry in gene expression, assessing error in fold change estimates and empirical error rates in detecting differential expression.
+
+**Tools/methods compared:** The paper provides a general discussion on RNA-Seq normalization methods, focusing on the types (e.g., normalization by library size, normalization by distribution, normalization by testing) rather than specific tools. The simulations used various methods, including DEGES, DESeq, Oracle, PoissonSeq, TMM, and Total Count.
+
+**Recommendation(s):** The authors suggest selecting normalization methods based on the specific conditions of the biological experiment. Library size normalization is effective when total mRNA/cell is consistent across conditions, whereas normalization by distribution/testing is better suited for conditions with symmetry in differential expression, regardless of mRNA/cell differences. In scenarios with both asymmetry and varying mRNA/cell levels, both methods are expected to perform poorly.
+
+**Additional links:** The authors' simulation code is available on [Github](https://github.com/ciaranlevans/rnaSeqAssumptions).
+
+---
 
 **Title:** [Statistical models for RNA-seq data derived from a two-condition 48-replicate experiment](https://academic.oup.com/bioinformatics/article/31/22/3625/240923)
 
@@ -363,7 +384,7 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Tools/methods compared:** `quanTIseq`, `TIMER`, `CIBERSORT`, `CIBERSORT abs. mode`, `MCPCounter`, `xCell`, `EPIC`.
 
-**Recommendation(s):** Varies. In general, the authors recommend [EPIC](https://github.com/GfellerLab/EPIC) and [quanTIseq](http://icbi.at/software/quantiseq/doc/index.html) due to their overall robustness and absolute (rather than relative) scoring, though [xCell](http://xcell.ucsf.edu/) is recommended for binary presence/absence of cell types and [MCPcounter](https://github.com/ebecht/MCPcounter) was their recommended relative scoring method.
+**Recommendation(s):** Varies. In general, the authors recommend [EPIC](https://github.com/GfellerLab/EPIC) and [quanTIseq](http://icbi.at/software/quantiseq/doc/index.html) due to their overall robustness and absolute (rather than relative) scoring, though [xCell](https://comphealth.ucsf.edu/app/xcell) is recommended for binary presence/absence of cell types and [MCPcounter](https://github.com/ebecht/MCPcounter) was their recommended relative scoring method.
 
 **Additional links:** The authors created an [R package called immunedeconv](https://github.com/icbi-lab/immunedeconv) for easy installation and use of all these methods. For developers, they have made their [benchmarking pipeline](https://github.com/icbi-lab/immune_deconvolution_benchmark) available so that others can reproduce/extend it to test their own tools/methods.
 
@@ -383,8 +404,105 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 **Additional links:** The authors provide their benchmarking code [on Github](https://github.com/favilaco/deconv_benchmark).
 
-## RNA/cDNA Microarrays
+## CRISPR Screens
 
+### Hit/Dependency Identification
+
+**Title:** [A benchmark of algorithms for the analysis of pooled CRISPR screens](https://doi.org/10.1186/s13059-020-01972-x)
+
+**Authors:** Sunil Bodapati*, Timothy P. Daley*, et al.
+
+**Journal Info:** Genome Biology, March 2020
+
+**Description:** This study evaluates and compares various algorithms used for analyzing data from pooled CRISPR screens, using a comprehensive simulation framework and real datasets. The algorithms were benchmarked for their ability to accurately identify essential genes in CRISPR knockout (CRISPRko), CRISPR interference (CRISPRi), and CRISPR activation (CRISPRa) screens. Key parameters such as the number of guides per gene, guide binding efficiency, sequencing depth, and control guides were varied to assess the robustness of these algorithms under different conditions.
+
+**Tools/methods compared:** The study compared several algorithms, including Redundant siRNA Activity (RSA), MAGeCK Robust Ranking Algorithm (RRA), HiTSelect, MAGeCK Maximum Likelihood Estimation (MLE), CRISPhieRmix, CERES, JACKS, and a standard t test. BAGEL was also discussed, but not included in the testing due to its requirement of a priori knowledge.
+
+**Recommendation(s):** 
+1. MAGeCK RRA is recommended for general use due to its robustness and consistent performance across various conditions.
+2. CRISPhieRmix is suggested for screens with high variable guide efficiency, such as in CRISPRi or CRISPRa screens.
+3. For multiple screens across different cell types or lines, MAGeCK MLE, JACKS, and CERES are good options.
+4. The study also highlights that a simple t test can be effective when suitable control guides are used.
+5. The number of guides per gene is crucial, with four being the minimum recommended for reliable results. More guides may be necessary for low-signal phenotypes.
+6. Sequencing depth is less critical than previously thought, with the performance of most algorithms plateauing at 25 reads per guide.
+
+**Additional links:** The simulation framework and scripts used in the study are available at [GitHub - CRISPR Benchmarking Algorithms](https://github.com/sbodapati/CRISPR_Benchmarking_Algorithms).
+
+## DNA Methylation
+
+### Platforms and Library Prep Methods
+
+**Title:** [Systematic evaluation of library preparation methods and sequencing platforms for high-throughput whole genome bisulfite sequencing](https://www.nature.com/articles/s41598-019-46875-5)
+
+**Authors:** Li Zhou, et al.
+
+**Journal Info:** Scientific Reports, 2019
+
+**Description:** This study focuses on improving strategies for whole genome bisulfite sequencing (WGBS) used in large-scale epidemiological studies. It systematically compares three WGBS library preparation methods (Swift Biosciences Accel-NGS, Illumina TruSeq, and QIAGEN QIAseq) across two Illumina sequencing platforms (NovaSeq and HiSeq X). The study also examines the concordance between WGBS and methylation array data. The study assayed quality metrics (Q20 and Q30 fractions), insert size, adaptor contamination, overlapping bases, read duplication rate, alignment rate, coverage depth, and genome coverage uniformity across the platforms.
+
+**Tools/methods compared:** 
+- Library Preparation Methods: Swift Biosciences Accel-NGS, Illumina TruSeq, QIAGEN QIAseq.
+- Sequencing Platforms: Illumina NovaSeq, HiSeq X.
+
+**Recommendation(s):**
+- Swift Biosciences Accel-NGS achieved the highest proportion of CpG sites assayed and effective coverage, making it the most recommended method.
+- Illumina TruSeq had a high proportion of PCR duplicates, while QIAGEN QIAseq generally underperformed across all quality metrics.
+- NovaSeq and HiSeq X platforms showed similar performance, except for a higher read duplication rate in NovaSeq.
+- WGBS was less precise than methylation arrays, requiring a minimum coverage of 100x for comparable precision.
+- Swift outperformed other methods in terms of uniform genome coverage and CpG site coverage at lower depths.
+- No significant differences in nucleotide amplification bias were observed between NovaSeq and HiSeq X.
+- For quantifying DNA methylation, WGBS with Swift on HiSeq X outperformed methylation arrays in CpG coverage.
+
+---
+
+**Title:** [Comparison and imputation-aided integration of five commercial platforms for targeted DNA methylome analysis](https://doi.org/10.1038/s41587-022-01336-9)
+
+**Authors:** Miljana Tanić, et al.
+
+**Journal Info:** Nature Biotechnology, October 2022.
+
+**Description:** This study benchmarks five commercial Targeted Bisulfite Sequencing (TBS) platforms for analyzing human DNA methylomes at base-pair resolution. The platforms include three hybridization capture-based (Agilent, Roche, and Illumina) and two reduced-representation-based (Diagenode and NuGen). Eleven sample types were analyzed, including cell lines and DNA methylation standards. Two samples were also compared with whole-genome DNA methylation sequencing using Illumina and Oxford Nanopore platforms. Key assessment parameters included workflow complexity, on/off-target performance, coverage accuracy, and reproducibility.
+
+**Tools/methods compared:** 
+- Hybridization capture-based platforms: Agilent SureSelect Methyl-Seq, Roche NimbleGen SeqCap EpiGiant, and Illumina TruSeq Methyl Capture EPIC.
+- Reduced-representation-based platforms: Diagenode Premium RRBS and NuGen Ovation RRBS Methyl-Seq.
+
+**Recommendation(s):**
+- Each platform exhibited strengths and limitations in coverage, reproducibility, and concordance of DNA methylation levels. 
+- RRBS platforms (Diagenode and NuGen) showed more uniform CpG coverage compared to hybridization capture-based methods (Agilent, Roche, Illumina). 
+- Illumina’s platform had the highest on-target capture efficiency (~90.6%), followed by Agilent's (~78.2%) and Roche's (~61.5%).
+- Differences in CpG coverage between platforms indicated varying suitability for specific genomic features. For instance, RRBS platforms had higher coverage in CpG islands and shores, while Roche excelled in covering open-sea regions and Illumina in enhancer regions.
+- High intra-platform and inter-platform correlation in DNA methylation levels were observed, except for Diagenode, which slightly underperformed.
+- All TBS platforms showed a strong correlation to whole-genome bisulfite sequencing (WGBS) and Oxford Nanopore data, suggesting their reliability for DNA methylome analysis.
+- The study suggests considering specific genomic feature coverage and desired analysis depth when choosing a TBS platform.
+
+**Additional links:** The authors provide their analysis code on [Github](https://github.com/ucl-medical-genomics/EpiCapture).
+
+### CpG Methylation from Nanopore Data
+
+**Title:** [Systematic benchmarking of tools for CpG methylation detection from nanopore sequencing](https://doi.org/10.1038/s41467-021-23778-6)
+
+**Authors:** Zaka Wing-Sze Yuen, et al.
+
+**Journal Info:** Nature Communications, 2021
+
+**Description:** This study systematically benchmarks six tools for detecting 5-methylcytosine (5mC) from nanopore sequencing using individual reads, controlled methylation mixtures, Cas9-targeted sequencing, and whole-genome bisulfite sequencing (WGBS). The research highlights a trade-off between true positives and false positives among these tools and a general high dispersion in predicting methylation frequencies. Metrics include accuracy (true positive rate & true negative rate) at the individual read level and per controlled mixture. The authors also tested a consensus approach combining the results of pairs of callers.
+
+**Tools/methods compared:** `Nanopolish`, `Megalodon`, `DeepSignal`, `Guppy`, `Tombo`, and `DeepMod`.
+
+**Recommendation(s):** 
+- No single method accurately predicts across all methylation frequency ranges. 
+- Guppy excels in identifying unmethylated sites but fails at fully methylated sites.
+- Nanopolish and Tombo accurately recover fully methylated sites but have high false positives at unmethylated sites.
+- Megalodon showed the best overall performance but requires GPU support.
+- The consensus approach METEORE, combining predictions from two or more tools (specifically Megalodon and DeepSignal), improved accuracy over individual methods. It balances accuracy and running times, although it also requires a GPU for efficiency.
+- On a CPU, the combination of Nanopolish and DeepSignal can match Megalodon's accuracy and be time-competitive.
+- Reassessing score cutoffs for individual reads and removing sites with uncertain methylation status can further enhance accuracy. 
+- These methods showed good consistency with WGBS data, suggesting potential for sensitive diagnostic and forensic tests without high coverage.
+- The study also notes that the highest discrepancy with WGBS occurred at CG sites in AT-rich sequences, particularly for DeepMod and DeepSignal.
+
+**Additional links:**
+The authors provide their method for consensus calling (METEORE) on [GitHub](https://github.com/comprna/METEORE).
 
 ## Variant Callers
 
@@ -492,7 +610,7 @@ Sensitivity, specificity, positive predictive value, negative predictive value, 
 **Tools/methods compared:** `DECoN`, `CoNVaDING`, `panelcn.MOPS`, `ExomeDepth`, `CODEX2`.
 
 **Recommendation(s):** Most tools performed well, but varied based on datasets. 
-The authors felt [DECoN](https://www.well.ox.ac.uk/research/research-groups/lunter-group/lunter-group/decon-detection-of-exon-copy-number) and [panelcn.MOPS](https://bioconductor.org/packages/release/bioc/html/panelcn.mops.html) with optimized parameters were sensitive enough to be used as screening methods in genetic dianostics.
+The authors felt [DECoN](https://github.com/RahmanTeam/DECoN) and [panelcn.MOPS](https://bioconductor.org/packages/release/bioc/html/panelcn.mops.html) with optimized parameters were sensitive enough to be used as screening methods in genetic dianostics.
 
 **Additional links:** The authors have made their benchmarking code ([CNVbenchmarkeR](https://github.com/TranslationalBioinformaticsIGTP/CNVbenchmarkeR)) available, which can be run to determine optimal parameters for each algorithm for a given user's data.
 
@@ -576,9 +694,53 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 
 **Recommendation(s):** The authors recommend using the [minimap2](https://github.com/lh3/minimap2) aligner in combination with the SV caller [Sniffles](https://github.com/fritzsedlazeck/Sniffles) because of their speed and relatively balanced performance.
 
-**Additional links (optional):** The authors provide [all code used in the study](https://github.com/JXing-Lab/nanopore-sv-evaluation) as well as a singularity package containing pre-installed programs and all seven pipeline.
+**Additional links:** The authors provide [all code used in the study](https://github.com/JXing-Lab/nanopore-sv-evaluation) as well as a singularity package containing pre-installed programs and all seven pipeline.
 
 ## Single Cell
+
+### scRNA Transformations/Normalization
+
+**Title:** [Comparison of transformations for single-cell RNA-seq data](https://doi.org/10.1038/s41592-023-01814-1)
+
+**Authors:** Constantin Ahlmann-Eltze & Wolfgang Huber
+
+**Journal Info:** Nature Methods, May 2023
+
+**Description:** This study evaluates 22 transformations for preprocessing single-cell RNA-sequencing data. These transformations are aimed at adjusting counts for variable sampling efficiency and making variance similar across the dynamic range. The research focuses on understanding cell types and states in terms of lower-dimensional mathematical structures, with benchmarks designed to assess the ability of transformations to recover latent cell structures.
+
+**Tools/methods compared:**
+1. **Delta method-based variance-stabilizing transformations:** acosh transformation, shifted logarithm (with pseudo-count y0 = 1 or y0 = 1/4α), shifted logarithm with CPM, and additional variations including HVG selection, z scoring, and output rescaling.
+2. **Residuals-based variance-stabilizing transformations:** clipped and unclipped Pearson residuals (implemented by sctransform and transformGamPoi), randomized quantile residuals, clipped Pearson residuals with HVG selection, z scoring, and an analytical approximation to the Pearson residuals.
+3. **Latent gene expression-based transformations (Lat Expr):** Sanity Distance, Sanity MAP, Dino, Normalisr.
+4. **Count-based factor analysis models (Count):** GLM PCA, NewWave.
+5. **Negative controls:** raw untransformed counts (y) and raw counts scaled by the size factor (y/s).
+
+**Recommendation(s):**
+- The shifted logarithm transformation (log(y/s + y0) with y0 = 1) followed by PCA performed well, often better than more sophisticated alternatives.
+- The study advises against using CPM as input for the shifted logarithm due to unrealistic large overdispersion assumptions.
+- Pearson residuals-based transformation has good theoretical properties and performed similarly to the shifted logarithm. However, it has limitations in handling genes with large dynamic range across cells.
+- Latent expression state transformations and count-based latent factor models did not outperform the shifted logarithm and were computationally expensive.
+- The delta method-based transformation produced more consistent results on the 10x datasets.
+- Overall, despite extensive research in preprocessing methods for single-cell RNA-seq data, the shifted logarithm still ranks among the best, underlining the utility of lower-dimensional embeddings of the transformed count matrix for noise reduction and fidelity increase.
+
+**Additional links:** An [interactive website](https://shiny-portal.embl.de/shinyapps/app/08_single-cell_transformation_benchmark) with all results for all tested parameter combinations is provided.
+
+### Gene Signature Scoring
+
+**Title:** [Signature-scoring methods developed for bulk samples are not adequate for cancer single-cell RNA sequencing data](https://elifesciences.org/articles/71994)
+
+**Authors:** Nighat Noureen, et al.
+
+**Journal Info:** eLife, February 2022
+
+**Description:** This study benchmarks five signature-scoring methods in the context of cancer single-cell RNA sequencing data. The authors highlight that methods developed for bulk sample analysis, specifically single sample gene set enrichment analysis (ssGSEA) and Gene Set Variation Analysis (GSVA), show biases and inaccuracies when applied to single-cell data. This is attributed to the higher gene counts in cancer cells compared to normal cells, which affects the performance of ssGSEA and GSVA. The study emphasizes the importance of considering cellular context in signature scoring, especially the effect of dropouts in single-cell data.
+
+**Tools/methods compared:** `ssGSEA`, `GSVA`, `AUCell`, `Single Cell Signature Explorer (SCSE)`, `Jointly Assessing Signature Mean and Inferring Enrichment (JASMINE)`
+
+**Recommendation(s):** The study recommends caution when using bulk-sample-based methods like ssGSEA and GSVA for single-cell RNA sequencing data due to their susceptibility to biases caused by high gene counts and dropouts in cancer cells. Single-cell-based methods, particularly JASMINE and SCSE, are more robust in this context. JASMINE, a new method developed in this study, showed particular effectiveness in accounting for dropouts and evaluating average expression levels of expressed signature genes. Typically, I'd avoid adding a paper in which the author's are touting their new tool, but I feel the contextual information therein is invaluable in this case.
+
+**Additional links:** The GitHub repository for JASMINE is available [here](https://github.com/NNoureen/JASMINE).
+
 
 ### scRNA Sequencing Protocols
 
@@ -742,9 +904,23 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 ### Integration/Batch Correction
 
+**Title:** [Benchmarking multi-omics integration algorithms across single-cell RNA and ATAC data](https://www.biorxiv.org/content/10.1101/2023.11.15.564963v1.full)
+
+**Authors:** Chuxi Xiao, et al.
+
+**Journal Info:** bioRxiv, November 2023
+
+**Description:** This study benchmarks 12 multi-omics integration methods across three integration tasks, assessing their performance in combining single-cell RNA (scRNA-seq) and ATAC (scATAC-seq) data. The evaluation considers aspects such as the extent of mixing between different omics, cell type conservation, single-cell level alignment accuracy, trajectory preservation, scalability, and ease of use.
+
+**Tools/methods compared:** `scMVP`, `MOFA+`, `MultiVI`, `Cobolt`, `scDART`, `UnionCom`, `MMD-MA`, `scJoint`, `Harmony`, `Seurat (v4.3)`, `LIGER`, `GLUE`.
+
+**Recommendation(s):** The study recommends different methods based on dataset type and size. For unpaired datasets, `GLUE` is preferred. In paired tasks, `GLUE` and `MultiVI` are top choices, with the latter excelling in trajectory conservation. For omics mixing, `scDART`, `LIGER`, and `Seurat` are recommended. For cell type conservation, `MOFA+` and `scMVP` are viable options. In terms of scalability, `Seurat`, `LIGER`, and `MOFA+` are efficient. For ease of use, `scDART`, `scJoint`, and `Seurat` are highlighted for their detailed guidance.
+
+---
+
 **Title:** [A benchmark of batch-effect correction methods for single-cell RNA sequencing data](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1850-9)
 
-**Authors:** Hoa Thi Nhu Tran et al.
+**Authors:** Hoa Thi Nhu Tran, et al.
 
 **Journal Info:** Genome Biology, January 2020
 
