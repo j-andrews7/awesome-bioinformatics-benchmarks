@@ -26,6 +26,8 @@ If you have a benchmarking study that is not yet included on this list, please m
     - [Cell-Type Deconvolution](#cell-type-deconvolution)
   - [CRISPR Screens](#crispr-screens)
   - [DNA Methylation](#dna-methylation)
+    - [Platforms and Library Prep Methods](#platforms-and-library-prep-methods)
+    - [Cpg Methylation from Nanopore Data](#cpg-methylation-from-nanopore-data)
   - [Variant Callers](#variant-callers)
     - [Germline SNP/Indel Callers](#germline-snpindel-callers)
     - [Somatic SNV/Indel callers](#somatic-snvindel-callers)
@@ -475,6 +477,32 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 - The study suggests considering specific genomic feature coverage and desired analysis depth when choosing a TBS platform.
 
 **Additional links:** The authors provide their analysis code on [Github](https://github.com/ucl-medical-genomics/EpiCapture).
+
+### CpG Methylation from Nanopore Data
+
+**Title:** [Systematic benchmarking of tools for CpG methylation detection from nanopore sequencing](https://doi.org/10.1038/s41467-021-23778-6)
+
+**Authors:** Zaka Wing-Sze Yuen, et al.
+
+**Journal Info:** Nature Communications, 2021
+
+**Description:** This study systematically benchmarks six tools for detecting 5-methylcytosine (5mC) from nanopore sequencing using individual reads, controlled methylation mixtures, Cas9-targeted sequencing, and whole-genome bisulfite sequencing (WGBS). The research highlights a trade-off between true positives and false positives among these tools and a general high dispersion in predicting methylation frequencies. Metrics include accuracy (true positive rate & true negative rate) at the individual read level and per controlled mixture. The authors also tested a consensus approach combining the results of pairs of callers.
+
+**Tools/methods compared:** `Nanopolish`, `Megalodon`, `DeepSignal`, `Guppy`, `Tombo`, and `DeepMod`.
+
+**Recommendation(s):** 
+- No single method accurately predicts across all methylation frequency ranges. 
+- Guppy excels in identifying unmethylated sites but fails at fully methylated sites.
+- Nanopolish and Tombo accurately recover fully methylated sites but have high false positives at unmethylated sites.
+- Megalodon showed the best overall performance but requires GPU support.
+- The consensus approach METEORE, combining predictions from two or more tools (specifically Megalodon and DeepSignal), improved accuracy over individual methods. It balances accuracy and running times, although it also requires a GPU for efficiency.
+- On a CPU, the combination of Nanopolish and DeepSignal can match Megalodon's accuracy and be time-competitive.
+- Reassessing score cutoffs for individual reads and removing sites with uncertain methylation status can further enhance accuracy. 
+- These methods showed good consistency with WGBS data, suggesting potential for sensitive diagnostic and forensic tests without high coverage.
+- The study also notes that the highest discrepancy with WGBS occurred at CG sites in AT-rich sequences, particularly for DeepMod and DeepSignal.
+
+**Additional links:**
+The authors provide their method for consensus calling (METEORE) on [GitHub](https://github.com/comprna/METEORE).
 
 ## Variant Callers
 
