@@ -25,6 +25,7 @@ If you have a benchmarking study that is not yet included on this list, please m
     - [_de novo_ Assembly and Quantification](#de-novo-assembly-and-quantification)
     - [Cell-Type Deconvolution](#cell-type-deconvolution)
   - [CRISPR Screens](#crispr-screens)
+    - [Hit/Dependency Identification](#hitdependency-identification)
   - [DNA Methylation](#dna-methylation)
     - [Platforms and Library Prep Methods](#platforms-and-library-prep-methods)
     - [Cpg Methylation from Nanopore Data](#cpg-methylation-from-nanopore-data)
@@ -39,7 +40,7 @@ If you have a benchmarking study that is not yet included on this list, please m
     - [scRNA Sequencing Protocols](#scrna-sequencing-protocols)
     - [scRNA Analysis Pipelines](#scrna-analysis-pipelines)
     - [scRNA Imputation Methods](#scrna-imputation-methods)
-    - [scRNA Differential Gene Expression](#scrna-differential-gene-expression)
+    - [scRNA Differential Gene Expression](#scrna-differential-gene-expressionmarker-detection)
     - [Trajectory Inference](#trajectory-inference)
     - [Gene Regulatory Network Inference](#gene-regulatory-network-inference)
     - [Integration/Batch Correction](#integrationbatch-correction)
@@ -838,7 +839,24 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 
 **Additional links (optional):** The authors placed all of their benchmaking code on [Github](https://github.com/Winnie09/imputationBenchmark).
 
-### scRNA Differential Gene Expression
+### scRNA Differential Gene Expression/Marker Detection
+
+**Title:** [A comparison of marker gene selection methods for single-cell RNA sequencing data](https://doi.org/10.1101/2022.05.09.490241)
+
+**Authors:** Jeffrey M. Pullin, Davis J. McCarthy
+
+**Journal Info:** bioRxiv, September 2022
+
+**Description:** This study benchmarks 56 computational methods used for selecting marker genes in single-cell RNA sequencing (scRNA-seq) data. The evaluation metrics include the ability to recover simulated and expert-annotated marker genes (precision, recall, and F1 score calculations), predictive performance, speed, memory efficiency, and software implementation quality. This comprehensive analysis uses 10 real datasets and over 170 simulated datasets.
+
+**Tools/methods compared:** The study benchmarks various packages such as Seurat, COSG, Scanpy, scran, presto, edger, RankCorr, glmGamPoi, limma, Cepo, and NSForest. The full list of 56 methods is detailed in Table 1 of the paper.
+
+**Recommendation(s):**
+- The best-performing methods for recall (the proportion of all true marker genes selected) were scran's Binomial-any method, Wilcoxon rank-sum based methods (Seurat and Scanpy), edgeR methods, Student’s t-test, and RankCorr with lambda set to 10.
+- The methods generally showing the poorest performance were NSForest, Cepo, and scran `findMarkers()`.
+
+
+---
 
 **Title:** [Bias, robustness and scalability in single-cell differential expression analysis](https://www.nature.com/articles/nmeth.4612)
 
