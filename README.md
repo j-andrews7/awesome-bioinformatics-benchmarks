@@ -598,6 +598,22 @@ In general, [BWA-mem](https://github.com/lh3/bwa) was the most consistent aligne
 
 ### CNV Callers
 
+**Title:** [Detection of germline CNVs from gene panel data: benchmarking the state of the art](https://academic.oup.com/bib/article/26/1/bbae645/7922578)
+
+**Authors:** Elisabet Munté, Carla Roca, et al.
+
+**Journal Info:** Briefings in Bioinformatics, December 2024.
+
+**Description:** This work evaluated 12 germline copy number variation callers against four real-validated datasets using their default parameters, assessed the impact of modifying 107 tool parameters, and analyzed 66 tool pair combinations to produce better meta-callers. Sensitivity, specificity, positive predictive value, negative predictive value, F1 score, and various correlation coefficients were used as benchmarking metrics.
+
+**Tools/methods compared:** `Atlas-CNV`, `ClearCNV`, `ClinCNV`, `CNVkit`, `Cobalt`, `CODEX2`, `CoNVaDING`, `DECoN`, `ExomeDepth`, `GATK-gCNV`, `panelcn.MOPS`, `VisCap`
+
+**Recommendation(s):** Results indicated that in terms of F1 score, ClinCNV and GATK-gCNV were the best CNV callers. Regarding sensitivity, GATK-gCNV also exhibited particularly high performance.
+
+**Additional links:** The authors published ([CNVbenchmarkeR2](https://github.com/jpuntomarcos/CNVbenchmarkeR2)), so other users can benchmark their tools on their own data.
+
+---
+
 **Title:** [Benchmark of tools for CNV detection from NGS panel data in a genetic diagnostics context](https://www.biorxiv.org/content/10.1101/850958v1)
 
 **Authors:** José Marcos Moreno-Cabrera, et al.
