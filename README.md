@@ -920,6 +920,22 @@ Authors wrote an [interactive Shiny app](https://dynverse.org/users/3-user-guide
 
 ### Integration/Batch Correction
 
+**Title:** [Benchmarking algorithms for single-cell multi-omics prediction and integration](https://www.nature.com/articles/s41592-024-02429-w)
+
+**Authors:** Hu, Yinlei, et al. 
+
+**Journal Info:** Nature Methods 21.11 (2024): 2182-2194.
+
+**Description:** A large-scale benchmark study was conducted to evaluate 14 algorithms for predicting protein abundance or chromatin accessibility and 18 algorithms for integrating single-cell multi-omics data across 47 datasets.
+
+**Tools/methods compared:** `bindSC`, `CiteFuse`, `cobolt`, `DCCA`, `DeepMAPS`, `GCN-SC`, `GLUE`, `Liger iNMF`, `Liger UiNMF`, `Liger online iNMF`,`MaxFuse`, `MEFISTO`, `MIDAS`, `MOFA+`, `Multigrate`, `MultiMAP`,`MultiVI`, `Pamona`, `SAILERX`, `scAI`, `SCALEX`, `scDEC`, `sciPENN`,`scMCs`, `scMDC`, `scMM`, `scMoMaT`, `scMVAE`, `scMVP`, `scVAEIT`,`Seurat v3 CCA`, `Seurat v4 RPCA`, `Seurat v4`, `WNN`, `Seurat v5 bridge`,`SIMBA`, `SpatialGlue`, `StabMap`, `totalVI`, `unionCom` and `uniPort`
+
+**Recommendation(s):** `TotalVI` and `scArches` were identified as the best performers for protein prediction, `LS_Lab` for chromatin accessibility, and `Seurat`, `MOJITOO`, and `scAI` for vertical integration. For horizontal and mosaic integration, `totalVI` and `UINMF` showed the highest performance.
+
+**Additional links (optional):**  Authors provided the codes and scripts used for the benchmark study and figure plotting to a GitHub website, which can be accessed at [Github](https://github.com/QuKunLab/MultiomeBenchmarking/). Code is also available in the [Zenodo repository](https://doi.org/10.5281/zenodo.10540843) 
+
+---
+
 **Title:** [Benchmarking multi-omics integration algorithms across single-cell RNA and ATAC data](https://www.biorxiv.org/content/10.1101/2023.11.15.564963v1.full)
 
 **Authors:** Chuxi Xiao, et al.
