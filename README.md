@@ -374,6 +374,20 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 
 ### Cell-Type Deconvolution
 
+**Title:** [Comprehensive evaluation of deconvolution methods for human brain gene expression](https://www.nature.com/articles/s41467-022-28655-4)
+
+**Authors:** Gavin J. Sutton, et al.
+
+**Journal Info:** Nature Communications, March 2022
+
+**Description:** This paper carries out a comprehensive evaluation of deconvolution methods for human brain transcriptome data, and assesses the tissue-specificity of key observations by comparison with human pancreas and heart. Eight transcriptome deconvolution approaches and nine cell-type signatures were evaluated, testing accuracy using in silico mixtures of single-cell RNA-seq data, RNA mixtures, and nearly 2000 human brain samples. The results identify the main factors that drive deconvolution accuracy for brain data, and highlight the importance of biological factors influencing cell-type signatures, such as brain region and in vitro cell culturing.
+
+**Tools/methods compared:** `CIBERSORTx`, `dtangle`, `MuSiC`, `BisqueRNA`, `DeconRNASeq`, `SCDC`, `ICeDT`, `CDSeq`.
+
+**Recommendation(s):** Partial deconvolution algorithms (reference-based methods) generally outperform complete deconvolution (reference-free) methods. However, the choice of cell-type signature has a major impact on accuracy, and the authors stress the importance of using appropriate cell-type signatures that account for biological factors such as brain region and avoiding signatures derived from in vitro cultured cells when deconvolving in vivo tissue samples.
+
+---
+
 **Title:** [Comprehensive evaluation of transcriptome-based cell-type quantification methods for immuno-oncology](https://academic.oup.com/bioinformatics/article/35/14/i436/5529146)
 
 **Authors:** Markus List\*, Tatsiana Aneichyk\*, et al.
