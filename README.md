@@ -13,7 +13,7 @@ If you have a benchmarking study that is not yet included on this list, please m
   - [Format \& Organization](#format--organization)
 - [Benchmarking Theory](#benchmarking-theory)
 - [Tool/Method Sections](#toolmethod-sections)
-  - [DNase, ATAC, and ChIP-seq](#dnase-atac-and-chip-seq)
+  - [DNase, ATAC, ChIP-seq, and CUT&RUN](#dnase-atac-chip-seq-and-cutrun)
     - [Peak Callers](#peak-callers)
     - [Normalization Methods](#normalization-methods)
   - [RNA-seq](#rna-seq)
@@ -107,9 +107,25 @@ Papers within each section should be ordered by publication date, with more rece
 # Tool/Method Sections
 Additional sections/sub-sections can be added as needed.
 
-## DNase, ATAC, and ChIP-seq
+## DNase, ATAC, ChIP-seq, and CUT&RUN
 
 ### Peak Callers
+
+**Title:** [Benchmarking Peak Calling Methods for CUT&RUN](https://academic.oup.com/bioinformatics/article/41/7/btaf375/8174968)
+
+**Authors:** Amin Nooranikhojasteh, et al.
+
+**Journal Info:** Bioinformatics, June 2025
+
+**Description:** This paper benchmarks four peak calling tools for CUT&RUN data, evaluating their performance using in-house data of three histone marks (H3K4me3, H3K27ac, and H3K27me3) from mouse brain tissue, as well as samples from the 4DNucleome database. Tools are assessed on the number of peaks called, peak length distribution, signal enrichment, computational efficiency, and reproducibility across biological replicates.
+
+**Tools/methods compared:** `MACS2`, `SEACR`, `GoPeaks`, `LanceOtron`.
+
+**Recommendation(s):** Varies by histone mark. The findings reveal substantial variability in peak calling efficacy, with each method demonstrating distinct strengths in sensitivity, precision, and applicability depending on the histone mark in question.
+
+**Additional links:** [GitHub](https://github.com/OroujiLab/CUTandRun_Peak_Calling)
+
+---
 
 **Title:** [Features that define the best ChIP-seq peak calling algorithms](https://academic.oup.com/bib/article/18/3/441/2453291)
 
