@@ -856,6 +856,20 @@ For insertions, `MELT`, `Mobster`, `inGAP-sv`, and methods using long read data 
 
 ### scRNA Differential Gene Expression
 
+**Title:** [Benchmarking methods for detecting differential states between conditions from multi-subject single-cell RNA-seq data](https://academic.oup.com/bib/article/23/5/bbac286/6649780)
+
+**Authors:** Sini Junttila, Johannes Smolander, and Laura L. Elo
+
+**Journal Info:** Briefings in Bioinformatics, September 2022
+
+**Description:** This paper performed a comprehensive comparison of 18 methods for the identification of differential states (DS) between conditions from multi-subject scRNA-seq data. Methods were categorized as pseudo-bulk methods, mixed models, and naive single-cell methods. The study addresses the pseudo-replicate bias problem, where naive methods that treat cells as statistically independent inflate false positive rates in the presence of variation between biological replicates.
+
+**Tools/methods compared:** *Pseudo-bulk methods* using `DESeq2`, `edgeR-LRT`, `edgeR-QLF`, `limma-trend`, and `limma-voom` with both sum and mean aggregation. *Mixed model methods* including `MAST` (with random effects), `lme4`, and `glmmTMB`. *Naive single-cell methods* including `Wilcoxon rank-sum`, `t-test`, `MAST` (without random effects), and Seurat-based latent models.
+
+**Recommendation(s):** Pseudo-bulk methods (`edgeR`, `DESeq2`, `limma`) and mixed models that model subjects as a random effect (e.g., `MAST` with random effects) performed generally best. Naive single-cell methods that do not account for subjects in any way achieved higher sensitivity but were subject to a high number of false positives. Accounting for subjects through latent variable modeling did not improve performance of the naive methods.
+
+---
+
 **Title:** [Bias, robustness and scalability in single-cell differential expression analysis](https://www.nature.com/articles/nmeth.4612)
 
 **Authors:** Charlotte Soneson\* & Mark D Robinson\*
