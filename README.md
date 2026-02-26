@@ -27,6 +27,7 @@ If you have a benchmarking study that is not yet included on this list, please m
   - [CRISPR Screens](#crispr-screens)
   - [DNA Methylation](#dna-methylation)
     - [Platforms and Library Prep Methods](#platforms-and-library-prep-methods)
+    - [Differential Methylation Region Calling](#differential-methylation-region-calling)
     - [Cpg Methylation from Nanopore Data](#cpg-methylation-from-nanopore-data)
   - [Variant Callers](#variant-callers)
     - [Germline SNP/Indel Callers](#germline-snpindel-callers)
@@ -477,6 +478,22 @@ All tools measured produced less than ideal precision-recall (both <90%) when us
 - The study suggests considering specific genomic feature coverage and desired analysis depth when choosing a TBS platform.
 
 **Additional links:** The authors provide their analysis code on [Github](https://github.com/ucl-medical-genomics/EpiCapture).
+
+### Differential Methylation Region Calling
+
+**Title:** [Calling differentially methylated regions from whole genome bisulphite sequencing with DMRcate](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8565305/)
+
+**Authors:** Timothy J. Peters, et al.
+
+**Journal Info:** Nucleic Acids Research, October 2021
+
+**Description:** This study evaluates DMR detection from whole-genome bisulfite sequencing (WGBS) data using simulation and real-data analyses, and introduces updates to the DMRcate framework for robust region-level calling.
+
+**Tools/methods compared:** `DMRcate`, `BSmooth`, `DSS`, `dmrseq`.
+
+**Recommendation(s):** DMRcate showed strong overall performance and scalability for WGBS DMR discovery, with the paper recommending method choice based on study design and emphasizing region-level approaches that balance sensitivity and false discovery control.
+
+**Additional links:** DMRcate package repository: [bioc/DMRcate](https://github.com/bioc/DMRcate)
 
 ### CpG Methylation from Nanopore Data
 
