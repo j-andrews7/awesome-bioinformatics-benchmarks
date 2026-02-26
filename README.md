@@ -239,6 +239,20 @@ The authors also proposed a generalized workflow for differential accessibility 
 
 ### Differential Gene Expression
 
+**Title:** [Locus-specific expression analysis of transposable elements](https://academic.oup.com/bib/article/23/1/bbab417/6400501)
+
+**Authors:** R. Schwarz, P. Koch, J. Wilbrandt, and S. Hoffmann
+
+**Journal Info:** Briefings in Bioinformatics, 2022
+
+**Description:** This study benchmarks methods for detecting differential expression of individual transposable element loci from RNA-seq data using simulated datasets with varying sequencing and experimental settings. It evaluates how well each approach recovers true positive and false positive signals for locus-level TE analysis.
+
+**Tools/methods compared:** `SalmonTE`, `SQuIRE`, `TEtools`, `Telescope`, `TEtranscripts`.
+
+**Recommendation(s):** The benchmark shows meaningful performance differences across TE-focused pipelines depending on dataset characteristics, so method selection should be guided by the specific experimental setup and validated with appropriate controls/simulations when possible.
+
+---
+
 **Title:** [How well do RNA-Seq differential gene expression tools perform in a complex eukaryote? A case study in Arabidopsis thaliana.](https://www.ncbi.nlm.nih.gov/pubmed/30726870)
 
 **Authors:** Kimon Froussios\*, Nick J Schurch\*, et al.
